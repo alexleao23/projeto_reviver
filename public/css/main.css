@@ -1,0 +1,25 @@
+.lista-select-paciente {
+    list-style: none;
+    width: 100%;
+}
+.lista-select-paciente li{
+    width: 100%;
+    padding: 10px;
+
+    border-bottom: 2px solid #0f74a8;
+}
+.lista-select-paciente li:hover {
+
+    background: #f0f0f0 !important;
+}
+
+.lista-select-paciente th {
+
+    background: #d7d7d7;
+    border: 1px solid #f0f0f0;
+}
+
+.btn-novo-paciente {
+  position: relative;
+  top: -7px;
+}
