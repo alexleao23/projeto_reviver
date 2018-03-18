@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
+});
+
+Auth::routes();
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+	Route::resource('pacientes', 'PacientesController');
 });
