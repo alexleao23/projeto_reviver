@@ -10,7 +10,6 @@
           <div class="register-box-body">
             <h3 class="login-box-msg">Cadastrar novo usuário</h3>
             {{ Form::open(['route'=>'register']) }}
-            {{-- <form action="../../index.html" method="post"> --}}
               <div class="form-group has-feedback">
                 <input name="name" type="text" class="form-control" placeholder="Nome Completo" {{ $errors->has('name') ? ' is-invalid' : '' }} value="{{ old('name') }}" required autofocus>
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
