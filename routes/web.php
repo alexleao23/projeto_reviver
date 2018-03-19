@@ -5,9 +5,12 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	Route::get('/', function(){
 		return view('home');
 	});
 	Route::resource('pacientes', 'PacientesController');
+	Route::resource('questionarios_nutricao', 'QuestionariosNutricaoController');
+	Route::resource('responsaveis', 'ResponsaveisController');
 });
