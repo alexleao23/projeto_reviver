@@ -25,18 +25,20 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
-      <li class="treeview">
-        <a href="{{ url('admin/register') }}">
-          <i class="fa fa-plus"></i> <span>Cadastrar Usuário</span>
-          {{-- <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span> --}}
-        </a>
-        {{-- <ul class="treeview-menu">
-          <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-          <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-        </ul> --}}
-      </li>
+      @can('create', App\User::class)
+        <li>
+          <a href="{{ url('admin/register') }}">
+            <i class="fa fa-plus"></i> <span>Cadastrar Usuário</span>
+            {{-- <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span> --}}
+          </a>
+          {{-- <ul class="treeview-menu">
+            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+          </ul> --}}
+        </li>
+      @endcan
       <li class="treeview">
         <a href="#">
           <i class="fa fa-files-o"></i>

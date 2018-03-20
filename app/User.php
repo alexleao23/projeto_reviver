@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Auth;
 
 class User extends Authenticatable
 {
@@ -15,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'cpf', 'celular', 'perfil', 'password'
+        'name', 'email', 'cpf', 'celular', 'perfil', 'lvpermissao', 'password'
     ];
 
     /**
@@ -33,5 +34,19 @@ class User extends Authenticatable
         $first = $fullname[0];
         $last = end($fullname);
         return $shortname = $first." ".$last;
+    }
+
+    public function isAdmin()
+    {
+        return Auth::user()->lvpermissao == 'Admin';
+    }
+
+    public function isCoordenador()
+    {
+        return Auth::user()->lvpermissao == 'Coordenador';
+    }
+    public function isTecnicoBolsista()
+    {
+        return Auth::user()->lvpermissao == 'Aluno';
     }
 }
