@@ -49,11 +49,11 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
-              <p>Bounce Rate</p>
+              <h3>53</h3>
+              <p><b>Pacientes cadastrados</b></p>
             </div>
             <div class="icon">
-              <i class="ion ion-stats-bars"></i>
+              <i class="fa fa-id-card-o"></i>
             </div>
             <a href="{{ action('PacientesController@create') }}" class="small-box-footer">
               <b>Cadastrar Paciente</b> <i class="fa fa-plus"></i>
@@ -67,14 +67,14 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
-              <p>User Registrations</p>
+              <h3><i class="fa fa-info-circle"></i></h3>
+              <p><b>Sobre o sistema</b></p>
             </div>
             <div class="icon">
-              <i class="ion ion-person-add"></i>
+              <i class="fa fa-info"></i>
             </div>
             <a href="#" class="small-box-footer">
-              More info <i class="fa fa-arrow-circle-right"></i>
+              <b>Saiba mais</b> <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
         </div>
