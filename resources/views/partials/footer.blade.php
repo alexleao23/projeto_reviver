@@ -7,3 +7,15 @@
     </div>
     <!-- /.container -->
   </footer>
+
+
+
+
+{{--     return Redirect::back()->with('msg', 'asidfjqweof');
+
+
+    @if($errors->any())
+
+	{{ $errors->first() }}
+
+    @endif --}}
