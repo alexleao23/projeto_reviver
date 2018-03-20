@@ -34,13 +34,13 @@
           <div class="small-box bg-aqua">
             <div class="inner">
               <h3>150</h3>
-              <p><b>Usuários cadastrados</b></p>
+              <p><strong>Usuários cadastrados</strong></p>
             </div>
             <div class="icon">
               <i class="fa fa-user-plus"></i>
             </div>
             <a href="{{ url('/admin/register') }}" class="small-box-footer">
-              <b>Cadastrar usuário</b> <i class="fa fa-plus"></i>
+              <b>Cadastrar Usuário</b> <i class="fa fa-plus"></i>
             </a>
           </div>
         </div>
@@ -50,13 +50,13 @@
           <div class="small-box bg-green">
             <div class="inner">
               <h3>53<sup style="font-size: 20px">%</sup></h3>
-              <p>Bounce Rate</p>
+              <p><strong>Pacientes Cadastrados</strong></p>
             </div>
             <div class="icon">
-              <i class="ion ion-stats-bars"></i>
+              <i class="fa fa-users"></i>
             </div>
             <a href="{{ action('PacientesController@create') }}" class="small-box-footer">
-              <b>Cadastrar Paciente</b> <i class="fa fa-plus"></i>
+              <strong>Cadastrar Paciente</strong> <i class="fa fa-plus"></i>
             </a>
           </div>
         </div>

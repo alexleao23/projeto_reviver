@@ -35,7 +35,8 @@ class PacientesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Paciente::create($request->all());
+        return redirect('/admin');
     }
 
     /**
