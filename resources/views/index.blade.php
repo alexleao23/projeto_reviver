@@ -5,8 +5,8 @@
   <!-- Content Header (Page header) -->
   @section('content-header')
     <h1>
-      Blank page
-      <small>it all starts here</small>
+      Página inicial
+      <small>Bem-vindo, {{ Auth::user()->short_name }}</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -49,11 +49,11 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
-              <p><strong>Pacientes Cadastrados</strong></p>
+              <h3>53</h3>
+              <p><strong>Pacientes cadastrados</strong></p>
             </div>
             <div class="icon">
-              <i class="fa fa-users"></i>
+              <i class="fa fa-id-card-o"></i>
             </div>
             <a href="{{ action('PacientesController@create') }}" class="small-box-footer">
               <strong>Cadastrar Paciente</strong> <i class="fa fa-plus"></i>
@@ -67,14 +67,14 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
-              <p>User Registrations</p>
+              <h3><i class="fa fa-info-circle"></i></h3>
+              <p><b>Sobre o sistema</b></p>
             </div>
             <div class="icon">
-              <i class="ion ion-person-add"></i>
+              <i class="fa fa-info"></i>
             </div>
             <a href="#" class="small-box-footer">
-              More info <i class="fa fa-arrow-circle-right"></i>
+              <b>Saiba mais</b> <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
         </div>

@@ -1,7 +1,7 @@
 @extends('partials.template')
 @section('title', 'Projeto Reviver | Cadastro')
 @section('content')
-  <div class="register-box" style="margin-top: 1%; margin-bottom: 1%">
+  <div class="register-box" style="margin-top: 0%; margin-bottom: 0%">
     <div class="register-box-body">
       <h3 class="login-box-msg">Cadastrar novo usuário</h3>
       {{ Form::open(['route'=>'register']) }}
@@ -70,6 +70,9 @@
           <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
         </div>
         <div class="row">
+          <div class="col-xs-6">
+            <a href="{{ URL::previous() }}" class="pull-right btn btn-default btn-block btn-flat">Voltar</a>
+          </div> 
           <div class="col-xs-6">
             <button type="submit" class="btn btn-primary btn-block btn-flat">Cadastrar</button>
           </div>
