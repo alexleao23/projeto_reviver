@@ -2,7 +2,7 @@
   <!-- Logo -->
   <a href="{{ url('/admin') }}" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini">P<b>J</b></span>
+    <span class="logo-mini">P<b>R</b></span>
     <!-- logo for regular state and mobile devices -->
     <span class="logo-lg">Projeto <b>Reviver</b></span>
   </a>
@@ -31,8 +31,8 @@
             <li class="user-header">
               <img src="{{ asset('bower_components/AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
               <p>
-                {{ Auth::user()->short_name }}
-                <small>Member since Nov. 2012</small>
+                {{ Auth::user()->short_name }}<br>
+                <strong>{{ Auth::user()->perfil }}</strong>
               </p>
             </li>
 

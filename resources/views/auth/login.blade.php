@@ -45,8 +45,6 @@
             {{ Form::close() }}
 
             <a href="{{ route('password.request') }}">Esqueceu sua senha?</a><br>
-            <a href="{{ route('register') }}" class="text-center">Cadastrar-se</a>
-
           </div>
           <!-- /.login-box-body -->
         </div>
