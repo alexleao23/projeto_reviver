@@ -41,8 +41,9 @@
     </div>
     <!-- /.container -->
     <!-- /.content-wrapper -->
-    @include('partials.footer')
   </div>
+    @include('partials.footer')
+
   <!-- ./wrapper -->
 
   <!-- jQuery 2.2.3 -->

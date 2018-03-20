@@ -1,12 +1,8 @@
-@extends('layouts.authlayout')
+@extends('partials.template')
 @section('title', 'Projeto Reviver | Cadastro')
 @section('content')
 <body class="hold-transition register-page">
   <div class="register-box">
-    <div class="register-logo">
-      <b>Projeto Reviver</b>
-    </div>
-
     <div class="register-box-body">
       <h3 class="login-box-msg">Cadastrar novo usuário</h3>
       {{ Form::open(['route'=>'register']) }}
