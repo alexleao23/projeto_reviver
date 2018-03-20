@@ -81,8 +81,6 @@
           <!-- /.col -->
         </div>
       {{ Form::close() }}
-      <br>
-      <a href="{{ route('login') }}" class="text-center">Já possuo uma conta</a>
     </div>
     <!-- /.form-box -->
   </div>

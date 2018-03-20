@@ -2,7 +2,7 @@
     <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="../../index2.html" class="navbar-brand"><b>Projeto</b>Reviver</a>
+          <a href="{{ url('/admin') }}" class="navbar-brand"><b>Projeto</b>Reviver</a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
             <i class="fa fa-bars"></i>
           </button>
@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
           <ul class="nav navbar-nav">
             @can('create', App\User::class)
-              <li><a href="{{ url('/admin/register') }}">Cadastrar Usuário <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
             @endcan
             <li><a href="#">Link</a></li>
             <li class="dropdown">

@@ -43,7 +43,7 @@
             <div class="icon">
               <i class="fa fa-user-plus"></i>
             </div>
-            <a href="/register" class="small-box-footer">
+            <a href="{{ url('/admin/register') }}" class="small-box-footer">
               <b>Cadastrar usuário</b> <i class="fa fa-plus"></i>
             </a>
           </div>
