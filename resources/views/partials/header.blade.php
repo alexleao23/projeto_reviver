@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
           <ul class="nav navbar-nav">
             @can('create', App\User::class)
-              <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
+              <li><a href="{{ url('/admin/register') }}">Cadastrar Usuário <span class="sr-only">(current)</span></a></li>
             @endcan
             <li><a href="#">Link</a></li>
             <li class="dropdown">
