@@ -32,19 +32,17 @@
     <div class="container">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>
-          Alguma coisa aqui he he he
-          <small>E se quiser botar info aqui bota tb hue</small>
-        </h1>
+          
+          @yield('content-header')
+
       </section>
 
       <!-- Main content -->
       <section class="content">
         
-        <!-- /.box -->
+          @yield('content')
             </div>
-            </div>
-</div></section>
+      </section>
       <!-- /.content -->
     </div>
     <!-- /.container -->
