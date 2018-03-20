@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'cpf', 'celular', 'perfil', 'password'
+        'name', 'email', 'cpf', 'celular', 'perfil', 'lvpermissao', 'password'
     ];
 
     /**
@@ -36,34 +36,17 @@ class User extends Authenticatable
         return $shortname = $first." ".$last;
     }
 
-    public function isNutricao()
-    {
-        return Auth::user()->perfil == 'Nutrição';
-    }
-
-    public function isFisioterapia()
-    {
-        return Auth::user()->perfil == 'Fisioterapia';
-    }
-
-    public function isEnfermagem()
-    {
-        return Auth::user()->perfil == 'Enfermagem';
-    }
-    public function isMedicina()
-    {
-        return Auth::user()->perfil == 'Medicina';
-    }
-    public function isEdFisica()
-    {
-        return Auth::user()->perfil == 'Ed. Física';
-    }
-    public function isFarmacia()
-    {
-        return Auth::user()->perfil == 'Farmacia';
-    }
     public function isAdmin()
     {
-        return Auth::user()->perfil == 'Admin';
+        return Auth::user()->lvpermissao == 'Admin';
+    }
+
+    public function isCoordenador()
+    {
+        return Auth::user()->lvpermissao == 'Coordenador';
+    }
+    public function isTecnicoBolsista()
+    {
+        return Auth::user()->lvpermissao == 'Aluno';
     }
 }

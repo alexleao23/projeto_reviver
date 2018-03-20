@@ -47,7 +47,10 @@
                 @endif
               </div>
               <div class="form-group has-feedback">
-                {{ Form::select('perfil', ['Nutrição'=>'Nutrição', 'Fisioterapia'=>'Fisioterapia', 'Enfermagem'=>'Enfermagem', 'Medicina'=>'Medicina', 'Ed. Física'=>'Ed. Física', 'Farmácia'=>'Farmácia', 'Admin'=>'Admin'], null, ['placeholder'=>'Selecione o perfil do usuário', 'class'=>'form-control', 'required']) }}
+                {{ Form::select('perfil', ['Nutrição'=>'Nutrição', 'Fisioterapia'=>'Fisioterapia', 'Enfermagem'=>'Enfermagem', 'Medicina'=>'Medicina', 'Ed. Física'=>'Ed. Física', 'Farmácia'=>'Farmácia', 'Admin'=>'Admin'], null, ['placeholder'=>'Perfil do usuário', 'class'=>'form-control', 'required']) }}
+              </div>
+              <div class="form-group has-feedback">
+                {{ Form::select('lvpermissao', ['Admin'=>'Admin', 'Coordenador'=>'Coordenador', 'Aluno'=>'Aluno'], null, ['placeholder'=>'Nível de permissão do usuário', 'class'=>'form-control', 'required']) }}
               </div>
               <div class="form-group has-feedback">
                 <input name="password" type="password" class="form-control" placeholder="Senha" {{ $errors->has('password') ? ' is-invalid' : '' }}">

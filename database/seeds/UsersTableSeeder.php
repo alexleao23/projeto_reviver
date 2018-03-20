@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
         	'cpf' => '03180984236',
         	'celular' => '04196981276981',
         	'perfil' => 'Admin',
+            'lvpermissao' => 'Admin',
         	'password' => Hash::make('kirito')
         ]);
     }

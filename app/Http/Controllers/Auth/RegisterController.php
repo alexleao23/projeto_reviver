@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -56,6 +57,7 @@ class RegisterController extends Controller
             'cpf' => 'required|string|max:11',
             'celular' => 'required',
             'perfil' => 'required',
+            'lvpermissao' => 'required',
             'password' => 'required|string|min:6|confirmed'
         ]);
     }
@@ -74,6 +76,7 @@ class RegisterController extends Controller
             'cpf' => $data['cpf'],
             'celular' => $data['celular'],
             'perfil' => $data['perfil'],
+            'lvpermissao' => $data['lvpermissao'],
             'password' => Hash::make($data['password']),
         ]);
     }
