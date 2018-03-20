@@ -70,8 +70,12 @@
           <input name="password_confirmation" type="password" class="form-control" placeholder="Confirmação da Senha">
           <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
         </div>
+        <br>
         <div class="row">
-          <div class="col-xs-4">
+          <div class="col-xs-6">
+            <a href="{{ URL::previous() }}" class="pull-right btn btn-default btn-block btn-flat">Voltar</a>
+          </div> 
+          <div class="col-xs-6">
             <button type="submit" class="btn btn-primary btn-block btn-flat">Cadastrar</button>
           </div>
           <!-- /.col -->
