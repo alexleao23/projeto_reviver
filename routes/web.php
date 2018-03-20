@@ -8,7 +8,7 @@ Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	Route::get('/', function(){
-		return view('home');
+		return view('index');
 	});
 	Route::resource('pacientes', 'PacientesController');
 	Route::resource('questionarios_nutricao', 'QuestionariosNutricaoController');

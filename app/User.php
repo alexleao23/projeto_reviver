@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getShortNameAttribute()
+    {
+        $fullname = explode(' ',$this->name);
+        $first = $fullname[0];
+        $last = end($fullname);
+        return $shortname = $first." ".$last;
+    }
 }
