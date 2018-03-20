@@ -1,14 +1,23 @@
 @extends('layouts.authlayout')
 @section('title', 'Projeto Reviver | Login')
 @section('content')
-    <body class="hold-transition login-page">
+    <body class="hold-transition login-page" style="background: url('backgroundsson.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;">
         <div class="login-box">
           <div class="login-logo">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-square-o fa-stack-2x"></i>
+              <i class="fa fa-hospital-o fa-stack-1x"></i>
+            </span>
             <b>Projeto Reviver</b>
           </div>
           <!-- /.login-logo -->
-          <div class="login-box-body">
-            <h3 class="login-box-msg">Entrar</h3>
+            <div class="login-box-body">
+            <h3 class="login-box-msg">  
+            </h3>
             {{ Form::open(['route'=>'login']) }}
               <div class="form-group has-feedback">
                 <input name="cpf" class="form-control" placeholder="CPF" {{ $errors->has('cpf') ? ' is-invalid' : '' }} value="{{ old('cpf') }}" required focus>
@@ -38,7 +47,7 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                  <button class="btn btn-primary btn-block btn-flat">Entrar</button>
+                  <button class="btn btn-danger btn-block btn-flat">Entrar</button>
                 </div>
                 <!-- /.col -->
               </div>
