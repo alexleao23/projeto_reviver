@@ -13,6 +13,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	Route::resource('pacientes', 'PacientesController');
 	Route::resource('questionarios_nutricao', 'QuestionariosNutricaoController');
 	Route::resource('responsaveis', 'ResponsaveisController');
-	Route::get('register', 'Auth\RegisterController@showRegistrationForm');
-	Route::post('register', 'Auth\RegisterController@register');
+	Route::get('register', 'Auth\RegisterController@showRegistrationForm')->middleware('can:create,App\User');
+	Route::post('register', 'Auth\RegisterController@register')->middleware('can:create,App\User');
 });
