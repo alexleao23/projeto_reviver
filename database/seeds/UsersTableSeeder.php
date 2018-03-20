@@ -21,5 +21,14 @@ class UsersTableSeeder extends Seeder
         	'perfil' => 'Admin',
         	'password' => Hash::make('kirito')
         ]);
+
+        $user = User::create([
+            'name' => 'João Victor Machado de Andrade',
+            'email' => 'admin@gmail.com',
+            'cpf' => '01098630203',
+            'celular' => '096981259500',
+            'perfil' => 'Admin',
+            'password' => Hash::make('admin')
+        ]);
     }
 }
