@@ -11,7 +11,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+            @can('create', App\User::class)
+              <li><a href="{{ url('/admin/register') }}">Cadastrar Usuário <span class="sr-only">(current)</span></a></li>
+            @endcan
             <li><a href="#">Link</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
@@ -138,7 +140,7 @@
                 <!-- The user image in the navbar-->
                 <img src="{{ asset('bower_components/AdminLTE/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                <span class="hidden-xs">{{ Auth::user()->name }}</span>
+                <span class="hidden-xs">{{ Auth::user()->short_name }}</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->
@@ -146,24 +148,9 @@
                   <img src="{{ asset('bower_components/AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
 
                   <p>
-                    {{ Auth::user()->name }}
-                    <small>Area do fera vai aqui</small>
+                    {{ Auth::user()->short_name }}
+                    <small>{{ Auth::user()->perfil }}</small>
                   </p>
-                </li>
-                <!-- Menu Body -->
-                <li class="user-body">
-                  <div class="row">
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
-                    </div>
-                  </div>
-                  <!-- /.row -->
                 </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">
