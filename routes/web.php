@@ -11,6 +11,9 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{id}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+Route::get('register', function(){
+	return redirect('login')->withErrors(['msg'=>'Você tentou acessar uma página restrita!']);
+});
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	Route::get('/', function(){

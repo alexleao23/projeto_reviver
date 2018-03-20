@@ -16,8 +16,13 @@
           </div>
           <!-- /.login-logo -->
             <div class="login-box-body">
-            <h3 class="login-box-msg">  
-            </h3>
+              @if ($errors->any())
+                <div class="alert alert-warning alert-dismissible">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                  <h4><i class="icon fa fa-warning"></i> Alerta!</h4>
+                  {{ $errors->first('msg') }}
+                </div>
+              @endif
             {{ Form::open(['route'=>'login']) }}
               <div class="form-group has-feedback">
                 <input name="cpf" class="form-control" placeholder="CPF" {{ $errors->has('cpf') ? ' is-invalid' : '' }} value="{{ old('cpf') }}" required focus>
