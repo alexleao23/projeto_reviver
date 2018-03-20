@@ -2,7 +2,7 @@
     <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="{{ url('/admin') }}" class="navbar-brand"><b>Projeto</b>Reviver</a>
+          <a href="{{ url('/admin') }}" class="navbar-brand"><i class="fa fa-hospital-o"></i> Projeto <b>Reviver</b></a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
             <i class="fa fa-bars"></i>
           </button>
