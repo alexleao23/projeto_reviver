@@ -29,7 +29,18 @@ class UsersTableSeeder extends Seeder
             'cpf' => '01098630203',
             'celular' => '096981259500',
             'perfil' => 'Admin',
+            'lvpermissao' => 'Admin',
             'password' => Hash::make('admin')
+        ]);
+
+        $user = User::create([
+            'name' => 'Kirigaya Kazuto',
+            'email' => 'kirigaya@gmail.com',
+            'cpf' => '00000000000',
+            'celular' => '22222222222',
+            'perfil' => 'Nutrição',
+            'lvpermissao' => 'Coordenador',
+            'password' => Hash::make('asuna1')
         ]);
     }
 }
