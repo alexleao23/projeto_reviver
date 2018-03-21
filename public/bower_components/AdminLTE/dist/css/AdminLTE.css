@@ -3452,6 +3452,7 @@ table.text-center th {
   text-align: center;
   margin-bottom: 25px;
   font-weight: 300;
+  opacity: 0.2;
 }
 .login-logo a,
 .register-logo a {
@@ -3465,6 +3466,7 @@ table.text-center th {
 .register-box {
   width: 360px;
   margin: 7% auto;
+  opacity: 0.9;
 }
 @media (max-width: 768px) {
   .login-box,

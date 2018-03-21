@@ -9,15 +9,17 @@
     background-size: cover;">
    
         <div class="login-box">
-          <div style="color:white;text-shadow: 2px 2px 5px white;" class="login-logo">
+          {{-- <div style="color:white;text-shadow: 2px 2px 5px white;" class="login-logo">
             <span class="fa-stack fa-lg">
               <i class="fa fa-square-o fa-stack-2x"></i>
               <i class="fa fa-hospital-o fa-stack-1x"></i>
             </span>
             <b> Projeto Reviver</b>
-          </div>
+          </div> --}}
           <!-- /.login-logo -->
             <div class="login-box-body">
+          <img src="logo.png" style="z-index: 999999" alt="">
+              <br><br>
               @if ($errors->any())
                 <div class="alert alert-warning alert-dismissible">
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -60,7 +62,7 @@
               </div>
             {{ Form::close() }}
 
-            <a href="{{ route('password.request') }}">Esqueceu sua senha?</a><br>
+            <a href="{{ route('password.request') }}" style="color: navy;">Esqueceu sua senha?</a><br>
           </div>
           <!-- /.login-box-body -->
         </div>
