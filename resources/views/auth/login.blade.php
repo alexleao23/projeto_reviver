@@ -20,7 +20,7 @@
             <div class="login-box-body">
           <img src="logo.png" style="z-index: 999999" alt="">
               <br><br>
-              @if ($errors->any())
+              @if ($errors->has('msg'))
                 <div class="alert alert-warning alert-dismissible">
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                   <h4><i class="icon fa fa-warning"></i> Alerta!</h4>
