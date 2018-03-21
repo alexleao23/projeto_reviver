@@ -8,11 +8,11 @@
       Página inicial
       <small>Bem-vindo, {{ Auth::user()->short_name }}</small>
     </h1>
-    <ol class="breadcrumb">
+{{--     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="#">Examples</a></li>
       <li class="active">Blank page</li>
-    </ol>
+    </ol> --}}
   @endsection
   <!-- Main content -->
   <!-- Default box -->
@@ -98,7 +98,7 @@
       <!-- ./col -->
     </div>
     <div class="box-footer">
-      Footer da box, n sei pra q ainda mas ta...
+      {{-- Footer da box, n sei pra q ainda mas ta... --}}
     </div>
   </div>
 </div>

@@ -15,7 +15,7 @@
               <li class="{{ request()->is('admin/register') ? 'active' : '' }}"><a href="{{ url('/admin/register') }}">Cadastrar Usuário <span class="sr-only">(current)</span></a></li>
             @endcan
             <li class="{{ request()->is('admin/pacientes/create') ? 'active' : '' }}"><a href="{{ url('/admin/pacientes/create') }}">Cadastrar paciente</a></li>
-            <li class="dropdown">
+            {{-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#">Action</a></li>
@@ -26,7 +26,7 @@
                 <li class="divider"></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
-            </li>
+            </li> --}}
           </ul>
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">

@@ -8,6 +8,7 @@
 
      });
  */
+ particlesJS();
 
  $("#pacienteform").submit(function() {
    

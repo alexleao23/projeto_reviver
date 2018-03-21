@@ -1,11 +1,13 @@
 @extends('layouts.authlayout')
 @section('title', 'Projeto Reviver | Login')
 @section('content')
+<div id="particles-js"></div>
     <body class="hold-transition login-page" style="background: url('backgroundsson.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;">
+   
         <div class="login-box">
           <div style="color:white;text-shadow: 2px 2px 5px white;" class="login-logo">
             <span class="fa-stack fa-lg">
@@ -63,4 +65,5 @@
           <!-- /.login-box-body -->
         </div>
         <!-- /.login-box -->
+        
 @endsection
