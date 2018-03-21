@@ -27,7 +27,7 @@
   <div class="wrapper" style="height: auto; min-height: 100%;">
     @include('partials.header')
     <!-- Full Width Column -->
-    <div class="content-wrapper" style="min-height: 217px;"><div style="padding: 20px 30px; background: rgb(243, 156, 18); z-index: 999999; font-size: 16px; font-weight: 600; display: none;"><a class="pull-right" href="#" data-toggle="tooltip" data-placement="left" title="" style="color: rgb(255, 255, 255); font-size: 20px;" data-original-title="Never show me this again!">×</a><a href="https://themequarry.com" style="color: rgba(255, 255, 255, 0.9); display: inline-block; margin-right: 10px; text-decoration: none;">Ready to sell your theme? Submit your theme to our new marketplace now and let over 200k visitors see it!</a><a class="btn btn-default btn-sm" href="https://themequarry.com" style="margin-top: -5px; border: 0px; box-shadow: none; color: rgb(243, 156, 18); font-weight: 600; background: rgb(255, 255, 255);">Let's Do It!</a></div>
+    <div class="content-wrapper" style="min-height: 217px;">
     <div class="container">
       <!-- Content Header (Page header) -->
       <section class="content-header">

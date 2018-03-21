@@ -6,7 +6,6 @@
   </h1>
 @endsection
 @section('content')
-
   <!-- Your Page Content Here -->
   <div class="box box-primary">
   <!-- /.box-header -->

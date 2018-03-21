@@ -1,7 +1,6 @@
 @extends('partials.template')
 @section('title', 'Projeto Reviver | Início')
-@section('content')
-<div class="content-wrapper">
+{{-- <div class="content-wrapper"> --}}
   <!-- Content Header (Page header) -->
   @section('content-header')
     <h1>
@@ -16,6 +15,7 @@
   @endsection
   <!-- Main content -->
   <!-- Default box -->
+  @section('content')
   <div class="box primary">
     <div class="box-header with-border">
       <h3 class="box-title">Ações</h3>
@@ -101,5 +101,5 @@
       {{-- Footer da box, n sei pra q ainda mas ta... --}}
     </div>
   </div>
-</div>
+{{-- </div> --}}
 @endsection
