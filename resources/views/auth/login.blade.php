@@ -7,12 +7,12 @@
     -o-background-size: cover;
     background-size: cover;">
         <div class="login-box">
-          <div class="login-logo">
+          <div style="color:white;text-shadow: 2px 2px 5px white;" class="login-logo">
             <span class="fa-stack fa-lg">
               <i class="fa fa-square-o fa-stack-2x"></i>
               <i class="fa fa-hospital-o fa-stack-1x"></i>
             </span>
-            <b>Projeto Reviver</b>
+            <b> Projeto Reviver</b>
           </div>
           <!-- /.login-logo -->
             <div class="login-box-body">
@@ -52,7 +52,7 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                  <button class="btn btn-danger btn-block btn-flat">Entrar</button>
+                  <button class="btn btn-primary btn-block btn-flat">Entrar</button>
                 </div>
                 <!-- /.col -->
               </div>

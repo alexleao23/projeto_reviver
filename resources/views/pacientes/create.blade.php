@@ -1,5 +1,5 @@
 @extends('partials.template')
-@section('page_header')
+@section('content-header')
   <h1>
   Pacientes - 
     <small>Cadastrar</small>
