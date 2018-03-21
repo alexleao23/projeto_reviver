@@ -12,6 +12,12 @@ class PacientesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct(Paciente $paciente)
+    {
+        $this->paciente = $paciente;
+    }
+
     public function index()
     {
         //
@@ -24,7 +30,8 @@ class PacientesController extends Controller
      */
     public function create()
     {
-        return view('pacientes.create');
+        $paciente = $this->paciente;
+        return view('pacientes.create', compact('paciente'));
     }
 
     /**
@@ -35,6 +42,7 @@ class PacientesController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         Paciente::create($request->all());
         return redirect('/admin');
     }
