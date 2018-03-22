@@ -16,7 +16,7 @@
   <!-- Main content -->
   <!-- Default box -->
   @section('content')
-  <div class="box primary">
+  <div class="box primary" style="z-index: 999">
     <div class="box-header with-border">
       <h3 class="box-title">Ações</h3>
 
