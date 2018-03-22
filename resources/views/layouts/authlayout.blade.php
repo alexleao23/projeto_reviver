@@ -31,7 +31,7 @@
 <script src="{{ asset('bower_components/AdminLTE/bootstrap/js/bootstrap.min.js') }}"></script>
 <!-- iCheck -->
 <script src="{{ asset('bower_components/AdminLTE/plugins/iCheck/icheck.min.js') }}"></script>
-<script src="particlesjs/particles.js"></script>
+<script src="{{ asset('particlesjs/particles.js') }}"></script>
 <script>
   $(function () {
     $('input').iCheck({

@@ -1,5 +1,5 @@
-@extends('layouts.app')
-
+@extends('layouts.authlayout')
+@section('title', 'Redefinir Senha | Projeto Reviver')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
