@@ -8,7 +8,7 @@
 @section('content')
 
   <!-- Your Page Content Here -->
-  <div class="box box-primary">
+  <div class="box box-primary" style="z-index: 99">
   <!-- /.box-header -->
   <!-- form start -->
   <div class='box-body'>

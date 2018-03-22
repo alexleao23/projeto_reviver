@@ -15,6 +15,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ asset('bower_components/AdminLTE/dist/css/skins/_all-skins.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,6 +24,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
+<div id="particles-js"></div>
 <body class="skin-blue layout-top-nav" style="height: auto; min-height: 100%;">
   <div class="wrapper" style="height: auto; min-height: 100%;">
     @include('partials.header')
@@ -62,5 +64,11 @@
   <script src="{{ asset('bower_components/AdminLTE/dist/js/app.min.js') }}"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="{{ asset('bower_components/AdminLTE/dist/js/demo.js') }}"></script>
+  <script src="{{ asset('particlesjs/particles.js') }}"></script>
+  <script>
+    $(function () {
+      particlesJS();
+    });
+  </script>
 </body>
 </html>

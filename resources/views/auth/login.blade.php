@@ -1,5 +1,5 @@
 @extends('layouts.authlayout')
-@section('title', 'Projeto Reviver | Login')
+@section('title', 'Entrar | Projeto Reviver')
 @section('content')
 <div id="particles-js"></div>
     <body class="hold-transition login-page" style="background: url('backgroundsson.jpg') no-repeat center center fixed;
