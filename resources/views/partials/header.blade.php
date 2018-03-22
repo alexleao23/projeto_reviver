@@ -1,4 +1,4 @@
-<header class="main-header" style="z-index: 999">
+<header class="main-header" style="z-index: 9999">
     <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">

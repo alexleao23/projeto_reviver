@@ -1,7 +1,7 @@
 @extends('layouts.authlayout')
 @section('title', 'Entrar | Projeto Reviver')
 @section('content')
-<div id="particles-js"></div>
+<div id="particles-js" style="z-index: -1;"></div>
     <body class="hold-transition login-page" style="background: url('backgroundsson.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
