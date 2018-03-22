@@ -17,12 +17,12 @@ class CreatePacientesTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->date('data_nasc');
-            $table->string('sexo');
+            $table->enum('sexo', ['M', 'F']);
             $table->string('endereco');
             $table->string('complemento');
             $table->string('bairro');
             $table->string('celular');
-            $table->string('estado_civil');
+            $table->enum('estado_civil', ['Solteiro(a)', 'Casado(a)', 'Desquitado(a)', 'Divorciado(a)', 'Viúvo(a)', 'Outros']);
             $table->timestamps();
         });
     }
