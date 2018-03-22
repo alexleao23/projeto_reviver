@@ -1,21 +1,21 @@
 @extends('partials.template')
 @section('title', 'Projeto Reviver | Início')
-@section('content')
-<div class="content-wrapper">
+{{-- <div class="content-wrapper"> --}}
   <!-- Content Header (Page header) -->
   @section('content-header')
     <h1>
       Página inicial
       <small>Bem-vindo, {{ Auth::user()->short_name }}</small>
     </h1>
-    <ol class="breadcrumb">
+{{--     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="#">Examples</a></li>
       <li class="active">Blank page</li>
-    </ol>
+    </ol> --}}
   @endsection
   <!-- Main content -->
   <!-- Default box -->
+  @section('content')
   <div class="box primary">
     <div class="box-header with-border">
       <h3 class="box-title">Ações</h3>
@@ -98,8 +98,8 @@
       <!-- ./col -->
     </div>
     <div class="box-footer">
-      Footer da box, n sei pra q ainda mas ta...
+      {{-- Footer da box, n sei pra q ainda mas ta... --}}
     </div>
   </div>
-</div>
+{{-- </div> --}}
 @endsection
