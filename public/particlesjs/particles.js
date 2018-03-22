@@ -20,7 +20,7 @@ var pJS = function(tag_id, params){
     },
     particles: {
       number: {
-        value: 250,
+        value: 150,
         density: {
           enable: true,
           value_area: 950
@@ -55,7 +55,7 @@ var pJS = function(tag_id, params){
         }
       },
       size: {
-        value: 1,
+        value: 2,
         random: false,
         anim: {
           enable: false,
@@ -66,14 +66,14 @@ var pJS = function(tag_id, params){
       },
       line_linked: {
         enable: true,
-        distance: 100,
+        distance: 150,
         color: '#fff',
-        opacity: 1,
+        opacity: 0.5,
         width: 1
       },
       move: {
         enable: true,
-        speed: 2,
+        speed: 4,
         direction: 'none',
         random: false,
         straight: false,
