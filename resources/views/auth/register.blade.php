@@ -1,10 +1,17 @@
 @extends('partials.template')
 @section('title', 'Cadastrar Usuário | Projeto Reviver')
+@section('content-header')
+  <h1 style="color: white;">
+  Usuários - 
+    <small style="color: lightgrey;">Cadastrar</small>
+  </h1>
+@endsection
 @section('content')
-  <div class="register-box" style="margin-top: 0%; margin-bottom: 0%">
-    <div class="register-box-body">
-      <h3 class="login-box-msg">Cadastrar novo usuário</h3>
-      {{ Form::open(['route'=>'register']) }}
+    <div class="box box-primary" style="z-index: 99">
+  <!-- /.box-header -->
+  <!-- form start -->
+  <div class='box-body'>
+          {{ Form::open(['route'=>'register']) }}
         <div class="form-group has-feedback">
           <input name="name" type="text" class="form-control" placeholder="Nome Completo" {{ $errors->has('name') ? ' is-invalid' : '' }} value="{{ old('name') }}" required autofocus>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -80,7 +87,6 @@
         </div>
       {{ Form::close() }}
     </div>
-    <!-- /.form-box -->
   </div>
   <!-- /.register-box -->
 @endsection

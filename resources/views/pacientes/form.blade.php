@@ -4,7 +4,7 @@
 <div class="row">
 <div class="col-lg-6 col-xs-6"> 
   {{ Form::label('nome', 'Nome completo:') }}
-  {{ Form::text('nome', null, ['class'=>'form-control', 'placeholder' => 'Ex: Antônio da Silva Matos']) }}
+  {{ Form::text('nome', null, ['class'=>'form-control', 'placeholder' => 'Ex: Antônio da Silva Matos', 'autofocus']) }}
 </div>
 <div class="col-lg-2 col-xs-2 {{ $errors->has('sexo') ? 'has-error' : '' }}">
         {{ Form::label('sexo', 'Sexo:') }}
