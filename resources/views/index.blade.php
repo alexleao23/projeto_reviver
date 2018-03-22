@@ -3,9 +3,9 @@
 {{-- <div class="content-wrapper"> --}}
   <!-- Content Header (Page header) -->
   @section('content-header')
-    <h1>
+    <h1 style="color: white;">
       Página inicial
-      <small>Bem-vindo, {{ Auth::user()->short_name }}</small>
+      <small style="color: lightgrey;">Bem-vindo, {{ Auth::user()->short_name }}</small>
     </h1>
 {{--     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>

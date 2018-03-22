@@ -27,7 +27,11 @@
   <div class="wrapper" style="height: auto; min-height: 100%;">
     @include('partials.header')
     <!-- Full Width Column -->
-    <div class="content-wrapper" style="min-height: 217px;">
+    <div class="content-wrapper" style="min-height: 217px; background: url('{{ URL::asset('backgroundsson.jpg') }}') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;">
     <div class="container">
       <!-- Content Header (Page header) -->
       <section class="content-header">
