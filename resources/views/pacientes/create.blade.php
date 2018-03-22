@@ -1,4 +1,5 @@
 @extends('partials.template')
+@section('title', 'Cadastrar Paciente | Projeto Reviver')
 @section('content-header')
   <h1>
   Pacientes - 

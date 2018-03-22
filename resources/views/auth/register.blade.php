@@ -1,5 +1,5 @@
 @extends('partials.template')
-@section('title', 'Projeto Reviver | Cadastro')
+@section('title', 'Cadastrar Usuário | Projeto Reviver')
 @section('content')
   <div class="register-box" style="margin-top: 0%; margin-bottom: 0%">
     <div class="register-box-body">
