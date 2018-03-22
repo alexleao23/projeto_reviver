@@ -62,6 +62,21 @@
         </div>
       </div>
       <div class="row">
+        <div class="col-lg-6 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>65</h3>
+              <p><b>Responsáveis cadastrados</b></p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-handshake-o"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+              <b>Cadastrar responsável</b> <i class="fa fa-plus"></i>
+            </a>
+          </div>
+        </div>
         <!-- ./col -->
         <div class="col-lg-6 col-xs-6">
           <!-- small box -->
@@ -79,21 +94,6 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-6 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>65</h3>
-              <p><b>Responsáveis cadastrados</b></p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">
-              More info <i class="fa fa-arrow-circle-right"></i>
-            </a>
-          </div>
-        </div>
       </div>
       <!-- ./col -->
     </div>
