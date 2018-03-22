@@ -3465,7 +3465,7 @@ table.text-center th {
 .login-box,
 .register-box {
   width: 360px;
-  padding-top: 200px;
+  padding-top: 10%;
   margin: 0 auto;
   opacity: 0.9;
 }

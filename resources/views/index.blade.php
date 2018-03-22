@@ -3,7 +3,8 @@
 {{-- <div class="content-wrapper"> --}}
   <!-- Content Header (Page header) -->
   @section('content-header')
-    <h1 style="color: white;">
+    <h1 style="color: white; 
+">
       Página inicial
       <small style="color: lightgrey;">Bem-vindo, {{ Auth::user()->short_name }}</small>
     </h1>
