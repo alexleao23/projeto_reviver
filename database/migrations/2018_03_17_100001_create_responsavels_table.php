@@ -17,7 +17,7 @@ class CreateResponsavelsTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->date('data_nasc');
-            $table->enum('sexo', ['M', 'F']);
+            $table->enum('sexo', ['Masculino', 'Feminino']);
             $table->string('endereco');
             $table->string('complemento');
             $table->string('bairro');
@@ -34,6 +34,6 @@ class CreateResponsavelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('responsaveis');
+        Schema::dropIfExists('responsavels');
     }
 }

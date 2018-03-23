@@ -13,7 +13,7 @@
   <!-- form start -->
   <div class='box-body'>
     {{ Form::model($questionarioNutricao ,['url'=>action('QuestionariosNutricaoController@store')]) }}
-      @include('pacientes.form')
+      @include('questionarios_nutricao.form')
     {{ Form::close() }}
     </div>
   </div>

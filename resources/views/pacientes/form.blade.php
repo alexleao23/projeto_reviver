@@ -17,7 +17,7 @@
         </div>
         {{-- Campo de sexo --}}
         <div class="form-group has-feedback">
-            {{ Form::select('sexo', ['M' => 'Masculino', 'F' => 'Femininio'], null, ['placeholder'=>'Sexo', 'class'=>'form-control', 'required']) }}
+            {{ Form::select('sexo', ['Masculino' => 'Masculino', 'Femininio' => 'Femininio'], null, ['placeholder'=>'Sexo', 'class'=>'form-control', 'required']) }}
         </div>
         {{-- Data de nascimento --}}
         <div class="form-group has-feedback">

@@ -27,10 +27,10 @@ class QuestionariosNutricaoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($paciente_id)
+    public function create()
     {
         $questionarioNutricao = $this->questionarioNutricao;
-        $paciente = Paciente::find($paciente_id)->get();
+        $paciente = Paciente::all();
         return view('questionarios_nutricao.create', compact('questionarioNutricao', 'paciente'));
     }
 

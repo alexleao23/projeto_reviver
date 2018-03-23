@@ -18,7 +18,8 @@ class ResponsaveisController extends Controller
     }
     public function index()
     {
-        //
+        $responsaveis = $this->responsavel->orderBy('id', 'desc')->paginate(10);
+        return view('responsaveis.index', compact('responsaveis'));
     }
 
     /**
@@ -52,7 +53,13 @@ class ResponsaveisController extends Controller
      */
     public function show($id)
     {
-        //
+        $validator = \Validator::make(
+            ['id' => $id],
+            ['id' => 'required|integer|exists:pacientes,id']
+        )->validate();
+
+        $responsavel = $this->responsavel->find($id);
+        return view('responsaveis.show', compact('responsavel'));
     }
 
     /**
@@ -63,7 +70,14 @@ class ResponsaveisController extends Controller
      */
     public function edit($id)
     {
-        //
+        $validator = \Validator::make(
+            ['id' => $id],
+            ['id' => 'required|integer|exists:pacientes,id']
+        )->validate();
+
+        $responsavel = $this->responsavel->find($id);
+
+        return view('responsaveis.edit', compact('responsavel'));
     }
 
     /**
@@ -75,7 +89,11 @@ class ResponsaveisController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $responsavel = $this->responsavel->find($id);
+
+        $responsavel->fill($request->all());
+
+        return redirect('/admin/responsaveis');
     }
 
     /**
@@ -86,6 +104,8 @@ class ResponsaveisController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $responsavel = $this->responsavel->find($id);
+        $responsavel->delete();
+        return redirect('/admin/responsaveis');
     }
 }
