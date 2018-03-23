@@ -48,23 +48,6 @@
         <!-- ./col -->
         <div class="col-lg-6 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>53</h3>
-              <p><strong>Pacientes cadastrados</strong></p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-id-card-o"></i>
-            </div>
-            <a href="{{ action('PacientesController@create') }}" class="small-box-footer">
-              <strong>Cadastrar Paciente</strong> <i class="fa fa-plus"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 col-xs-6">
-          <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
               <h3>65</h3>
@@ -75,6 +58,23 @@
             </div>
             <a href="#" class="small-box-footer">
               <b>Cadastrar responsável</b> <i class="fa fa-plus"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>53</h3>
+              <p><strong>Pacientes cadastrados</strong></p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-id-card-o"></i>
+            </div>
+            <a href="{{ action('PacientesController@create') }}" class="small-box-footer">
+              <strong>Cadastrar Paciente</strong> <i class="fa fa-plus"></i>
             </a>
           </div>
         </div>

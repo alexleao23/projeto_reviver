@@ -24,7 +24,7 @@ class CreatePacientesTable extends Migration
             $table->string('celular');
             $table->enum('estado_civil', ['Solteiro(a)', 'Casado(a)', 'Desquitado(a)', 'Divorciado(a)', 'Viúvo(a)', 'Outros']);
             $table->integer('responsavel_id');
-            $table->foreign('responsavel_id')->references('id')->on('responsaveis');
+            $table->foreign('responsavel_id')->references('id')->on('responsavels');
             $table->timestamps();
         });
     }

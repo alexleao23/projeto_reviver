@@ -11,10 +11,6 @@
               </span>
           @endif
         </div>
-        {{-- Campo de responsável --}}
-        <div class="form-group has-feedback">
-            {{ Form::select('responsavel_id', $responsavel->pluck('nome', 'id'), null, ['placeholder'=>'Responsável', 'class'=>'form-control', 'required']) }}
-        </div>
         {{-- Campo de sexo --}}
         <div class="form-group has-feedback">
             {{ Form::select('sexo', ['M' => 'Masculino', 'F' => 'Femininio'], null, ['placeholder'=>'Sexo', 'class'=>'form-control', 'required']) }}

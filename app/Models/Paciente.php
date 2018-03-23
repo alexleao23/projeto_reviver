@@ -8,7 +8,7 @@ use App\Models\QuestionarioNutricao;
 
 class Paciente extends Model
 {
-    protected $fillable = ['nome','data_nasc','sexo','endereco','complemento','bairro','celular','estado_civil'];
+    protected $fillable = ['nome','data_nasc','sexo','endereco','complemento','bairro','celular','estado_civil', 'responsavel_id'];
 
     public function responsavel()
     {

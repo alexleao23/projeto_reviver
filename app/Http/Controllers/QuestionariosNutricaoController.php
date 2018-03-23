@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\QuestionarioNutricao;
+use App\Models\Paciente;
 
 class QuestionariosNutricaoController extends Controller
 {
@@ -12,6 +13,10 @@ class QuestionariosNutricaoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(QuestionarioNutricao $questionarioNutricao)
+    {
+        $this->questionarioNutricao = $questionarioNutricao;
+    }
     public function index()
     {
         //
@@ -22,9 +27,11 @@ class QuestionariosNutricaoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($paciente_id)
     {
-        //
+        $questionarioNutricao = $this->questionarioNutricao;
+        $paciente = Paciente::find($paciente_id)->get();
+        return view('questionarios_nutricao.create', compact('questionarioNutricao', 'paciente'));
     }
 
     /**
@@ -35,7 +42,8 @@ class QuestionariosNutricaoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        QuestionarioNutricao::create($request->all());
+        return redirect('/admin');
     }
 
     /**

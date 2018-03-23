@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Paciente;
+use App\Models\Responsavel;
 
 class PacientesController extends Controller
 {
@@ -31,7 +32,8 @@ class PacientesController extends Controller
     public function create()
     {
         $paciente = $this->paciente;
-        return view('pacientes.create', compact('paciente'));
+        $responsavel = Responsavel::all();
+        return view('pacientes.create', compact('paciente', 'responsavel'));
     }
 
     /**
