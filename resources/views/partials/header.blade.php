@@ -42,9 +42,9 @@
               </ul>
             </li>
           </ul>
-          <form class="navbar-form navbar-left" role="search">
+          <form class="navbar-form navbar-left" role="search" method="get" action="{{ action('PacientesController@index') }}">
             <div class="form-group">
-              <input type="text" class="form-control" id="navbar-search-input" placeholder="Campo de busca a decidir">
+              <input type="text" class="form-control" value="{{ request()->get('search') }}" name="search" id="navbar-search-input" placeholder="Buscar paciente">
             </div>
           </form>
         </div>

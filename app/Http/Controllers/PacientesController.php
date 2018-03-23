@@ -21,7 +21,14 @@ class PacientesController extends Controller
 
     public function index(Request $request)
     {
-         $pacientes = $this->paciente->orderBy('id', 'desc')->paginate(10);
+        $pacientes = $this->paciente;
+        $query = $this->paciente->newQuery();    
+        if($request->has('search')){
+            $query->orWhere('nome', 'ilike', "%{$request->get('search')}%");
+            $pacientes = $query->paginate(10);
+        } else {
+            $pacientes = $this->paciente->orderBy('id', 'desc')->paginate(10);
+        }
          return view('pacientes.index', compact('pacientes'));
     }
 

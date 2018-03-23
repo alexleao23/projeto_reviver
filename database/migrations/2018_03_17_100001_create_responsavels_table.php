@@ -34,6 +34,6 @@ class CreateResponsavelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('responsaveis');
+        Schema::dropIfExists('responsavels');
     }
 }
