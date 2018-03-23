@@ -1,4 +1,4 @@
-<header class="main-header" style="z-index: 9999">
+<header class="main-header" style="z-index: 9999;">
     <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -38,7 +38,7 @@
               <ul class="dropdown-menu" role="menu">
                 <li><a href="{{ url('/admin/pacientes/create') }}">Cadastrar Paciente</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Todos os Pacientes</a></li>
+                <li><a href="/admin/pacientes">Todos os Pacientes</a></li>
               </ul>
             </li>
           </ul>

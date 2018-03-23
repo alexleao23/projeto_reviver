@@ -19,4 +19,25 @@ class Paciente extends Model
     {
     	return $this->hasOne(QuestionarioNutricao::class);
     }
+
+    public function getDataNascFormatadaAttribute()
+    {
+        if($this->attributes['data_nasc']) {
+            return \Carbon\Carbon::parse($this->attributes['data_nasc'])->format('d/m/Y');
+        }
+    }
+    public function getIdadeAttribute()
+    {   
+        $idade = \Carbon\Carbon::parse($this->attributes['data_nasc'])->age;
+
+        if ($this->attributes['data_nasc']) {
+            if ($idade == 1) {
+                $idade = $idade . " ANO";
+            }else{
+                $idade = $idade . " ANOS";
+            }
+            return $idade;
+        }
+    }
+
 }
