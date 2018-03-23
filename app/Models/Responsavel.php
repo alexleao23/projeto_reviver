@@ -14,7 +14,8 @@ class Responsavel extends Model
     	return $this->belongsToMany(Paciente::class);
     }
 
-        public function getDataNascFormatadaAttribute()
+
+    public function getDataNascFormatadaAttribute()
     {
         if($this->attributes['data_nasc']) {
             return \Carbon\Carbon::parse($this->attributes['data_nasc'])->format('d/m/Y');

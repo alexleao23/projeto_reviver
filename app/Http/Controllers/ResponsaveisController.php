@@ -18,7 +18,7 @@ class ResponsaveisController extends Controller
     }
     public function index(Request $request)
     {
-         $responsavels = $this->responsavel->orderBy('id', 'desc')->paginate(10);
+     $responsavels = $this->responsavel->orderBy('id', 'desc')->paginate(10);
          return view('responsaveis.index', compact('responsavels'));
     }
 
@@ -56,6 +56,7 @@ class ResponsaveisController extends Controller
         $validator = \Validator::make(
             ['id' => $id],
             ['id' => 'required|integer|exists:responsavels,id']
+
         )->validate();
 
         $responsavel = $this->responsavel->find($id);
@@ -72,10 +73,12 @@ class ResponsaveisController extends Controller
     {
         $validator = \Validator::make(
             ['id' => $id],
-            ['id' => 'required|integer|exists:responsavels,id']
+
+            ['id' => 'required|integer|exists:pacientes,id']
         )->validate();
 
         $responsavel = $this->responsavel->find($id);
+
         return view('responsaveis.edit', compact('responsavel'));
     }
 
@@ -92,9 +95,8 @@ class ResponsaveisController extends Controller
 
         $responsavel->fill($request->all());
 
-        // if($responsavel->save()){
-        //     Session::flash('mensage_sucesso','Cadastro atualizado com sucesso!');
-        // }
+
+
         return redirect('/admin/responsaveis');
     }
 

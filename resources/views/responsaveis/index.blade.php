@@ -29,6 +29,7 @@
                     <tbody>
                         {{-- {{ dd($responsavels) }} --}}
                         @foreach($responsavels as $responsavel)
+
                             <tr>
                                 <td>{{ $responsavel->nome  }}</td>
                                 <td width="410px">
@@ -41,7 +42,6 @@
                                         {{ csrf_field() }}
                                         <button href="" class="btn btn-danger"><i class="fa fa-trash"></i> Remover</button>
                                     </form>
-                               {{--      <a href="{{ action('responsavelController@show', $responsavel->id) }}" class="btn btn-default"><i class="fa fa-file-text-o"></i> Entradas </a> --}}
 
                                 </td>
                             </tr>
