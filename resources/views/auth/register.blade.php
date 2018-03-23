@@ -13,15 +13,15 @@
   <div class='box-body'>
           {{ Form::open(['route'=>'register']) }}
         <div class="form-group has-feedback">
-          <input name="name" type="text" class="form-control" placeholder="Nome Completo" {{ $errors->has('name') ? ' is-invalid' : '' }} value="{{ old('name') }}" required autofocus>
+          <input name="nome" type="text" class="form-control" placeholder="Nome Completo" {{ $errors->has('nome') ? ' is-invalid' : '' }} value="{{ old('nome') }}" required autofocus>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
-          @if ($errors->has('name'))
+          @if ($errors->has('nome'))
               <span class="invalid-feedback">
-                  <strong>{{ $errors->first('name') }}</strong>
+                  <strong>{{ $errors->first('nome') }}</strong>
               </span>
           @endif
         </div>
-        <div class="form-group has-feedback">
+        {{-- <div class="form-group has-feedback">
           <input name="email" type="email" class="form-control" placeholder="E-mail" {{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" required>
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           @if ($errors->has('email'))
@@ -29,8 +29,8 @@
                   <strong>{{ $errors->first('email') }}</strong>
               </span>
           @endif
-        </div>
-        <div class="form-group has-feedback">
+        </div> --}}
+        {{-- <div class="form-group has-feedback">
           <input name="cpf" class="form-control cpf" placeholder="CPF" {{ $errors->has('cpf') ? ' is-invalid' : '' }}" value="{{ old('cpf') }}" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
           @if ($errors->has('cpf'))
@@ -38,7 +38,7 @@
                   <strong>{{ $errors->first('cpf') }}</strong>
               </span>
           @endif
-        </div>
+        </div> --}}
         <div class="form-group has-feedback">
           <input name="celular" type="celular" class="form-control telefone" placeholder="Celular(Ex: 99999-9999)" {{ $errors->has('celular') ? ' is-invalid' : '' }}" value="{{ old('celular') }}" required>
           <span class="glyphicon glyphicon-earphone form-control-feedback"></span>

@@ -2,7 +2,7 @@
 @section('title', 'Cadastrar Paciente | Projeto Reviver')
 @section('content-header')
   <h1 style="color: white;">
-  Responsavel - 
+  Responsável - 
     <small style="color: lightgrey;">Cadastrar</small>
   </h1>
 @endsection
@@ -12,8 +12,8 @@
   <!-- /.box-header -->
   <!-- form start -->
   <div class='box-body'>
-    {{ Form::model($responsavel ,['url'=>action('ResponsaveisController@store')]) }}
-      @include('responsaveis.form')
+    {{ Form::model($responsavel ,['url'=>action('PacientesController@store')]) }}
+      @include('pacientes.form')
     {{ Form::close() }}
     </div>
   </div>
