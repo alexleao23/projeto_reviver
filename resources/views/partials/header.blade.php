@@ -30,7 +30,7 @@
               <ul class="dropdown-menu" role="menu">
                 <li><a href="{{ url('/admin/responsaveis/create') }}">Cadastrar Responsável</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Todos os Responsáveis</a></li>
+                <li><a href="{{ url('/admin/responsaveis') }}">Todos os Responsáveis</a></li>
               </ul>
             </li>
             <li class="dropdown">

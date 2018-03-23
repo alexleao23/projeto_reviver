@@ -56,7 +56,7 @@
             <div class="icon">
               <i class="fa fa-handshake-o"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="{{ url('/admin/responsaveis/create') }}" class="small-box-footer">
               <b>Cadastrar responsável</b> <i class="fa fa-plus"></i>
             </a>
           </div>

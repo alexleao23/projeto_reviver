@@ -1,9 +1,9 @@
-@extends('templates.admin.admin_template')
-@section('page_header')
-  <h1>
-  Processos - 
-    <small>Editar</small>
-  </h1>
+@extends('partials.template')
+@section('content-header')
+    <h1 style="text-align: center; color: white;">
+        Responsáveis -
+        <small>Editar</small>
+    </h1>
 @endsection
 @section('content')
 
@@ -12,8 +12,8 @@
   <!-- /.box-header -->
   <!-- form start -->
   <div class='box-body'>
-    {{ Form::model($processo,['url'=>action('ProcessosController@update', $processo->id), 'method'=>'PUT']) }}
-      @include('processo.form', ['obras'=>$obras])
+    {{ Form::model($responsavel, ['url'=>action('ResponsaveisController@update', $responsavel->id), 'method'=>'PUT']) }}
+      @include('responsaveis.form')
     {{ Form::close() }}
     </div>
   </div>
