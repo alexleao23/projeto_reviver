@@ -31,7 +31,7 @@
           @endif
         </div>
         <div class="form-group has-feedback">
-          <input name="cpf" class="form-control" placeholder="CPF" {{ $errors->has('cpf') ? ' is-invalid' : '' }}" value="{{ old('cpf') }}" required>
+          <input name="cpf" class="form-control cpf" placeholder="CPF" {{ $errors->has('cpf') ? ' is-invalid' : '' }}" value="{{ old('cpf') }}" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
           @if ($errors->has('cpf'))
               <span class="invalid-feedback">
@@ -40,7 +40,7 @@
           @endif
         </div>
         <div class="form-group has-feedback">
-          <input name="celular" type="celular" class="form-control" placeholder="Celular" {{ $errors->has('celular') ? ' is-invalid' : '' }}" value="{{ old('celular') }}" required>
+          <input name="celular" type="celular" class="form-control telefone" placeholder="Celular(Ex: 99999-9999)" {{ $errors->has('celular') ? ' is-invalid' : '' }}" value="{{ old('celular') }}" required>
           <span class="glyphicon glyphicon-earphone form-control-feedback"></span>
           @if ($errors->has('celular'))
               <span class="invalid-feedback">
