@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Paciente;
+use Session;
 
 class PacientesController extends Controller
 {
@@ -18,9 +19,10 @@ class PacientesController extends Controller
         $this->paciente = $paciente;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        //
+         $pacientes = $this->paciente->orderBy('id', 'desc')->paginate(10);
+         return view('pacientes.index', compact('pacientes'));
     }
 
     /**
@@ -55,7 +57,15 @@ class PacientesController extends Controller
      */
     public function show($id)
     {
-        //
+        $validator = \Validator::make(
+            ['id' => $id],
+            ['id' => 'required|integer|exists:pacientes,id']
+        )->validate();
+
+        $paciente = $this->paciente->find($id);
+        return view('pacientes.show', compact('paciente'));
+     
+        
     }
 
     /**
@@ -66,7 +76,14 @@ class PacientesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $validator = \Validator::make(
+            ['id' => $id],
+            ['id' => 'required|integer|exists:pacientes,id']
+        )->validate();
+
+        $paciente = $this->paciente->find($id);
+
+        return view('pacientes.edit', compact('paciente'));
     }
 
     /**
@@ -78,7 +95,14 @@ class PacientesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $paciente = $this->paciente->find($id);
+
+        $paciente->fill($request->all());
+
+        // if($paciente->save()){
+        //     Session::flash('mensage_sucesso','Cadastro atualizado com sucesso!');
+        // }
+        return redirect('/admin/pacientes');
     }
 
     /**
@@ -89,6 +113,8 @@ class PacientesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $paciente = $this->paciente->find($id);
+        $paciente->delete();
+        return redirect('/admin/pacientes');
     }
 }

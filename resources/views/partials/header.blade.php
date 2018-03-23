@@ -38,7 +38,7 @@
               <ul class="dropdown-menu" role="menu">
                 <li><a href="{{ url('/admin/pacientes/create') }}">Cadastrar Paciente</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Todos os Pacientes</a></li>
+                <li><a href="/admin/pacientes">Todos os Pacientes</a></li>
               </ul>
             </li>
           </ul>
