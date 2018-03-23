@@ -25,7 +25,7 @@
   <![endif]-->
 </head>
 <div id="particles-js"></div>
-<body class="skin-blue layout-top-nav" style="height: auto; min-height: 100%;">
+<body class="skin-blue layout-top-nav skin-green" style="height: auto; min-height: 100%;">
   <div class="wrapper" style="height: auto; min-height: 100%;">
     @include('partials.header')
     <!-- Full Width Column -->
