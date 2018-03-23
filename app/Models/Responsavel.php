@@ -10,6 +10,6 @@ class Responsavel extends Model
 
     public function paciente()
     {
-    	return $this->belongsToMany(Paciente::class, 'pacientes_id');
+    	return $this->belongsToMany(Paciente::class);
     }
 }

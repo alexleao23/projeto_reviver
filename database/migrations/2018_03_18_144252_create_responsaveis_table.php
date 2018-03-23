@@ -23,8 +23,6 @@ class CreateResponsaveisTable extends Migration
             $table->string('bairro');
             $table->string('celular');
             $table->enum('estado_civil', ['Solteiro(a)', 'Casado(a)', 'Desquitado(a)', 'Divorciado(a)', 'Viúvo(a)', 'Outros']);
-            $table->integer('pacientes_id');
-            $table->foreign('pacientes_id')->references('id')->on('pacientes');
             $table->timestamps();
         });
     }
