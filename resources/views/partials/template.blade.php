@@ -65,10 +65,24 @@
   <!-- AdminLTE for demo purposes -->
   <script src="{{ asset('bower_components/AdminLTE/dist/js/demo.js') }}"></script>
   <script src="{{ asset('particlesjs/particles.js') }}"></script>
+  <script src="{{ asset('jquerymask/src/jquery.mask.js') }}"></script>
   <script>
     $(function () {
       particlesJS();
     });
   </script>
+  <script>
+    $(document).ready(function () {
+
+    $('.cep').mask('00000-000')
+    $('.date').mask('00/00/0000')
+    $('.datetime').mask('00/00/0000 00:00')
+    $('.cpf').mask('000.000.000-00');
+    $('.telefone').mask('00000-0000');
+    $('.cns').mask('000 0000 0000 0000');
+    $('.rg').mask('000000');
+
+    });
+</script>
 </body>
 </html>

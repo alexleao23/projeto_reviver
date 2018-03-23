@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
         $user = User::create([
         	'name' => 'Alexander Silva de Leão',
         	'email' => 'alexandersilvadeleao23@gmail.com',
-        	'cpf' => '03180984236',
+        	'cpf' => '031.809.842-36',
         	'celular' => '04196981276981',
         	'perfil' => 'Admin',
             'lvpermissao' => 'Admin',
@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
         $user = User::create([
             'name' => 'João Victor Machado de Andrade',
             'email' => 'admin@gmail.com',
-            'cpf' => '01098630203',
+            'cpf' => '010.986.302-03',
             'celular' => '096981259500',
             'perfil' => 'Admin',
             'lvpermissao' => 'Admin',
@@ -36,7 +36,7 @@ class UsersTableSeeder extends Seeder
         $user = User::create([
             'name' => 'Kirigaya Kazuto',
             'email' => 'kirigaya@gmail.com',
-            'cpf' => '00000000000',
+            'cpf' => '000.000.000-00',
             'celular' => '22222222222',
             'perfil' => 'Nutrição',
             'lvpermissao' => 'Coordenador',

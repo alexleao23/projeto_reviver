@@ -29,7 +29,7 @@
               @endif
             {{ Form::open(['route'=>'login']) }}
               <div class="form-group has-feedback">
-                <input name="cpf" class="form-control" placeholder="CPF" autofocus {{ $errors->has('cpf') ? ' is-invalid' : '' }} value="{{ old('cpf') }}" required focus>
+                <input name="cpf" class="form-control cpf" placeholder="CPF" autofocus {{ $errors->has('cpf') ? ' is-invalid' : '' }} value="{{ old('cpf') }}" required focus>
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 @if ($errors->has('cpf'))
                     <span class="invalid-feedback">
