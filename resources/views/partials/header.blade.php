@@ -28,7 +28,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Responsáveis <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Cadastrar Responsável</a></li>
+                <li><a href="{{ url('/admin/responsaveis/create') }}">Cadastrar Responsável</a></li>
                 <li class="divider"></li>
                 <li><a href="#">Todos os Responsáveis</a></li>
               </ul>

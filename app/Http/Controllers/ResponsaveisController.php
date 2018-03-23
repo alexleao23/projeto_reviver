@@ -12,6 +12,10 @@ class ResponsaveisController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(Responsavel $responsavel)
+    {
+        $this->responsavel = $responsavel;
+    }
     public function index()
     {
         //
@@ -24,7 +28,8 @@ class ResponsaveisController extends Controller
      */
     public function create()
     {
-        //
+        $responsavel = $this->responsavel;
+        return view('responsaveis.create', compact('responsavel'));
     }
 
     /**
