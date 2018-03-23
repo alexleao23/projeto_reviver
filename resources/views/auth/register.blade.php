@@ -2,7 +2,7 @@
 @section('title', 'Cadastrar Usuário | Projeto Reviver')
 @section('content-header')
   <h1 style="color: white;">
-  Usuários - 
+  Usuário - 
     <small style="color: lightgrey;">Cadastrar</small>
   </h1>
 @endsection
