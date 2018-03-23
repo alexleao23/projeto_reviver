@@ -40,7 +40,8 @@ class ResponsaveisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Responsavel::create($request->all());
+        return redirect('/admin');
     }
 
     /**
