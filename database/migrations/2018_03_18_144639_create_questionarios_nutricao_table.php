@@ -15,6 +15,8 @@ class CreateQuestionariosNutricaoTable extends Migration
     {
         Schema::create('questionarios_nutricao', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('paciente_id');
+            $table->foreign('paciente_id')->references('id')->on('pacientes');
             $table->string('horario_atend');
             $table->string('dia_atend');
             $table->string('cfspr');

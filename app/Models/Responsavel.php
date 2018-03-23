@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Paciente;
 
 class Responsavel extends Model
 {
@@ -10,6 +11,6 @@ class Responsavel extends Model
 
     public function paciente()
     {
-    	return $this->belongsToMany(Paciente::class, 'pacientes_id');
+    	return $this->belongsToMany(Paciente::class);
     }
 }
