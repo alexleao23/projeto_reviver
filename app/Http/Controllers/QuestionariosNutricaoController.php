@@ -17,6 +17,7 @@ class QuestionariosNutricaoController extends Controller
     {
         $this->questionarioNutricao = $questionarioNutricao;
     }
+
     public function index()
     {
         //
@@ -27,11 +28,11 @@ class QuestionariosNutricaoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
         $questionarioNutricao = $this->questionarioNutricao;
-        $paciente = Paciente::find($id);
-        return view('questionarios_nutricao.create', compact('questionarioNutricao', 'paciente'));
+        $pacientes = Paciente::all();
+        return view('questionarios_nutricao.create', compact('questionarioNutricao', 'pacientes'));
     }
 
     /**

@@ -23,11 +23,11 @@ class CreateQuestionariosNutricaoTable extends Migration
             $table->string('diagnostico_paciente');
             $table->string('tempo_doenca');
             $table->enum('uso_medicamento', ['SIM', 'NÃO']);
-            $table->enum('sob_prescricao', ['SIM', 'NÃO']);
+            $table->enum('sob_prescricao', ['SIM', 'NÃO'])  ->nullable();
             $table->string('medico_que_prescreveu')->nullable();
-            $table->text('nome_medicamentos');
-            $table->string('dose');
-            $table->time('horario');
+            $table->text('nome_medicamentos')->nullable();
+            $table->string('dose')->nullable();
+            $table->text('horario')->nullable(); //botei text porque pode ser mais de um horario por dia, time só ia da pra por um.
             $table->enum('faz_tratamento_med', ['SIM', 'NÃO']);
             $table->text('quais_tratamento')->nullable();
             $table->enum('incapaz_realizar_atividades_domesticas', ['SIM', 'NÃO']);

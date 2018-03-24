@@ -40,8 +40,8 @@ class PacientesController extends Controller
     public function create()
     {
         $paciente = $this->paciente;
-        $responsavel = Responsavel::all();
-        return view('pacientes.create', compact('paciente', 'responsavel'));
+        $responsaveis = Responsavel::all();
+        return view('pacientes.create', compact('paciente', 'responsaveis'));
     }
 
     /**

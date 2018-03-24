@@ -12,8 +12,8 @@
   <!-- /.box-header -->
   <!-- form start -->
   <div class='box-body'>
-    {{ Form::model($questionarioNutricao, ['url'=>action('QuestionariosNutricaoController@store', $paciente->id)]) }}
-      @include('questionarios_nutricao.form')
+    {{ Form::model($questionarioNutricao, ['url'=>action('QuestionariosNutricaoController@store')]) }}
+      @include('questionarios_nutricao.form', ['paciente' => $pacientes])
     {{ Form::close() }}
     </div>
   </div>

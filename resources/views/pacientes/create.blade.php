@@ -12,8 +12,8 @@
   <!-- /.box-header -->
   <!-- form start -->
   <div class='box-body'>
-    {{ Form::model([$paciente, $responsavel],['url'=>action('PacientesController@store')]) }}
-      @include('pacientes.form')
+    {{ Form::model($paciente,['url'=>action('PacientesController@store')]) }}
+      @include('pacientes.form', ['responsavel' => $responsaveis])
     {{ Form::close() }}
     </div>
   </div>
