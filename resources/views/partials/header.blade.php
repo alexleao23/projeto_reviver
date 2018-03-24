@@ -16,7 +16,7 @@
             @endcan --}}
             {{-- <li class="{{ request()->is('admin/pacientes/create') ? 'active' : '' }}"><a href="{{ url('/admin/pacientes/create') }}">Cadastrar Paciente</a></li> --}}
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuários <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Usuários </strong><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 @can('create', App\User::class)
                   <li><a href="{{ url('/admin/register') }}">Cadastrar Usuário</a></li>
@@ -26,7 +26,7 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Responsáveis <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Responsáveis </strong><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="{{ url('/admin/responsaveis/create') }}">Cadastrar Responsável</a></li>
                 <li class="divider"></li>
@@ -34,7 +34,7 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pacientes <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Pacientes </strong><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="{{ url('/admin/pacientes/create') }}">Cadastrar Paciente</a></li>
                 <li class="divider"></li>
@@ -66,7 +66,7 @@
                 <!-- The user image in the navbar-->
                 <img src="{{ asset('bower_components/AdminLTE/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                <span class="hidden-xs">{{ Auth::user()->short_name }}</span>
+                <span class="hidden-xs"><strong>{{ Auth::user()->short_name }}</strong></span>
               </a>
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->
@@ -74,8 +74,8 @@
                   <img src="{{ asset('bower_components/AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
 
                   <p>
-                    {{ Auth::user()->short_name }}
-                    <small>{{ Auth::user()->perfil }}</small>
+                    <strong>{{ Auth::user()->short_name }}</strong>
+                    <small><strong>{{ Auth::user()->perfil }}</strong></small>
                   </p>
                 </li>
                 <!-- Menu Footer-->

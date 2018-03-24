@@ -1,6 +1,5 @@
 {{-- Form de paciente separado por tipo de dado --}}
 <h3>Dados pessoais</h3>
-{{ csrf_field() }}
         {{-- Campo de nome --}}
         <div class="form-group has-feedback">
           <input name="nome" type="text" class="form-control" placeholder="Nome Completo" {{ $errors->has('nome') ? ' is-invalid' : '' }} value="{{ old('name') }}" required autofocus>

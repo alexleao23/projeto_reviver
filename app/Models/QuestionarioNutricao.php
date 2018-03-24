@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class QuestionarioNutricao extends Model
 {
-	// protected $fillable = [''];
+	protected $fillable = ['paciente_id'];
     public function paciente()
     {
     	return $this->belongsTo(Paciente::class);

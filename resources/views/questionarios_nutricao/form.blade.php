@@ -1,7 +1,10 @@
 {{-- Form de paciente separado por tipo de dado --}}
-<h3>Dados pessoais</h3>
-{{ csrf_field() }}
-        {{-- Campo de nome --}}
+<h3>Paciente</h3>
+        {{-- Campo do Paciente --}}
+        <div class="form-group has-feedback">
+            {{ Form::select('paciente_id', $questionarioNutricao->paciente->id, null, ['placeholder'=>'Paciente', 'class'=>'form-control', 'required']) }}
+            {{-- <input class="form-control" name="paciente_id" value="{{ $paciente->id }}" disabled > --}}
+        </div>
         <div class="form-group has-feedback">
           <input name="nome" type="text" class="form-control" placeholder="Nome Completo" {{ $errors->has('nome') ? ' is-invalid' : '' }} value="{{ old('name') }}" required autofocus>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
