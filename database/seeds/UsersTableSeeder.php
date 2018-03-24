@@ -18,8 +18,8 @@ class UsersTableSeeder extends Seeder
         	'email' => 'alexandersilvadeleao23@gmail.com',
         	'cpf' => '031.809.842-36',
         	'celular' => '04196981276981',
-        	'perfil' => 'Admin',
-            'lvpermissao' => 'Admin',
+        	'perfil' => 'Administrador',
+            'lvpermissao' => 'Administrador',
         	'password' => Hash::make('kirito')
         ]);
 
@@ -28,8 +28,8 @@ class UsersTableSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'cpf' => '010.986.302-03',
             'celular' => '096981259500',
-            'perfil' => 'Admin',
-            'lvpermissao' => 'Admin',
+            'perfil' => 'Administrador',
+            'lvpermissao' => 'Administrador',
             'password' => Hash::make('admin')
         ]);
 

@@ -30,7 +30,7 @@
                         @foreach($pacientes as $paciente)
                             <tr>
                                 <td>{{ $paciente->nome  }}</td>
-                                <td width="410px">
+                                <td width="430px">
 
                                     <a href="{{ action('PacientesController@show', $paciente->id) }}" class="btn btn-default"><i class="fa fa-eye"></i> Detalhes </a>
 
@@ -40,7 +40,7 @@
                                         {{ csrf_field() }}
                                         <button href="" class="btn btn-danger"><i class="fa fa-trash"></i> Remover</button>
                                     </form>
-                               {{--      <a href="{{ action('PacienteController@show', $paciente->id) }}" class="btn btn-default"><i class="fa fa-file-text-o"></i> Entradas </a> --}}
+                                    <a href="{{ action('QuestionariosNutricaoController@create', $paciente->id) }}" class="btn btn-default"><i class="fa fa-file-text-o"></i> Questionário </a>
 
                                 </td>
                             </tr>

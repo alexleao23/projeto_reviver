@@ -30,21 +30,23 @@
     </div>
     <div class="box-body">
       <div class="row">
-        <div class="col-lg-6 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3>150</h3>
-              <p><strong>Usuários cadastrados</strong></p>
+        @can('create', App\User::class)
+          <div class="col-lg-6 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>150</h3>
+                <p><strong>Usuários cadastrados</strong></p>
+              </div>
+              <div class="icon">
+                <i class="fa fa-user-plus"></i>
+              </div>
+              <a href="{{ url('/admin/register') }}" class="small-box-footer">
+                <b>Cadastrar Usuário</b> <i class="fa fa-plus"></i>
+              </a>
             </div>
-            <div class="icon">
-              <i class="fa fa-user-plus"></i>
-            </div>
-            <a href="{{ url('/admin/register') }}" class="small-box-footer">
-              <b>Cadastrar Usuário</b> <i class="fa fa-plus"></i>
-            </a>
           </div>
-        </div>
+        @endcan
         <!-- ./col -->
         <div class="col-lg-6 col-xs-6">
           <!-- small box -->

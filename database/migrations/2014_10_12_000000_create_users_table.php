@@ -19,8 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->string('cpf')->unique();
             $table->string('celular');
-            $table->enum('perfil', ['Nutrição', 'Fisioterapia', 'Enfermagem', 'Medicina', 'Ed. Física', 'Farmácia', 'Admin']);
-            $table->enum('lvpermissao', ['Admin', 'Coordenador', 'Aluno']);
+            $table->enum('perfil', ['Nutrição', 'Fisioterapia', 'Enfermagem', 'Medicina', 'Ed. Física', 'Farmácia', 'Administrador']);
+            $table->enum('lvpermissao', ['Administrador', 'Coordenador', 'Aluno']);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

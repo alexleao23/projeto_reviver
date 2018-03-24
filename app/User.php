@@ -38,7 +38,7 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        return Auth::user()->lvpermissao == 'Admin';
+        return Auth::user()->lvpermissao == 'Administrador';
     }
 
     public function isCoordenador()

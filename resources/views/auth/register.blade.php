@@ -11,13 +11,13 @@
   <!-- /.box-header -->
   <!-- form start -->
   <div class='box-body'>
-          {{ Form::open(['route'=>'register']) }}
+        {{ Form::open(['route'=>'register']) }}
         <div class="form-group has-feedback">
-          <input name="nome" type="text" class="form-control" placeholder="Nome Completo" {{ $errors->has('nome') ? ' is-invalid' : '' }} value="{{ old('nome') }}" required autofocus>
+          <input name="name" type="text" class="form-control" placeholder="Nome Completo" {{ $errors->has('name') ? ' is-invalid' : '' }} value="{{ old('name') }}" required autofocus>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
-          @if ($errors->has('nome'))
+          @if ($errors->has('name'))
               <span class="invalid-feedback">
-                  <strong>{{ $errors->first('nome') }}</strong>
+                  <strong>{{ $errors->first('name') }}</strong>
               </span>
           @endif
         </div>
@@ -48,12 +48,12 @@
               </span>
           @endif
         </div>
-        @if (Auth::user()->lvpermissao == 'Admin')
+        @if (Auth::user()->lvpermissao == 'Administrador')
           <div class="form-group has-feedback">
-            {{ Form::select('perfil', ['Nutrição'=>'Nutrição', 'Fisioterapia'=>'Fisioterapia', 'Enfermagem'=>'Enfermagem', 'Medicina'=>'Medicina', 'Ed. Física'=>'Ed. Física', 'Farmácia'=>'Farmácia', 'Admin'=>'Admin'], null, ['placeholder'=>'Perfil do usuário', 'class'=>'form-control', 'required']) }}
+            {{ Form::select('perfil', ['Nutrição'=>'Nutrição', 'Fisioterapia'=>'Fisioterapia', 'Enfermagem'=>'Enfermagem', 'Medicina'=>'Medicina', 'Ed. Física'=>'Ed. Física', 'Farmácia'=>'Farmácia', 'Administrador'=>'Administrador'], null, ['placeholder'=>'Perfil do usuário', 'class'=>'form-control', 'required']) }}
           </div>
           <div class="form-group has-feedback">
-            {{ Form::select('lvpermissao', ['Admin'=>'Admin', 'Coordenador'=>'Coordenador', 'Aluno'=>'Aluno'], null, ['placeholder'=>'Nível de permissão do usuário', 'class'=>'form-control', 'required']) }}
+            {{ Form::select('lvpermissao', ['Administrador'=>'Administrador', 'Coordenador'=>'Coordenador', 'Aluno'=>'Aluno'], null, ['placeholder'=>'Nível de permissão do usuário', 'class'=>'form-control', 'required']) }}
           </div>
         @elseif(Auth::user()->lvpermissao == 'Coordenador')
           <div class="form-group has-feedback" type="hidden">
