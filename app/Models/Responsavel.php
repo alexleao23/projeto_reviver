@@ -14,6 +14,7 @@ class Responsavel extends Model
     	return $this->belongsToMany(Paciente::class);
     }
 
+
     public function getDataNascFormatadaAttribute()
     {
         if($this->attributes['data_nasc']) {

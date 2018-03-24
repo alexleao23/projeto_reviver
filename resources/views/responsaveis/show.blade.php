@@ -21,7 +21,7 @@
             <div class="box-body table-responsive">
                 <table class="table table-bordered table-striped table-hover">
                     <tr><th>Nome: </th><td>{{ mb_strtoupper($responsavel->nome) }}</td></tr>
-                    {{-- <tr><th>CPF:</th><td>{{ $paciente->cpf }}</td></tr> --}}
+                    {{-- <tr><th>CPF:</th><td>{{ $responsavel->cpf }}</td></tr> --}}
                     <tr><th>Data de Nascimento:</th><td>{{ $responsavel->data_nasc_formatada }}</td></tr>
                     <tr><th>Sexo:</th><td>{{ mb_strtoupper($responsavel->sexo) }}</td></tr>
                     <tr><th>Celular:</th><td>{{ $responsavel->celular }}</td></tr>

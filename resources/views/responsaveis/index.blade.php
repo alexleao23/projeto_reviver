@@ -27,7 +27,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($responsaveis as $responsavel)
+                        {{-- {{ dd($responsavels) }} --}}
+                        @foreach($responsavels as $responsavel)
+
                             <tr>
                                 <td>{{ $responsavel->nome  }}</td>
                                 <td width="410px">
@@ -40,7 +42,6 @@
                                         {{ csrf_field() }}
                                         <button href="" class="btn btn-danger"><i class="fa fa-trash"></i> Remover</button>
                                     </form>
-                               {{--      <a href="{{ action('PacienteController@show', $paciente->id) }}" class="btn btn-default"><i class="fa fa-file-text-o"></i> Entradas </a> --}}
 
                                 </td>
                             </tr>
@@ -50,7 +51,7 @@
 
             </div>
             <div style="text-align: center;">
-                {{ $responsaveis->links() }}
+                {{ $responsavels->links() }}
             </div>
         </div>
     </div>
