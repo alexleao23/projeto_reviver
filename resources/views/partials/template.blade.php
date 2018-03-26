@@ -82,6 +82,65 @@
     $('.cns').mask('000 0000 0000 0000');
     $('.rg').mask('000000');
 
+    //Alteração de campos no questionário baseado nas escolhas
+    $(".outros").hide();
+    $(".comoconheceu").change(function () {
+           if ($(this).val() === "Outros") {
+                    $(".outros").show();
+                }else{
+                    $(".outros").hide();
+                } 
+    });
+
+    $(".outrostempo").hide();
+    $(".tempodoenca").change(function () {
+           if ($(this).val() === "Outro") {
+                    $(".outrostempo").show();
+                }else{
+                    $(".outrostempo").hide();
+                } 
+    });
+
+    $(".campousamedicamentos").hide();
+    $(".usamedicamentos").change(function () {
+      $(".campousamedicamentos").toggle();
+    });
+
+    $(".campomedico").hide();
+    $(".campoprescrito").change(function () {
+      $(".campomedico").toggle();
+    });
+
+    $(".tratamentossemmed").hide();
+    $(".realizatratamentossemmed").change(function () {
+      $(".tratamentossemmed").toggle();
+    });
+
+    $(".campodomestica").hide();
+    $(".incapazdomestica").change(function () {
+      $(".campodomestica").toggle();
+    });
+
+    $(".campolazer").hide();
+    $(".camporealizalazer").change(function () {
+      $(".campolazer").toggle();
+    });
+
+    $(".maneira").hide();
+    $(".teminterferido").change(function () {
+      $(".maneira").toggle();
+    });
+
+    $(".atividadefisica").hide();
+    $(".realizafisica").change(function () {
+      $(".atividadefisica").toggle();
+    });
+
+    $(".atividadereligiosa").hide();
+    $(".realizareligiosa").change(function () {
+      $(".atividadereligiosa").toggle();
+    });
+
     });
 </script>
 </body>
