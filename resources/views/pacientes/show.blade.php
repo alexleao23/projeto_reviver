@@ -23,6 +23,7 @@
                     <tr><th>Nome: </th><td>{{ mb_strtoupper($paciente->nome) }}</td></tr>
                     {{-- <tr><th>CPF:</th><td>{{ $paciente->cpf }}</td></tr> --}}
                     <tr><th>Data de Nascimento:</th><td>{{ $paciente->data_nasc_formatada }}</td></tr>
+                    <tr><th>Idade:</th><td>{{ $paciente->idade }}</td></tr>
                     <tr><th>Sexo:</th><td>{{ mb_strtoupper($paciente->sexo) }}</td></tr>
                     <tr><th>Celular:</th><td>{{ $paciente->celular }}</td></tr>
                     <tr><th>Endereço:</th><td>{{ mb_strtoupper($paciente->endereco) }}
