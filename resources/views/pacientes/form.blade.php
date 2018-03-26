@@ -73,6 +73,137 @@
               </span>
           @endif
         </div>
+        <h3>Questionário</h3>
+        {{-- Qual o melhor horário para atendimento? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('horario_atend', 'Qual o melhor horário para atendimento?') }}
+            {{ Form::select('horario_atend', ['Manhã'=>'Manhã', 'Tarde'=>'Tarde'], null, ['class'=>'form-control time', 'placeholder' => 'Selecione']) }}
+            {!! $errors->first('horario_atend', '<span class="help-block">:message</span>') !!}
+        </div>
+        {{-- Qual o melhor dia para atendimento? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('dia_atend', 'Qual o melhor dia para atendimento?') }}
+            {{ Form::select('dia_atend', ['Segunda'=>'Segunda', 'Terça'=>'Terça', 'Quarta'=>'Quarta', 'Quinta'=>'Quinta', 'Sexta'=>'Sexta', 'Sábado'=>'Sábado'], null, ['class'=>'form-control','placeholder' => 'Selecione']) }}
+        </div>
+        {{-- Como ficou sabendo do Projeto Reviver? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('sabendo_projeto', 'Como ficou sabendo do Projeto Reviver?') }}
+            {{ Form::select('sabendo_projeto', ['Redes Sociais'=>'Redes Sociais', 'Amigos, Parentes, Vizinhos'=>'Amigos, Parentes, Vizinhos', 'Universidade'=>'Universidade', 'Outros'=>'Outros'], null, ['class'=>'form-control', 'placeholder'=>'Selecione']) }}
+        </div>
+        {{-- Se Outro, Por onde ficou sabendo do projeto --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('por_onde', 'Se Outros, por onde ficou sabendo do projeto?') }}
+            {{ Form::text('por_onde', null, ['class'=>'form-control','placeholder' => 'Ex.: TV']) }}
+        </div>
+        {{-- Qual o diagnóstico do paciente? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('diagnostico_paciente', 'Diagnóstico do paciente') }}
+            {{ Form::select('diagnostico_paciente', ['Doença de Alzheimer (DA)'=>'Doença de Alzheimer (DA)', 'Doença de Parkinson (DP)'=>'Doença de Parkinson (DP)'], null, ['class'=>'form-control','placeholder' => 'Selecione']) }}
+        </div>
+        {{-- Há quanto tempo possui a doença? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('tempo_doenca', 'Há quanto tempo possui a doença?') }}
+            {{ Form::select('tempo_doenca', ['1 ano'=>'1 ano', '2 anos'=>'2 anos', '3 anos'=>'3 anos', 'Outro'=>'Outro'], null, ['class'=>'form-control','placeholder' => 'Selecione']) }}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('tempo_outro', 'Se Outro, há quanto tempo?') }}
+            {{ Form::text('tempo_outro', null, ['class'=>'form-control','placeholder' => 'Ex.: 10 anos']) }}
+        </div>
+        {{-- Paciente faz uso de medicamentos? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('uso_medicamentos', 'Paciente faz uso de medicamentos?') }}
+            {{ Form::select('uso_medicamentos', ['SIM' => 'SIM', 'NÃO' => 'NÃO'], null, ['placeholder'=>'Selecione', 'class'=>'form-control', 'required']) }}
+        </div>
+        {{-- Se SIM, sob prescrição médica? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('sob_prescricao', 'Se SIM, sob prescrição médica?') }}
+            {{ Form::select('sob_prescricao', ['SIM' => 'SIM', 'NÃO' => 'NÃO'], null, ['placeholder'=>'Selecione', 'class'=>'form-control']) }}
+        </div>
+        {{-- Se SIM, qual médico prescreveu os medicamentos? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('medico_prescreveu', 'Se SIM, qual médico prescreveu os medicamentos?') }}
+            {{ Form::text('medico_prescreveu', null, ['class'=>'form-control','placeholder' => 'Ex.: Dr. Pedro Santos']) }}
+        </div>
+        {{-- Quais medicamentos utiliza? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('nome_medicamentos', 'Quais medicamentos utiliza?') }}
+            {{ Form::text('nome_medicamentos', null, ['class'=>'form-control','placeholder' => 'Ex.: Paracetamol, Doril']) }}
+        </div>
+        {{-- Qual a dosagem? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('dose', 'Qual a dosagem?') }}
+            {{ Form::text('dose', null, ['class'=>'form-control','placeholder' => 'Ex.: Dois comprimidos ao dia']) }}
+        </div>
+        {{-- Quais horários? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('horarios', 'Quais horários?') }}
+            {{ Form::text('horarios', null, ['class'=>'form-control','placeholder' => 'Quais horários?']) }}
+        </div>
+        {{-- Você faz algum tratamento sem medicamentos? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('tratamento_smed', 'Você faz algum tratamento sem medicamentos?') }}
+            {{ Form::select('tratamento_smed', ['SIM' => 'SIM', 'NÃO' => 'NÃO'], null, ['placeholder'=>'Selecione', 'class'=>'form-control', 'required']) }}
+        </div>
+        {{-- Se SIM, quais tratamentos? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('quais_tratamentos', 'Se SIM, quais tratamentos?') }}
+            {{ Form::text('quais_tratamentos', null, ['class'=>'form-control','placeholder' => 'Ex.: Fisioterapia']) }}
+        </div> 
+        {{-- Você tem se sentido incapaz de realizar atividades domésticas habituais devido à sua doença? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('incapaz_realizar_atividades_domesticas', 'Você tem se sentido incapaz de realizar atividades domésticas habituais devido à sua doença?') }}
+            {{ Form::select('incapaz_realizar_atividades_domesticas', ['SIM' => 'SIM', 'NÃO' => 'NÃO'], null, ['placeholder'=>'Selecione', 'class'=>'form-control', 'required']) }}
+        </div>
+        {{-- Se SIM, quais atividades? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('quais_atividades', 'Se SIM, quais atividades?') }}
+            {{ Form::text('quais_atividades', null, ['class'=>'form-control','placeholder' => 'Ex.: Varrer a casa']) }}
+        </div> 
+        {{-- Você realiza alguma atividade de lazer ou divertimento? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('atividades_lazer', 'Você realiza alguma atividade de lazer ou divertimento?') }}
+            {{ Form::select('atividades_lazer', ['SIM' => 'SIM', 'NÃO' => 'NÃO'], null, ['placeholder'=>'Selecione', 'class'=>'form-control', 'required']) }}
+        </div>
+        {{-- Se SIM, quais atividades de lazer? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('quais_atividades_lazer', 'Se SIM, quais atividades de lazer?') }}
+            {{ Form::text('quais_atividades_lazer', null, ['class'=>'form-control','placeholder' => 'Ex.: Jogar bola']) }}
+        </div>
+        {{-- Seu estado de saúde tem interferido nas suas atividades de lazer ou divertimento? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('interferido_atividades_lazer', 'Seu estado de saúde tem interferido nas suas atividades de lazer ou divertimento?') }}
+            {{ Form::select('interferido_atividades_lazer', ['SIM' => 'SIM', 'NÃO' => 'NÃO'], null, ['placeholder'=>'Selecione', 'class'=>'form-control', 'required']) }}
+        </div>
+        {{-- Se SIM, de que maneira? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('de_que_maneira', 'Se SIM, de que maneira?') }}
+            {{ Form::text('de_que_maneira', null, ['class'=>'form-control','placeholder' => 'Ex.: Impedindo que eu saia de casa']) }}
+        </div>
+        {{-- Você realiza alguma atividade física? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('atividade_fisica', 'Você realiza alguma atividade física?') }}
+            {{ Form::select('atividade_fisica', ['SIM' => 'SIM', 'NÃO' => 'NÃO'], null, ['placeholder'=>'Selecione', 'class'=>'form-control', 'required']) }}
+        </div>
+        {{-- Se SIM, quais atividades físicas? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('quais_atividades_fisicas', 'Se SIM, quais atividades físicas?') }}
+            {{ Form::text('quais_atividades_fisicas', null, ['class'=>'form-control','placeholder' => 'Ex.: Corrida']) }}
+        </div>
+        {{-- Você participa de atividades religiosas? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('atividades_religiosas', 'Você participa de atividades religiosas?') }}
+            {{ Form::select('atividades_religiosas', ['SIM' => 'SIM', 'NÃO' => 'NÃO'], null, ['placeholder'=>'Selecione', 'class'=>'form-control', 'required']) }}
+        </div>
+        {{-- Se SIM, quais atividades religiosas? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('quais_atividades_religiosas', 'Se SIM, quais atividades religiosas?') }}
+            {{ Form::text('quais_atividades_religiosas', null, ['class'=>'form-control','placeholder' => 'Ex.: Evangelizar']) }}
+        </div>
+        {{-- Como você costuma se locomover? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('como_locomover', 'Como você costuma se locomover?') }}
+            {{ Form::select('como_locomover', ['Carro' => 'Carro', 'Transporte Público' => 'Transporte Público', 'Bicicleta' => 'Bicicleta', 'Motocicleta' => 'Motocicleta', 'A pé' => 'A pé'], null, ['placeholder'=>'Selecione', 'class'=>'form-control', 'required']) }}
+        </div>
         {{-- Botões abaixo dos campos --}}
         <div class="row">
           <div class="col-xs-6">

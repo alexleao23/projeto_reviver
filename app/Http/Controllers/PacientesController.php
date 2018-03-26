@@ -128,7 +128,7 @@ class PacientesController extends Controller
         return redirect('/admin/pacientes');
     }
 
-    public function questionarioNutricao($id)
+    public function questionarioNutricaoCreate($id)
     {
         $paciente = Paciente::find($id);
         return view('questionarios_nutricao.create', compact('paciente'));
