@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuestionariosNutricaoTable extends Migration
+class CreateQuestionarioNutricaosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateQuestionariosNutricaoTable extends Migration
      */
     public function up()
     {
-        Schema::create('questionarios_nutricao', function (Blueprint $table) {
+        Schema::create('questionario_nutricaos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('paciente_id');
             $table->foreign('paciente_id')->references('id')->on('pacientes');
@@ -52,6 +52,6 @@ class CreateQuestionariosNutricaoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questionarios_nutricao');
+        Schema::dropIfExists('questionario_nutricaos');
     }
 }
