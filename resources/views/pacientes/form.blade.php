@@ -107,11 +107,15 @@
         {{-- Há quanto tempo possui a doença? --}}
         <div class="form-group has-feedback">
             {{ Form::label('tempo_doenca', 'Há quanto tempo possui a doença?') }}
-            {{ Form::select('tempo_doenca', ['1 ano'=>'1 ano', '2 anos'=>'2 anos', '3 anos'=>'3 anos', 'Outro'=>'Outro'], null, ['class'=>'form-control','placeholder' => 'Selecione']) }}
+            {{ Form::select('tempo_doenca', ['1 ano'=>'1 ano', '2 anos'=>'2 anos', '3 anos'=>'3 anos', 'Outro'=>'Outro'], null, ['class'=>'form-control tempodoenca','placeholder' => 'Selecione']) }}
         </div>
-        <div class="form-group has-feedback">
-            {{ Form::label('tempo_outro', 'Se Outro, há quanto tempo?') }}
-            {{ Form::text('tempo_outro', null, ['class'=>'form-control','placeholder' => 'Ex.: 10 anos']) }}
+        <div class="box box-success outrostempo" style="z-index: 99">
+            <div class='box-body' style="background-color: lightgrey;">
+                <div class="form-group has-feedback">
+                    {{ Form::label('tempo_outro', 'Há quanto tempo?') }}
+                    {{ Form::text('tempo_outro', null, ['class'=>'form-control','placeholder' => 'Ex.: 10 anos']) }}
+                </div>
+            </div>
         </div>
         {{-- Paciente faz uso de medicamentos? --}}
         <div class="form-group has-feedback">

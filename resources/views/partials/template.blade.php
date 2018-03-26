@@ -92,6 +92,15 @@
                 } 
     });
 
+    $(".outrostempo").hide();
+    $(".tempodoenca").change(function () {
+           if ($(this).val() === "Outro") {
+                    $(".outrostempo").show();
+                }else{
+                    $(".outrostempo").hide();
+                } 
+    });
+
     $(".campousamedicamentos").hide();
     $(".usamedicamentos").change(function () {
       $(".campousamedicamentos").toggle();
