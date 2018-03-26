@@ -1,7 +1,7 @@
 {{-- Form de questionário de nutrição --}}
         {{-- Campo de paciente --}}
         <div class="form-group has-feedback">
-          {{ Form::select('paciente_id', $pacientes->pluck('nome', 'id'), $paciente, ['placeholder'=>'Paciente relacionado','class'=>'select2 form-control', 'disabled']) }}
+          {{ Form::select('paciente_id', $paciente->pluck('nome', 'id'), $paciente->id, ['placeholder'=>'Paciente relacionado','class'=>'select2 form-control', 'disabled']) }}
           {!! $errors->first('paciente_id', '<span class="help-block">:message</span>') !!}
         </div>
         {{-- Campo de hora de atendimento --}}

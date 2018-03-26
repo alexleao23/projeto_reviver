@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Paciente;
 use App\Models\Responsavel;
+use App\Models\QuestionarioNutricao;
 
 class PacientesController extends Controller
 {
@@ -54,7 +55,7 @@ class PacientesController extends Controller
     {
         // dd($request->all());
         Paciente::create($request->all());
-        return redirect('/admin');
+        return redirect('/admin/pacientes');
     }
 
     /**
@@ -124,6 +125,18 @@ class PacientesController extends Controller
     {
         $paciente = $this->paciente->find($id);
         $paciente->delete();
+        return redirect('/admin/pacientes');
+    }
+
+    public function questionarioNutricao($id)
+    {
+        $paciente = Paciente::find($id);
+        return view('questionarios_nutricao.create', compact('paciente'));
+    }
+
+    public function questionarioNutricaoStore(Request $request)
+    {
+        QuestionarioNutricao::create($request->all());
         return redirect('/admin/pacientes');
     }
 }

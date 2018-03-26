@@ -21,7 +21,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	});
 	Route::resource('responsaveis', 'ResponsaveisController');
 	Route::resource('pacientes', 'PacientesController');
-	Route::resource('questionarios_nutricao', 'QuestionariosNutricaoController');
+	Route::get('pacientes/{id}/questionarios_nutricao', 'PacientesController@questionarioNutricao');
+	Route::post('pacientes/questionarios_nutricao', 'PacientesController@questionarioNutricaoStore');
+
+	// Route::resource('questionarios_nutricao', 'QuestionariosNutricaoController');
 	Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register')->middleware('can:create,App\User');
 	Route::post('register', 'Auth\RegisterController@register')->middleware('can:create,App\User');
 });

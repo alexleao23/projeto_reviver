@@ -40,7 +40,7 @@
                                         {{ csrf_field() }}
                                         <button href="" class="btn btn-danger"><i class="fa fa-trash"></i> Remover</button>
                                     </form>
-                                    <a href="{{ action('QuestionariosNutricaoController@create') }}" class="btn btn-default"><i class="fa fa-file-text-o"></i> Questionário </a>
+                                    <a href="{{ action('PacientesController@questionarioNutricao', $paciente->id) }}" class="btn btn-default"><i class="fa fa-file-text-o"></i> Questionário </a>
 
                                 </td>
                             </tr>
