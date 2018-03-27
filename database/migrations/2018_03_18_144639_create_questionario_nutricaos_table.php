@@ -51,9 +51,9 @@ class CreateQuestionarioNutricaosTable extends Migration
             $table->enum('lesoes_pele', [0, 1]);
             $table->enum('refeicoes_dia', [0, 1, 2]);
                 // Cálculo Doente Consome
-                $table->enum('uma_porcao_diaria_leite', ['SIM', 'NÃO']);
-                $table->enum('duas_porcoes_semanais_legumes', ['SIM', 'NÃO']);
-                $table->enum('carne_peixe_aves', ['SIM', 'NÃO']);
+                $table->boolean('uma_porcao_diaria_leite');
+                $table->boolean('duas_porcoes_semanais_legumes');
+                $table->boolean('carne_peixe_aves');
                 $table->enum('pontuacao_doente_consome', [0.0, 0.5, 1.0]);
                 //
             $table->enum('duas_porcoes_diarias_frutas', [0, 1]);
