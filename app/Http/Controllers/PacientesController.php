@@ -163,7 +163,7 @@ class PacientesController extends Controller
         // Cálculo Triagem fim
         // Cálculo Doente Consome início
             $arraydoenteCon = [$requestall['uma_porcao_diaria_leite'], $requestall['duas_porcoes_semanais_legumes'], $requestall['carne_peixe_aves']];
-            $arraydoenteConCount = count(array_filter($arraydoenteCon);
+            $arraydoenteConCount = count(array_filter($arraydoenteCon));
             if($arraydoenteConCount < 2){
                 $requestall['pontuacao_doente_consome'] = 0.0;
             }
