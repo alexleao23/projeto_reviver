@@ -10,6 +10,14 @@ class Paciente extends Model
 {
     protected $guarded = [];
 
+    public function getShortNomeAttribute()
+    {
+        $fullname = explode(' ', $this->nome);
+        $first = $fullname[0];
+        $last = end($fullname);
+        return $shortname = $first." ".$last;
+    }
+
     public function responsavel()
     {
     	return $this->belongsTo(Responsavel::class);

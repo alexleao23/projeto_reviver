@@ -1,4 +1,5 @@
 @extends('partials.template')
+@section('title', 'Responsável '.$responsavel->short_nome.'| Projeto Reviver')
 @section('content-header')
     <h1 style="text-align: center; color: white;">
         Responsável -

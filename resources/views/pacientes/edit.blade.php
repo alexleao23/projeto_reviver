@@ -1,4 +1,5 @@
 @extends('partials.template')
+@section('title', 'Editar Paciente | Projeto Reviver')
 @section('content-header')
     <h1 style="text-align: center; color: white;">
         Pacientes -

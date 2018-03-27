@@ -30,7 +30,7 @@ class User extends Authenticatable
 
     public function getShortNameAttribute()
     {
-        $fullname = explode(' ',$this->name);
+        $fullname = explode(' ', $this->name);
         $first = $fullname[0];
         $last = end($fullname);
         return $shortname = $first." ".$last;

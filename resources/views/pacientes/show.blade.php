@@ -1,4 +1,5 @@
 @extends('partials.template')
+@section('title', 'Paciente '.$paciente->short_nome.' | Projeto Reviver')
 @section('content-header')
     <h1 style="text-align: center; color: white;">
         Paciente -

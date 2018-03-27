@@ -9,6 +9,14 @@ class Responsavel extends Model
 {
     protected $fillable = ['nome', 'data_nasc', 'sexo', 'endereco', 'complemento', 'bairro', 'celular', 'estado_civil'];
 
+    public function getShortNomeAttribute()
+    {
+        $fullname = explode(' ', $this->nome);
+        $first = $fullname[0];
+        $last = end($fullname);
+        return $shortname = $first." ".$last;
+    }
+
     public function paciente()
     {
     	return $this->hasMany(Paciente::class);
