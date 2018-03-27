@@ -11,7 +11,7 @@ class Responsavel extends Model
 
     public function paciente()
     {
-    	return $this->belongsToMany(Paciente::class);
+    	return $this->hasMany(Paciente::class);
     }
 
 

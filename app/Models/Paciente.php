@@ -12,7 +12,7 @@ class Paciente extends Model
 
     public function responsavel()
     {
-    	return $this->hasOne(Responsavel::class);
+    	return $this->belongsTo(Responsavel::class);
     }
 
     public function questionarioNutricao()
