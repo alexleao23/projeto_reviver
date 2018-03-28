@@ -12,6 +12,17 @@
               </span>
           @endif
         </div>
+        {{-- Campo de CPF --}}
+        <div class="form-group has-feedback">
+          {{ Form::label('cpf', 'CPF') }}
+          {{ Form::text('cpf', null , ['class'=>'form-control cpf', $errors->has('cpf') ? ' is-invalid' : '', 'placeholder'=>'Ex.: 000.000.000-00']) }}
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          @if ($errors->has('cpf'))
+              <span class="invalid-feedback">
+                  <strong>{{ $errors->first('cpf') }}</strong>
+              </span>
+          @endif
+        </div>
         {{-- Campo de responsável --}}
         <div class="form-group has-feedback">
           {{ Form::label('responsavel_id', 'Responsável') }}
@@ -42,7 +53,7 @@
         {{-- Campo de celular --}}
         <div class="form-group has-feedback">
           {{ Form::label('celular', 'Celular') }}
-          {{ Form::text('celular', null , ['class'=>'form-control', $errors->has('celular') ? ' is-invalid' : '', 'placeholder'=>'Ex.: 99999-9999']) }}
+          {{ Form::text('celular', null , ['class'=>'form-control telefone', $errors->has('celular') ? ' is-invalid' : '', 'placeholder'=>'Ex.: 99999-9999']) }}
           {{-- <input name="celular" type="celular" class="form-control telefone" placeholder="Celular(Ex: 99999-9999)" {{ $errors->has('celular') ? ' is-invalid' : '' }}" value="{{ old('celular') }}" required> --}}
           <span class="glyphicon glyphicon-earphone form-control-feedback"></span>
           @if ($errors->has('celular'))
@@ -89,6 +100,46 @@
           @endif
         </div>
         <h3>Questionário</h3>
+        {{-- Qual a sua escolaridade? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('escolaridade', 'Qual a sua escolaridade?') }}
+            {{ Form::select('escolaridade', ['Analfabeto'=>'Analfabeto', 'EFI'=>'Ensino Fundamental Incompleto', 'EFC'=>'Ensino Fundamental Completo', 'EMI'=>'Ensino Médio Incompleto', 'EMC'=>'Ensino Médio Completo', 'ESI'=>'Ensino Superior Incompleto', 'ESC'=>'Ensino Superior Completo', 'Pós-graduação'=>'Pós-graduação'], null, ['class'=>'form-control', 'placeholder' => 'Selecione']) }}
+            {!! $errors->first('escolaridade', '<span class="help-block">:message</span>') !!}
+        </div>
+        {{-- Você fuma? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('fuma', 'Você fuma?') }}
+            {{ Form::select('fuma', ['NÃO' => 'NÃO', 'SIM' => 'SIM', 'PAROU'=>'PAROU'], null, ['class'=>'form-control', 'required']) }}
+        </div>
+                {{-- Se PAROU, Há quanto tempo parou? --}}
+                <div class="form-group has-feedback">
+                    {{ Form::label('tempo_fuma', 'Se PAROU, Há quanto tempo parou?') }}
+                    {{ Form::text('tempo_fuma', null, ['class'=>'form-control','placeholder' => 'Ex.: Dois meses']) }}
+                </div>
+        {{-- Você consome alguma bebida alcoólica? --}}
+        <div class="form-group has-feedback">
+            {{ Form::label('bebida_alcoolica', 'Você consome alguma bebida alcoólica?') }}
+            {{ Form::select('bebida_alcoolica', ['NÃO' => 'NÃO', 'SIM' => 'SIM'], null, ['class'=>'form-control', 'required']) }}
+        </div>
+                {{-- Se SIM, quantos dias no mês? --}}
+                <div class="form-group has-feedback">
+                    {{ Form::label('quantos_dias_mes', 'Se SIM, quantos dias no mês?') }}
+                    {{ Form::select('quantos_dias_mes', ['Raramente'=>'Raramente', '1 dia no mês'=>'1 dia no mês', '2-5 dias'=>'2-5 dias', '5-10 dias'=>'5-10 dias', 'Mais de 10 dias'=>'Mais de 10 dias'], null, ['placeholder'=>'Selecione','class'=>'form-control']) }}
+                </div>
+        {{-- Você realiza alguma atividade física? --}}
+        <div class="form-group has-feedback realizafisica">
+            {{ Form::label('atividade_fisica', 'Você realiza alguma atividade física?') }}
+            {{ Form::select('atividade_fisica', ['NÃO' => 'NÃO', 'SIM' => 'SIM'], null, ['class'=>'form-control', 'required']) }}
+        </div>
+         <div class="box box-success atividadefisica" style="z-index: 99">
+            <div class='box-body' style="background-color: lightgrey;">
+                {{-- Se SIM, quais atividades físicas? --}}
+                <div class="form-group has-feedback">
+                    {{ Form::label('quais_atividades_fisicas', 'Quais atividades físicas?') }}
+                    {{ Form::text('quais_atividades_fisicas', null, ['class'=>'form-control','placeholder' => 'Ex.: Corrida, Natação']) }}
+                </div>
+            </div>
+        </div>
         {{-- Qual o melhor horário para atendimento? --}}
         <div class="form-group has-feedback">
             {{ Form::label('horario_atend', 'Qual o melhor horário para atendimento?') }}
@@ -220,20 +271,6 @@
                 <div class="form-group has-feedback">
                     {{ Form::label('de_que_maneira', 'De que maneira?') }}
                     {{ Form::text('de_que_maneira', null, ['class'=>'form-control','placeholder' => 'Ex.: Impedindo que eu saia de casa']) }}
-                </div>
-            </div>
-        </div>
-        {{-- Você realiza alguma atividade física? --}}
-        <div class="form-group has-feedback realizafisica">
-            {{ Form::label('atividade_fisica', 'Você realiza alguma atividade física?') }}
-            {{ Form::select('atividade_fisica', ['NÃO' => 'NÃO', 'SIM' => 'SIM'], null, ['class'=>'form-control', 'required']) }}
-        </div>
-         <div class="box box-success atividadefisica" style="z-index: 99">
-            <div class='box-body' style="background-color: lightgrey;">
-                {{-- Se SIM, quais atividades físicas? --}}
-                <div class="form-group has-feedback">
-                    {{ Form::label('quais_atividades_fisicas', 'Quais atividades físicas?') }}
-                    {{ Form::text('quais_atividades_fisicas', null, ['class'=>'form-control','placeholder' => 'Ex.: Corrida']) }}
                 </div>
             </div>
         </div>

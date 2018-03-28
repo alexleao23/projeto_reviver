@@ -26,6 +26,11 @@ class CreatePacientesTable extends Migration
             $table->enum('estado_civil', ['Solteiro(a)', 'Casado(a)', 'Desquitado(a)', 'Divorciado(a)', 'Viúvo(a)', 'Outros']);
             $table->integer('responsavel_id');
             $table->foreign('responsavel_id')->references('id')->on('responsavels');
+            $table->enum('escolaridade', ['Analfabeto', 'EFI', 'EFC', 'EMI', 'EMC', 'ESI', 'ESC', 'Pós-graduação']);
+            $table->enum('fuma', ['SIM', 'NÃO', 'PAROU']);
+            $table->text('tempo_fuma')->nullable();
+            $table->enum('bebida_alcoolica', ['SIM', 'NÃO']);
+            $table->enum('quantos_dias_mes', ['Raramente', '1 dia no mês', '2-5 dias', '5-10 dias', 'Mais de 10 dias'])->nullable();
             $table->enum('horario_atend', ['Manhã', 'Tarde']);
             $table->enum('dia_atend', ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']);
             $table->enum('sabendo_projeto', ['Redes Sociais', 'Amigos, Parentes, Vizinhos', 'Universidade', 'Outros']);

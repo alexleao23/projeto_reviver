@@ -12,6 +12,17 @@
               </span>
           @endif
         </div>
+        {{-- Campo de CPF --}}
+        <div class="form-group has-feedback">
+          {{ Form::label('cpf', 'CPF') }}
+          {{ Form::text('cpf', null , ['class'=>'form-control cpf', $errors->has('cpf') ? ' is-invalid' : '', 'placeholder'=>'Ex.: 000.000.000-00']) }}
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          @if ($errors->has('cpf'))
+              <span class="invalid-feedback">
+                  <strong>{{ $errors->first('cpf') }}</strong>
+              </span>
+          @endif
+        </div>
         {{-- Campo de sexo --}}
         <div class="form-group has-feedback">
           {{ Form::label('sexo', 'Sexo') }}
@@ -37,7 +48,7 @@
         {{-- Campo de celular --}}
         <div class="form-group has-feedback">
           {{ Form::label('celular', 'Celular') }}
-          {{ Form::text('celular', null , ['class'=>'form-control', $errors->has('celular') ? ' is-invalid' : '', 'placeholder'=>'Ex.: 99999-9999']) }}
+          {{ Form::text('celular', null , ['class'=>'form-control telefone', $errors->has('celular') ? ' is-invalid' : '', 'placeholder'=>'Ex.: 99999-9999']) }}
           {{-- <input name="celular" type="celular" class="form-control telefone" placeholder="Celular(Ex: 99999-9999)" {{ $errors->has('celular') ? ' is-invalid' : '' }}" value="{{ old('celular') }}" required> --}}
           <span class="glyphicon glyphicon-earphone form-control-feedback"></span>
           @if ($errors->has('celular'))
