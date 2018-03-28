@@ -25,6 +25,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	Route::post('pacientes/questionarios_nutricao', 'PacientesController@questionarioNutricaoStore');
 
 	// Route::resource('questionarios_nutricao', 'QuestionariosNutricaoController');
-	Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register')->middleware('can:create,App\User');
-	Route::post('register', 'Auth\RegisterController@register')->middleware('can:create,App\User');
+	Route::get('users/register', 'Auth\RegisterController@showRegistrationForm')->name('register')->middleware('can:create,App\User');
+	Route::post('users/register', 'Auth\RegisterController@register')->middleware('can:create,App\User');
+	Route::get('users', 'UsersController@index');
+	Route::delete('users/{id}', 'UsersController@destroy');
 });
