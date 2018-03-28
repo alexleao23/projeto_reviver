@@ -1,4 +1,5 @@
 {{-- Form de questionário de nutrição --}}
+{{--  IMC, PONTUAÇÃO-IMC e PONTUAÇÃO-TRIAGEM --}}
         <h3 style="margin-top: 1%">História Clínica</h3>  
         {{-- Paciente --}}
         <div class="form-group has-feedback">

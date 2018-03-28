@@ -34,13 +34,13 @@ class UsersTableSeeder extends Seeder
         ]);
 
         $user = User::create([
-            'name' => 'Kirigaya Kazuto',
-            'email' => 'kirigaya@gmail.com',
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
             'cpf' => '000.000.000-00',
             'celular' => '22222222222',
-            'perfil' => 'Nutrição',
-            'lvpermissao' => 'Coordenador',
-            'password' => Hash::make('asuna1')
+            'perfil' => 'Administrador',
+            'lvpermissao' => 'Administrador',
+            'password' => Hash::make('admin')
         ]);
     }
 }
