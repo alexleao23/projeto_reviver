@@ -19,7 +19,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <div class="box-body table-responsive">
+            <div class="box-body table">
                 <table class="table table-bordered table-striped table-hover">
                     <tr><th>Nome: </th><td>{{ mb_strtoupper($paciente->nome) }}</td></tr>
                     {{-- <tr><th>CPF:</th><td>{{ $paciente->cpf }}</td></tr> --}}

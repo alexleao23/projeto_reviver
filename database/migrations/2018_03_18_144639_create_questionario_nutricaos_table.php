@@ -17,11 +17,11 @@ class CreateQuestionarioNutricaosTable extends Migration
             $table->increments('id');
             $table->integer('paciente_id');
             $table->foreign('paciente_id')->references('id')->on('pacientes');
-            $table->enum('antecedente_familiar', ['Diabetes', 'Hipertensão', 'Câncer', 'Alzheimer']);
-            $table->enum('antecedente_clinico', ['Tabagista', 'Alcoolista', 'Depressão', 'Doenças Cardiovasculares', 'Infarto', 'Traumatismo Craniano']);
-            $table->enum('presenca_doenca', ['SIM', 'NÃO']);
-            $table->enum('qual_doenca', ['Diabetes', 'Hipertensão', 'Câncer', 'Artrite Reumatóide', 'Inflamações', 'Infecções', 'Febre', 'Diarréia', 'Outros'])->nullable();
-            $table->text('outros_doenca')->nullable();
+            $table->text('antecedentes_familiares');
+            $table->text('antecedentes_clinicos');
+            $table->enum('presenca_doencas', ['SIM', 'NÃO']);
+            $table->text('quais_doencas')->nullable();
+            $table->text('outros_doencas')->nullable();
             $table->enum('medicamento_suplemento', ['SIM', 'NÃO']);
             $table->text('nome_medicamento')->nullable();
             $table->text('inicio_tratamento')->nullable();

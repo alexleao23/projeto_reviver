@@ -138,7 +138,7 @@ class PacientesController extends Controller
     {
         $requestall = $request->all();
         // Cálculo IMC início
-            $requestall['imc'] = $imc = $requestall['peso']/$requestall['altura'];
+            $requestall['imc'] = $imc = $requestall['peso']/pow($requestall['altura'], 2);
             if ($imc < 19) {
                 $requestall['pontuacao_imc'] = 0;
             }
