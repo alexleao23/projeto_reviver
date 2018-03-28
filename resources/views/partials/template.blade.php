@@ -15,7 +15,9 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ asset('bower_components/AdminLTE/dist/css/skins/_all-skins.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('bower_components/AdminLTE/css/main.css') }}">
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+  <link rel="stylesheet" href="{{ asset('bower_components/AdminLTE/plugins/select2/select2.min.css') }}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -66,8 +68,10 @@
   <script src="{{ asset('bower_components/AdminLTE/dist/js/demo.js') }}"></script>
   <script src="{{ asset('particlesjs/particles.js') }}"></script>
   <script src="{{ asset('jquerymask/src/jquery.mask.js') }}"></script>
+  <script src="{{ asset('bower_components/AdminLTE/plugins/select2/select2.full.min.js') }}"></script>
   <script>
     $(function () {
+      $(".select2").select2();
       particlesJS();
     });
   </script>
