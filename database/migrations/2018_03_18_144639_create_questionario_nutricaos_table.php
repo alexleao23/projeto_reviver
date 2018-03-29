@@ -17,8 +17,8 @@ class CreateQuestionarioNutricaosTable extends Migration
             $table->increments('id');
             $table->integer('paciente_id');
             $table->foreign('paciente_id')->references('id')->on('pacientes');
-            $table->text('antecedentes_familiares');
-            $table->text('antecedentes_clinicos');
+            $table->text('antecedentes_familiares')->nullable();
+            $table->text('antecedentes_clinicos')->nullable();
             $table->enum('presenca_doencas', ['SIM', 'NÃO']);
             $table->text('quais_doencas')->nullable();
             $table->text('outros_doencas')->nullable();
@@ -57,10 +57,10 @@ class CreateQuestionarioNutricaosTable extends Migration
                 $table->enum('pontuacao_doente_consome', [0.0, 0.5, 1.0]);
                 //
             $table->enum('duas_porcoes_diarias_frutas', [0, 1]);
-            $table->enum('liquido_doente_consome_dia', [0.0, 0.5, 1.0]);
+            $table->enum('liquido_doente_consome_dia', [0.0, '0.5', 1.0]);
             $table->enum('modo_alimentar', [0, 1, 2]);
-            $table->enum('doente_sua_saude', [0.0, 0.5, 1.0, 2.0]);
-            $table->enum('pb', [0.0, 0.5, 1.0]);
+            $table->enum('doente_sua_saude', [0.0, '0.5', 1.0, 2.0]);
+            $table->enum('pb', [0.0, '0.5', 1.0]);
             $table->enum('pp', [0, 1]);
             $table->double('pontuacao_global');
             //Global End

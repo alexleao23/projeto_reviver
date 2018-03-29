@@ -38,11 +38,9 @@
                                     {{-- <a href="{{ action('PacientesController@edit',$paciente->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Editar </a> --}}
                                     @can('before', App\User::class)
                                         @if ($user->id != Auth::user()->id)
-                                            <form action="{{ action('UsersController@destroy', $user->id) }}" method="POST" style="display: inline" id="deleteform">
-                                            {{ method_field('DELETE') }}
-                                            {{ csrf_field() }}
-                                            <button class="btn btn-danger"><i class="fa fa-trash"></i> Remover</button>
-                                            </form> 
+                                            {{ Form::open(['action'=>['UsersController@destroy', $user->id], 'method'=>'DELETE']) }}
+                                                <button class="btn btn-danger"><i class="fa fa-trash"></i> Remover</button>
+                                            {{ Form::close() }}
                                         @endif                   
                                     @endcan
                                 </td>
@@ -53,6 +51,4 @@
             </div>
         </div>
     </div>
-    {{-- {{ Form::open(['action'=>['UsersController@destroy', $user->id], 'method'=>'DELETE', 'id'=>'deleteform']) }}
-    {{ Form::close() }} --}}
 @endsection
