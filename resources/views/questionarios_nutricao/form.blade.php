@@ -1,5 +1,5 @@
 {{-- Form de questionário de nutrição --}}
-{{--  IMC, PONTUAÇÃO-IMC e PONTUAÇÃO-TRIAGEM --}}
+{{--  IMC, PONTUAÇÃO-IMC e PONTUAÇÃO-TRIAGEM, --}}
         <h3 style="margin-top: 1%">História Clínica</h3>  
         {{-- Paciente --}}
         <div class="form-group has-feedback">
@@ -92,6 +92,113 @@
             {!! $errors->first('toma_liquido', '<span class="help-block">:message</span>') !!}
         </div>
         <h3>Triagem</h3>
+        <div class="form-group has-feedback">
+            {{ Form::label('diminuiu_ingesta_alimentar', 'Nos últimos três meses houve diminuição da ingesta alimentar devido a perda de apetite, problemas digestivos ou dificuldade para mastigar ou deglutir?') }}
+            {{ Form::select('diminuiu_ingesta_alimentar', [0 =>'Diminuição grave da ingesta', 1 =>'Diminuição moderada da ingesta', 2 => 'Sem diminuição da ingesta'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('diminuiu_ingesta_alimentar', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('perda_peso', 'Perda de peso nos últimos 3 meses') }}
+            {{ Form::select('perda_peso', [0 =>'Superior a três quilos', 1 =>'Não sabe informar', 2 => 'Entre um e três quilos', 4 => 'Não houve perda de peso'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('perda_peso', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('mobilidade', 'Mobilidade') }}
+            {{ Form::select('mobilidade', [0 =>'Restrito ao leito ou à cadeira de rodas', 1 =>'Deambula mas não é capaz de sair de casa', 2 => 'Normal'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('mobilidade', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('stress_doenca', 'Passou por algum stress psicológico ou doença aguda nos últimos três meses?') }}
+            {{ Form::select('stress_doenca', [0 =>'Sim', 2 => 'Não'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('stress_doenca', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('problemas_neuropsicologicos', 'Problemas neuropsicológicos') }}
+            {{ Form::select('problemas_neuropsicologicos', [0 =>'Demência ou depressão graves', 1 =>'Demência ligeira', 2 => 'Sem problemas psicológicos'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('problemas_neuropsicologicos', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('peso', 'Peso em kg') }}
+            {{ Form::text('peso', null , ['class'=>'form-control peso', $errors->has('peso') ? ' is-invalid' : '', 'placeholder'=>'Ex.: 98.15']) }}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('peso', 'Altura em metros') }}
+            {{ Form::text('peso', null , ['class'=>'form-control altura', $errors->has('altura') ? ' is-invalid' : '', 'placeholder'=>'Ex.: 1.67']) }}
+        </div>
+        {{-- Triagem End --}}
+
+        {{-- Resto das perguntas --}}
+        <h3>Restante das perguntas</h3>
+        <div class="form-group has-feedback">
+            {{ Form::label('vive_emcasa', 'O paciente vive em sua própria casa(não em instituição geriátrica ou hospital)?') }}
+            {{ Form::select('vive_emcasa', [0 =>'Sim', 1 =>'Não'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('vive_emcasa', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('utiliza_muito_medicamentos', 'Utiliza mais de três medicamentos diferentes por dia?') }}
+            {{ Form::select('utiliza_muito_medicamentos', [0 =>'Sim', 1 =>'Não'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('utiliza_muito_medicamentos', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('lesoes_pele', 'Possui lesões de pele ou escaras?') }}
+            {{ Form::select('lesoes_pele', [0 =>'Sim', 1 =>'Não'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('lesoes_pele', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('refeicoes_dia', 'Quantas refeições faz por dia?') }}
+            {{ Form::select('refeicoes_dia', [0 =>'Uma refeição', 1 =>'Duas refeições', 3 => 'Três refeições'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('refeicoes_dia', '<span class="help-block">:message</span>') !!}
+        </div>
+        <b>O paciente consome</b>
+                <div class="box box-success" style="z-index: 99">
+                    <div class='box-body' style="background-color: lightgrey;">
+                <div class="form-group has-feedback">
+                    {{ Form::label('uma_porcao_diaria_leite', 'Pelo menos uma porção diária de leite ou derivados(leite, queijo, iogurte, etc)?') }}
+                    {{ Form::select('uma_porcao_diaria_leite', [true =>'Sim', false =>'Não'], null, ['class'=>'form-control select2']) }}
+                    {!! $errors->first('uma_porcao_diaria_leite', '<span class="help-block">:message</span>') !!}
+                </div>
+                <div class="form-group has-feedback">
+                    {{ Form::label('duas_porcoes_semanais_legumes', 'Duas ou mais porções semanais de leguminosas ou ovos?') }}
+                    {{ Form::select('duas_porcoes_semanais_legumes', [true =>'Sim', false =>'Não'], null, ['class'=>'form-control select2']) }}
+                    {!! $errors->first('duas_porcoes_semanais_legumes', '<span class="help-block">:message</span>') !!}
+                </div>
+                <div class="form-group has-feedback">
+                    {{ Form::label('carne_peixe_aves', 'Carne, peixe ou aves todos os dias?') }}
+                    {{ Form::select('carne_peixe_aves', [true =>'Sim', false =>'Não'], null, ['class'=>'form-control select2']) }}
+                    {!! $errors->first('carne_peixe_aves', '<span class="help-block">:message</span>') !!}
+                </div>  
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('duas_porcoes_diarias_frutas', 'O paciente consome duas ou mais porções diárias de frutas ou produtos hortícolas?') }}
+            {{ Form::select('duas_porcoes_diarias_frutas', [1 =>'Sim', 0 =>'Não'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('duas_porcoes_diarias_frutas', '<span class="help-block">:message</span>') !!}
+        </div>  
+        <div class="form-group has-feedback">
+            {{ Form::label('liquido_doente_consome_dia', 'Quantos copos de líquido(água, sumo, café, chá, leite) o paciente consome por dia?') }}
+            {{ Form::select('liquido_doente_consome_dia', [1 =>'Mais de cinco copos', 0 =>'Menos de três copos', 0.5 => 'Três a cinco copos'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('liquido_doente_consome_dia', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('modo_alimentar', 'Modo de se alimentar') }}
+            {{ Form::select('modo_alimentar', [0 =>'Não é capaz de se alimentar sozinho', 1 =>'Se alimenta sozinho, mas com dificuldade', 2 => 'Se alimenta sozinho, sem dificuldade'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('modo_alimentar', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('doente_sua_saude', 'Em comparação com pessoas da mesma idade, como considera o paciente sua própria saúde?') }}
+            {{ Form::select('doente_sua_saude', [0 =>'Pior', 0.5 => 'Não sabe', 1 =>'Igual', 2 => 'Melhor'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('doente_sua_saude', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('pb', 'Perímetro braquial(PB) em cm') }}
+            {{ Form::select('pb', [0 =>'PB < 21', 0.5 => '21 < PB < 22', 1 =>'PB > 22'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('pb', '<span class="help-block">:message</span>') !!}
+        </div>        
+        <div class="form-group has-feedback">
+            {{ Form::label('pp', 'Perímetro da perna(PP) em cm') }}
+            {{ Form::select('pp', [0 =>'PP < 31', 1 =>'PP > 31'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('pp', '<span class="help-block">:message</span>') !!}
+        </div>        
         {{-- Botões abaixo dos campos --}}
         <div class="row">
           <div class="col-xs-6">

@@ -81,9 +81,36 @@
     $('.date').mask('00/00/0000')
     $('.datetime').mask('00/00/0000 00:00')
     $('.cpf').mask('000.000.000-00');
-    $('.telefone').mask('00000-0000');
     $('.cns').mask('000 0000 0000 0000');
     $('.rg').mask('000000');
+    $('.peso').mask('00.00');
+    $('.altura').mask('0.00');
+
+    //Máscara de telefone mutável
+    var SPMaskBehavior = function (val) {
+      return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+    },
+    spOptions = {
+      onKeyPress: function(val, e, field, options) {
+          field.mask(SPMaskBehavior.apply({}, arguments), options);
+        }
+    };
+
+    $('.telefone').mask(SPMaskBehavior, spOptions);
+
+    //Máscara de peso mutável
+    var PesoMaskBehavior = function (val) {
+      return val.replace(/\D/g, '').length === 5 ? '000.00' : '00.009';
+    },
+    pesoOptions = {
+      onKeyPress: function(val, e, field, options) {
+          field.mask(PesoMaskBehavior.apply({}, arguments), options);
+        }
+    };
+
+    $('.peso').mask(PesoMaskBehavior, pesoOptions);
+
+
 
     //Alteração de campos no questionário baseado nas escolhas
     $(".outros").hide();
