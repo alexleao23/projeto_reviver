@@ -195,6 +195,21 @@
       $(".qualprotese").toggle();
     });
 
+    $(".quaisdoencas").hide();
+    $(".presencadoencas").change(function () {
+      $(".quaisdoencas").toggle();
+    });
+
+    $(".nomevitaminico").hide();
+    $(".vitaminico").change(function () {
+      $(".nomevitaminico").toggle();
+    });
+
+    $(".qualrefeicao").hide();
+    $(".tomacomendo").change(function () {
+      $(".qualrefeicao").toggle();
+    });
+
 
     });
 </script>
