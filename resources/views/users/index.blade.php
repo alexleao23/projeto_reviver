@@ -36,21 +36,23 @@
                                     {{-- <a href="{{ action('PacientesController@show', $paciente->id) }}" class="btn btn-default"><i class="fa fa-eye"></i> Detalhes </a> --}}
 
                                     {{-- <a href="{{ action('PacientesController@edit',$paciente->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Editar </a> --}}
-                                    @can('before', App\User::class)                              
-                                        <button href="" class="btn btn-danger" onclick="document.getElementById('deleteform').submit();"><i class="fa fa-trash"></i> Remover</button>
+                                    @can('before', App\User::class)
+                                        @if ($user->id != Auth::user()->id)
+                                            <form action="{{ action('UsersController@destroy', $user->id) }}" method="POST" style="display: inline" id="deleteform">
+                                            {{ method_field('DELETE') }}
+                                            {{ csrf_field() }}
+                                            <button class="btn btn-danger"><i class="fa fa-trash"></i> Remover</button>
+                                            </form> 
+                                        @endif                   
                                     @endcan
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
-                {{ Form::open(['action'=>['UsersController@destroy', $user->id], 'method'=>'DELETE', 'id'=>'deleteform']) }}
-                {{ Form::close() }}
-                {{-- <form action="{{ action('UsersController@destroy', $user->id) }}" method="POST" style="display: inline" id="deleteform"> --}}
-                    {{-- {{ method_field('DELETE') }} --}}
-                    {{-- {{ csrf_field() }} --}}
-                {{-- </form> --}}
             </div>
         </div>
     </div>
+    {{-- {{ Form::open(['action'=>['UsersController@destroy', $user->id], 'method'=>'DELETE', 'id'=>'deleteform']) }}
+    {{ Form::close() }} --}}
 @endsection

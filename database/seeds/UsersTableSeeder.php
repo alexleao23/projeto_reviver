@@ -42,5 +42,24 @@ class UsersTableSeeder extends Seeder
             'lvpermissao' => 'Administrador',
             'password' => Hash::make('admin')
         ]);
+
+        $user = User::create([
+            'name' => 'Aluno',
+            'email' => 'aluno@gmail.com',
+            'cpf' => '555.555.555-55',
+            'celular' => '22222222222',
+            'perfil' => 'Nutrição',
+            'lvpermissao' => 'Aluno',
+            'password' => Hash::make('aluno')
+        ]);
+        $user = User::create([
+            'name' => 'Coordenador',
+            'email' => 'coordenador@gmail.com',
+            'cpf' => '999.999.999-99',
+            'celular' => '999999999',
+            'perfil' => 'Nutrição',
+            'lvpermissao' => 'Coordenador',
+            'password' => Hash::make('coordenador')
+        ]);
     }
 }

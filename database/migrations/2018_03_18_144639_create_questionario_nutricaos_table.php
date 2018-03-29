@@ -66,7 +66,7 @@ class CreateQuestionarioNutricaosTable extends Migration
             //Global End
             $table->double('pontuacao_total');
             // Estado nutricional com base na pontuação total 
-                $table->enum('estado_nutricional', ['Normal', 'Risco de Desnutrição', 'Desnutrido']);
+            $table->enum('estado_nutricional', ['Normal', 'Risco de Desnutrição', 'Desnutrido']);
             //
             $table->enum('tempo_medio_refeicao', ['Até 30 minutos', 'Mais de 30 minutos']);
             $table->enum('postura_alimentacao', ['Sentada', 'Inclinada']);

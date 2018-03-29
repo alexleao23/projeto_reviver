@@ -36,12 +36,16 @@
                                     <a href="{{ action('PacientesController@show', $paciente->id) }}" class="btn btn-default"><i class="fa fa-eye"></i> Detalhes </a>
 
                                     <a href="{{ action('PacientesController@edit',$paciente->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Editar </a>
-                                    <form action="{{ action('PacientesController@destroy',$paciente->id) }}" method="POST" style="display: inline">
-                                        {{ method_field('DELETE') }}
-                                        {{ csrf_field() }}
-                                        <button href="" class="btn btn-danger"><i class="fa fa-trash"></i> Remover</button>
-                                    </form>
-                                    <a href="{{ action('PacientesController@questionarioNutricaoCreate', $paciente->id) }}" class="btn btn-default"><i class="fa fa-file-text-o"></i> Questionário </a>
+                                    @can('delete', App\User::class)
+                                        <form action="{{ action('PacientesController@destroy',$paciente->id) }}" method="POST" style="display: inline">
+                                            {{ method_field('DELETE') }}
+                                            {{ csrf_field() }}
+                                            <button href="" class="btn btn-danger"><i class="fa fa-trash"></i> Remover</button>
+                                        </form>
+                                    @endcan
+                                    @can('create', App\User::class)
+                                        <a href="{{ action('PacientesController@questionarioNutricaoCreate', $paciente->id) }}" class="btn btn-default"><i class="fa fa-file-text-o"></i> Questionário </a>
+                                    @endcan
 
                                 </td>
                             </tr>

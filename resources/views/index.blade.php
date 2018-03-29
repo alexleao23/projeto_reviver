@@ -48,21 +48,39 @@
           </div>
         @endcan
         <!-- ./col -->
-        <div class="col-lg-6 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>65</h3>
-              <p><b>Responsáveis cadastrados</b></p>
+        @if (Auth::user()->lvpermissao == "Aluno")
+          <div class="col-lg-12 col-xs-12">
+            <!-- small box -->
+            <div class="small-box bg-red">
+              <div class="inner">
+                <h3>65</h3>
+                <p><b>Responsáveis cadastrados</b></p>
+              </div>
+              <div class="icon">
+                <i class="fa fa-handshake-o"></i>
+              </div>
+              <a href="{{ url('/admin/responsaveis/create') }}" class="small-box-footer">
+                <b>Cadastrar responsável</b> <i class="fa fa-plus"></i>
+              </a>
             </div>
-            <div class="icon">
-              <i class="fa fa-handshake-o"></i>
-            </div>
-            <a href="{{ url('/admin/responsaveis/create') }}" class="small-box-footer">
-              <b>Cadastrar responsável</b> <i class="fa fa-plus"></i>
-            </a>
           </div>
-        </div>
+        @else
+          <div class="col-lg-6 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-red">
+              <div class="inner">
+                <h3>65</h3>
+                <p><b>Responsáveis cadastrados</b></p>
+              </div>
+              <div class="icon">
+                <i class="fa fa-handshake-o"></i>
+              </div>
+              <a href="{{ url('/admin/responsaveis/create') }}" class="small-box-footer">
+                <b>Cadastrar responsável</b> <i class="fa fa-plus"></i>
+              </a>
+            </div>
+          </div>
+        @endif
       </div>
       <div class="row">
         <div class="col-lg-6 col-xs-6">
