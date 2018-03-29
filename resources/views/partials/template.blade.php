@@ -171,6 +171,17 @@
       $(".atividadereligiosa").toggle();
     });
 
+    $(".qualconsistencia").hide();
+    $(".restricaoconsistencia").change(function () {
+      $(".qualconsistencia").toggle();
+    });
+
+    $(".qualprotese").hide();
+    $(".protese").change(function () {
+      $(".qualprotese").toggle();
+    });
+
+
     });
 </script>
 </body>

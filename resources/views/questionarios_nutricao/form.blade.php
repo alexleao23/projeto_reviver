@@ -150,8 +150,8 @@
             {!! $errors->first('refeicoes_dia', '<span class="help-block">:message</span>') !!}
         </div>
         <b>O paciente consome</b>
-                <div class="box box-success" style="z-index: 99">
-                    <div class='box-body' style="background-color: lightgrey;">
+        <div class="box box-success" style="z-index: 99">
+            <div class='box-body' style="background-color: lightgrey;">
                 <div class="form-group has-feedback">
                     {{ Form::label('uma_porcao_diaria_leite', 'Pelo menos uma porção diária de leite ou derivados(leite, queijo, iogurte, etc)?') }}
                     {{ Form::select('uma_porcao_diaria_leite', [true =>'Sim', false =>'Não'], null, ['class'=>'form-control select2']) }}
@@ -198,7 +198,59 @@
             {{ Form::label('pp', 'Perímetro da perna(PP) em cm') }}
             {{ Form::select('pp', [0 =>'PP < 31', 1 =>'PP > 31'], null, ['class'=>'form-control select2']) }}
             {!! $errors->first('pp', '<span class="help-block">:message</span>') !!}
-        </div>        
+        </div>       
+        {{-- Resto das perguntas end --}}
+        {{-- Avaliação Miofuncional Orofacial --}}
+        <h3>Avaliação Miofuncional Orofacial - Aspector Gerais de Alimentação</h3>
+        <div class="form-group has-feedback">
+            {{ Form::label('tempo_medio_refeicao', 'Tempo médio para cada refeição') }}
+            {{ Form::select('tempo_medio_refeicao', ['Até 30 minutos' =>'Até 30 minutos', 'Mais de 30 minutos' =>'Mais de 30 minutos'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('tempo_medio_refeicao', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('postura_alimentacao', 'Tempo médio para cada refeição') }}
+            {{ Form::select('postura_alimentacao', ['Sentada' =>'Sentada', 'Inclinada' =>'Inclinada'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('postura_alimentacao', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('aux_liquido', 'Auxílio de líquido') }}
+            {{ Form::select('aux_liquido', ['NÃO' =>'NÃO','SIM' =>'SIM'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('aux_liquido', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback restricaoconsistencia">
+            {{ Form::label('restricao_consistencia', 'Restrição de alguma consistência?') }}
+            {{ Form::select('restricao_consistencia', ['NÃO' =>'NÃO','SIM' =>'SIM'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('restricao_consistencia', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="box box-success qualconsistencia" style="z-index: 99">
+            <div class='box-body' style="background-color: lightgrey;">
+                <div class="form-group has-feedback">
+                    {{ Form::label('qual_restricao', 'Auxílio de líquido') }}
+                    {{ Form::select('qual_restricao', ['Sólido' =>'Sólido','Pastoso' =>'Pastoso', 'Líquido'=>'Líquido'], null, ['class'=>'form-control select2']) }}
+                    {!! $errors->first('qual_restricao', '<span class="help-block">:message</span>') !!}
+                </div>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('denticao', 'Dentição') }}
+            {{ Form::select('denticao', ['Presente' =>'Presente', 'Ausente' =>'Ausente'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('denticao', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="form-group has-feedback protese">
+            {{ Form::label('protese_dentaria', 'Utiliza prótese dentária?') }}
+            {{ Form::select('protese_dentaria', ['NÃO' =>'NÃO','SIM' =>'SIM'], null, ['class'=>'form-control select2']) }}
+            {!! $errors->first('protese_dentaria', '<span class="help-block">:message</span>') !!}
+        </div>
+        <div class="box box-success qualprotese" style="z-index: 99">
+            <div class='box-body' style="background-color: lightgrey;">
+                <div class="form-group has-feedback">
+                    {{ Form::label('qual_protese', 'Que tipo de prótese?') }}
+                    {{ Form::select('qual_protese', ['Total Superior' =>'Total Superior','Total Inferior' =>'Total Inferior', 'Pacial Superior'=>'Pacial Superior', 'Parcial Inferior'=>'Parcial Inferior'], null, ['class'=>'form-control select2']) }}
+                    {!! $errors->first('qual_protese', '<span class="help-block">:message</span>') !!}
+                </div>
+            </div>
+        </div>
+
         {{-- Botões abaixo dos campos --}}
         <div class="row">
           <div class="col-xs-6">
