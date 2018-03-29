@@ -109,23 +109,31 @@
         {{-- Você fuma? --}}
         <div class="form-group has-feedback">
             {{ Form::label('fuma', 'Você fuma?') }}
-            {{ Form::select('fuma', ['NÃO' => 'NÃO', 'SIM' => 'SIM', 'PAROU'=>'PAROU'], null, ['class'=>'form-control', 'required']) }}
+            {{ Form::select('fuma', ['NÃO' => 'NÃO', 'SIM' => 'SIM', 'PAROU'=>'PAROU'], null, ['class'=>'form-control fuma', 'required']) }}
         </div>
+        <div class="box box-success tempofuma" style="z-index: 99">
+            <div class='box-body' style="background-color: lightgrey;">
                 {{-- Se PAROU, Há quanto tempo parou? --}}
                 <div class="form-group has-feedback">
-                    {{ Form::label('tempo_fuma', 'Se PAROU, Há quanto tempo parou?') }}
+                    {{ Form::label('tempo_fuma', 'Há quanto tempo parou?') }}
                     {{ Form::text('tempo_fuma', null, ['class'=>'form-control','placeholder' => 'Ex.: Dois meses']) }}
                 </div>
+            </div>
+        </div>
         {{-- Você consome alguma bebida alcoólica? --}}
         <div class="form-group has-feedback">
             {{ Form::label('bebida_alcoolica', 'Você consome alguma bebida alcoólica?') }}
-            {{ Form::select('bebida_alcoolica', ['NÃO' => 'NÃO', 'SIM' => 'SIM'], null, ['class'=>'form-control', 'required']) }}
+            {{ Form::select('bebida_alcoolica', ['NÃO' => 'NÃO', 'SIM' => 'SIM'], null, ['class'=>'form-control bebe', 'required']) }}
         </div>
+        <div class="box box-success quantobebe" style="z-index: 99">
+            <div class='box-body' style="background-color: lightgrey;">
                 {{-- Se SIM, quantos dias no mês? --}}
                 <div class="form-group has-feedback">
-                    {{ Form::label('quantos_dias_mes', 'Se SIM, quantos dias no mês?') }}
+                    {{ Form::label('quantos_dias_mes', 'Quantos dias no mês?') }}
                     {{ Form::select('quantos_dias_mes', ['Raramente'=>'Raramente', '1 dia no mês'=>'1 dia no mês', '2-5 dias'=>'2-5 dias', '5-10 dias'=>'5-10 dias', 'Mais de 10 dias'=>'Mais de 10 dias'], null, ['placeholder'=>'Selecione','class'=>'form-control']) }}
                 </div>
+            </div>
+        </div>
         {{-- Você realiza alguma atividade física? --}}
         <div class="form-group has-feedback realizafisica">
             {{ Form::label('atividade_fisica', 'Você realiza alguma atividade física?') }}

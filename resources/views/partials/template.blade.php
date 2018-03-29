@@ -131,9 +131,23 @@
                 } 
     });
 
+    $(".tempofuma").hide();
+    $(".fuma").change(function () {
+           if ($(this).val() === "PAROU") {
+                    $(".tempofuma").show();
+                }else{
+                    $(".tempofuma").hide();
+                } 
+    });
+
     $(".campousamedicamentos").hide();
     $(".usamedicamentos").change(function () {
       $(".campousamedicamentos").toggle();
+    });
+
+    $(".quantobebe").hide();
+    $(".bebe").change(function () {
+      $(".quantobebe").toggle();
     });
 
     $(".campomedico").hide();
@@ -179,6 +193,21 @@
     $(".qualprotese").hide();
     $(".protese").change(function () {
       $(".qualprotese").toggle();
+    });
+
+    $(".quaisdoencas").hide();
+    $(".presencadoencas").change(function () {
+      $(".quaisdoencas").toggle();
+    });
+
+    $(".nomevitaminico").hide();
+    $(".vitaminico").change(function () {
+      $(".nomevitaminico").toggle();
+    });
+
+    $(".qualrefeicao").hide();
+    $(".tomacomendo").change(function () {
+      $(".qualrefeicao").toggle();
     });
 
 

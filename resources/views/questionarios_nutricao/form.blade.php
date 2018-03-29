@@ -22,25 +22,29 @@
         {{-- Presença de Doenças --}}
         <div class="form-group has-feedback">
             {{ Form::label('presenca_doencas', 'Presença de Doenças') }}
-            {{ Form::select('presenca_doencas', ['NÃO'=>'NÃO', 'SIM'=>'SIM'], null, ['class'=>'form-control']) }}
+            {{ Form::select('presenca_doencas', ['NÃO'=>'NÃO', 'SIM'=>'SIM'], null, ['class'=>'form-control presencadoencas']) }}
             {!! $errors->first('presenca_doencas', '<span class="help-block">:message</span>') !!}
         </div>
-        {{-- Se SIM, quais doenças? --}}
-        <div class="form-group has-feedback">
-            {{ Form::label('quais_doencas', 'Se SIM, quais doenças?') }}
-            {{ Form::select('quais_doencas', ['Diabetes'=>'Diabetes', 'Hipertensão'=>'Hipertensão', 'Câncer'=>'Câncer', 'Artrite Reumatóide'=>'Artrite Reumatóide', 'Inflamações'=>'Inflamações', 'Infecções'=>'Infecções', 'Febre'=>'Febre', 'Diarréia'=>'Diarréia', 'Outros'=>'Outros'], null, ['data-placeholder'=>'Selecione', 'class'=>'form-control select2', 'multiple']) }}
-            {!! $errors->first('quais_doencas', '<span class="help-block">:message</span>') !!}
-        </div>
-        {{-- Se Outros, quais outros? --}}
-        <div class="form-group has-feedback">
-            {{ Form::label('outros_doencas', 'Se Outros, quais outros?') }}
-            {{ Form::text('outros_doencas', null, ['placeholder'=>'Ex.: Sinusite, Renite','class'=>'form-control']) }}
-            {!! $errors->first('outros_doencas', '<span class="help-block">:message</span>') !!}
+        <div class="box box-success quaisdoencas" style="z-index: 99">
+            <div class='box-body' style="background-color: lightgrey;">
+                {{-- Se SIM, quais doenças? --}}
+                <div class="form-group has-feedback">
+                    {{ Form::label('quais_doencas', 'Quais doenças?') }}
+                    {{ Form::select('quais_doencas', ['Diabetes'=>'Diabetes', 'Hipertensão'=>'Hipertensão', 'Câncer'=>'Câncer', 'Artrite Reumatóide'=>'Artrite Reumatóide', 'Inflamações'=>'Inflamações', 'Infecções'=>'Infecções', 'Febre'=>'Febre', 'Diarréia'=>'Diarréia'], null, ['data-placeholder'=>'Selecione', 'class'=>'form-control select2', 'multiple']) }}
+                    {!! $errors->first('quais_doencas', '<span class="help-block">:message</span>') !!}
+                </div>
+                {{-- Se Outros, quais outros? --}}
+                <div class="form-group has-feedback doencaoutros">
+                    {{ Form::label('outros_doencas', 'Se houverem outras, quais são?') }}
+                    {{ Form::text('outros_doencas', null, ['placeholder'=>'Ex.: Sinusite, Rinite','class'=>'form-control']) }}
+                    {!! $errors->first('outros_doencas', '<span class="help-block">:message</span>') !!}
+                </div>
+            </div>
         </div>
         {{-- Uso de medicamentos ou suplemento vitamínico-mineral --}}
         <div class="form-group has-feedback">
             {{ Form::label('medicamento_suplemento', 'Uso de medicamentos ou suplemento vitamínico-mineral') }}
-            {{ Form::select('medicamento_suplemento', ['NÃO'=>'NÃO', 'SIM'=>'SIM'], null, ['class'=>'form-control']) }}
+            {{ Form::select('medicamento_suplemento', ['NÃO'=>'NÃO', 'SIM'=>'SIM'], null, ['class'=>'form-control vitaminico']) }}
             {!! $errors->first('medicamento_suplemento', '<span class="help-block">:message</span>') !!}
         </div>
         {{-- Se SIM, qual o nome do medicamento ou suplemento vitamínico-mineral? --}}
@@ -203,9 +207,9 @@
         {{-- Avaliação Miofuncional Orofacial --}}
         <h3>Avaliação Miofuncional Orofacial - Aspector Gerais de Alimentação</h3>
         <div class="form-group has-feedback">
-            {{ Form::label('tempo_medio_refeicao', 'Tempo médio para cada refeição') }}
-            {{ Form::select('tempo_medio_refeicao', ['Até 30 minutos' =>'Até 30 minutos', 'Mais de 30 minutos' =>'Mais de 30 minutos'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
-            {!! $errors->first('tempo_medio_refeicao', '<span class="help-block">:message</span>') !!}
+            {{ Form::label('tempo_medio_quais_refeicoes', 'Tempo médio para cada refeição') }}
+            {{ Form::select('tempo_medio_quais_refeicoes', ['Até 30 minutos' =>'Até 30 minutos', 'Mais de 30 minutos' =>'Mais de 30 minutos'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
+            {!! $errors->first('tempo_medio_quais_refeicoes', '<span class="help-block">:message</span>') !!}
         </div>
         <div class="form-group has-feedback">
             {{ Form::label('postura_alimentacao', 'Postura durante a alimentação') }}
