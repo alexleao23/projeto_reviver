@@ -26,7 +26,7 @@
         {{-- Campo de responsável --}}
         <div class="form-group has-feedback">
           {{ Form::label('responsavel_id', 'Responsável') }}
-          {{ Form::select('responsavel_id', $responsavel->pluck('nome', 'id'), null, ['placeholder'=>'Selecione', 'class'=>'form-control', 'required']) }}
+          {{ Form::select('responsavel_id', $responsavel->pluck('nome', 'id'), null, ['placeholder'=>'Selecione', 'class'=>'form-control select2', 'required']) }}
         </div>
         {{-- Campo de sexo --}}
         <div class="form-group has-feedback">
