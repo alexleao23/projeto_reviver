@@ -72,7 +72,7 @@ class CreateQuestionarioNutricaosTable extends Migration
             $table->enum('postura_alimentacao', ['Sentada', 'Inclinada']);
             $table->enum('aux_liquido', ['SIM', 'NÃO']);
             $table->enum('restricao_consistencia', ['SIM', 'NÃO']);
-            $table->enum('qual_restricao', ['Sólido', 'Pastoso', 'Líquido']);
+            $table->enum('qual_restricao', ['Sólido', 'Pastoso', 'Líquido'])->nullable();
             $table->enum('usa_mastigacao', ['SIM', 'NÃO']);
             $table->enum('denticao', ['Presente', 'Ausente'])->nullable();
             $table->enum('protese_dentaria', ['SIM', 'NÃO'])->nullable();
