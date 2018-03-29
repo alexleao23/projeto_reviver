@@ -131,9 +131,23 @@
                 } 
     });
 
+    $(".tempofuma").hide();
+    $(".fuma").change(function () {
+           if ($(this).val() === "PAROU") {
+                    $(".tempofuma").show();
+                }else{
+                    $(".tempofuma").hide();
+                } 
+    });
+
     $(".campousamedicamentos").hide();
     $(".usamedicamentos").change(function () {
       $(".campousamedicamentos").toggle();
+    });
+
+    $(".quantobebe").hide();
+    $(".bebe").change(function () {
+      $(".quantobebe").toggle();
     });
 
     $(".campomedico").hide();
