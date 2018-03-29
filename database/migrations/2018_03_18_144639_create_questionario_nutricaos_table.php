@@ -29,7 +29,7 @@ class CreateQuestionarioNutricaosTable extends Migration
             $table->text('ff')->nullable();
             $table->enum('jejum', ['SIM', 'NÃO'])->nullable();
             $table->enum('toma_prox_alimento', ['SIM', 'NÃO'])->nullable();
-            $table->text('qual_medicamento')->nullable();
+            $table->text('quais_refeicoes')->nullable();
             $table->enum('toma_liquido', ['SIM', 'NÃO'])->nullable();
             // Triagem (máximo de 14 pontos)
             $table->enum('diminu_ingesta_alimentar', [0, 1, 2]);

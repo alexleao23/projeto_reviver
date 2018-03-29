@@ -81,9 +81,9 @@
         </div>
         {{-- Se SIM, qual medicamento? --}}
         <div class="form-group has-feedback">
-            {{ Form::label('qual_medicamento', 'Se SIM, qual medicamento?') }}
-            {{ Form::text('qual_medicamento', null, ['placeholder'=>'Ex.:','class'=>'form-control']) }}
-            {!! $errors->first('qual_medicamento', '<span class="help-block">:message</span>') !!}
+            {{ Form::label('quais_refeicoes', 'Se SIM, quais refeições?') }}
+            {{ Form::text('quais_refeicoes', null, ['placeholder'=>'Ex.:','class'=>'form-control']) }}
+            {!! $errors->first('quais_refeicoes', '<span class="help-block">:message</span>') !!}
         </div>
         {{-- Toma com algum líquido? --}}
         <div class="form-group has-feedback">
@@ -93,13 +93,13 @@
         </div>
         <h3>Avaliação Triagem</h3>
         <div class="form-group has-feedback">
-            {{ Form::label('diminuiu_ingesta_alimentar', 'Nos últimos três meses houve diminuição da ingesta alimentar devido a perda de apetite, problemas digestivos ou dificuldade para mastigar ou deglutir?') }}
-            {{ Form::select('diminuiu_ingesta_alimentar', [0 =>'Diminuição grave da ingesta', 1 =>'Diminuição moderada da ingesta', 2 => 'Sem diminuição da ingesta'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
-            {!! $errors->first('diminuiu_ingesta_alimentar', '<span class="help-block">:message</span>') !!}
+            {{ Form::label('diminu_ingesta_alimentar', 'Nos últimos três meses houve diminuição da ingesta alimentar devido a perda de apetite, problemas digestivos ou dificuldade para mastigar ou deglutir?') }}
+            {{ Form::select('diminu_ingesta_alimentar', [0 =>'Diminuição grave da ingesta', 1 =>'Diminuição moderada da ingesta', 2 => 'Sem diminuição da ingesta'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
+            {!! $errors->first('diminu_ingesta_alimentar', '<span class="help-block">:message</span>') !!}
         </div>
         <div class="form-group has-feedback">
             {{ Form::label('perda_peso', 'Perda de peso nos últimos 3 meses') }}
-            {{ Form::select('perda_peso', [0 =>'Superior a três quilos', 1 =>'Não sabe informar', 2 => 'Entre um e três quilos', 4 => 'Não houve perda de peso'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
+            {{ Form::select('perda_peso', [0 =>'Superior a três quilos', 1 =>'Não sabe informar', 2 => 'Entre um e três quilos', 3 => 'Não houve perda de peso'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
             {!! $errors->first('perda_peso', '<span class="help-block">:message</span>') !!}
         </div>
         <div class="form-group has-feedback">
@@ -122,8 +122,8 @@
             {{ Form::text('peso', null , ['class'=>'form-control peso', $errors->has('peso') ? ' is-invalid' : '', 'placeholder'=>'Ex.: 98.15']) }}
         </div>
         <div class="form-group has-feedback">
-            {{ Form::label('peso', 'Altura em metros') }}
-            {{ Form::text('peso', null , ['class'=>'form-control altura', $errors->has('altura') ? ' is-invalid' : '', 'placeholder'=>'Ex.: 1.67']) }}
+            {{ Form::label('altura', 'Altura em metros') }}
+            {{ Form::text('altura', null , ['class'=>'form-control altura', $errors->has('altura') ? ' is-invalid' : '', 'placeholder'=>'Ex.: 1.67']) }}
         </div>
         {{-- Triagem End --}}
 
@@ -131,7 +131,7 @@
         <h3>Avaliação Global</h3>
         <div class="form-group has-feedback">
             {{ Form::label('vive_emcasa', 'O paciente vive em sua própria casa(não em instituição geriátrica ou hospital)?') }}
-            {{ Form::select('vive_emcasa', [0 =>'Sim', 1 =>'Não'], null, ['class'=>'form-control select2']) }}
+            {{ Form::select('vive_emcasa', [1 =>'Sim', 0 =>'Não'], null, ['class'=>'form-control select2']) }}
             {!! $errors->first('vive_emcasa', '<span class="help-block">:message</span>') !!}
         </div>
         <div class="form-group has-feedback">
@@ -146,7 +146,7 @@
         </div>
         <div class="form-group has-feedback">
             {{ Form::label('refeicoes_dia', 'Quantas refeições faz por dia?') }}
-            {{ Form::select('refeicoes_dia', [0 =>'Uma refeição', 1 =>'Duas refeições', 3 => 'Três refeições'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
+            {{ Form::select('refeicoes_dia', [0 =>'Uma refeição', 1 =>'Duas refeições', 2 => 'Três refeições'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
             {!! $errors->first('refeicoes_dia', '<span class="help-block">:message</span>') !!}
         </div>
         <b>O paciente consome</b>
@@ -191,12 +191,12 @@
         </div>
         <div class="form-group has-feedback">
             {{ Form::label('pb', 'Perímetro braquial(PB) em cm') }}
-            {{ Form::select('pb', [0 =>'PB < 21', '0.5' => '21 < PB < 22', 1 =>'PB > 22'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
+            {{ Form::select('pb', [0 =>'PB < 21', '0.5' => '21 <= PB <= 22', 1 =>'PB > 22'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
             {!! $errors->first('pb', '<span class="help-block">:message</span>') !!}
         </div>        
         <div class="form-group has-feedback">
             {{ Form::label('pp', 'Perímetro da perna(PP) em cm') }}
-            {{ Form::select('pp', [0 =>'PP < 31', 1 =>'PP > 31'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
+            {{ Form::select('pp', [0 =>'PP < 31', 1 =>'PP >= 31'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
             {!! $errors->first('pp', '<span class="help-block">:message</span>') !!}
         </div>       
         {{-- Resto das perguntas end --}}
@@ -208,7 +208,7 @@
             {!! $errors->first('tempo_medio_refeicao', '<span class="help-block">:message</span>') !!}
         </div>
         <div class="form-group has-feedback">
-            {{ Form::label('postura_alimentacao', 'Tempo médio para cada refeição') }}
+            {{ Form::label('postura_alimentacao', 'Postura durante a alimentação') }}
             {{ Form::select('postura_alimentacao', ['Sentada' =>'Sentada', 'Inclinada' =>'Inclinada'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
             {!! $errors->first('postura_alimentacao', '<span class="help-block">:message</span>') !!}
         </div>
