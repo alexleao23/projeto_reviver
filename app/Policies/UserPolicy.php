@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use App\User;
 
 class UserPolicy extends BasePolicy
 {
@@ -16,7 +16,7 @@ class UserPolicy extends BasePolicy
      * @param  \App\User  $model
      * @return mixed
      */
-    public function view(User $user, User $model)
+    public function view(User $user)
     {
         //
     }
@@ -39,7 +39,7 @@ class UserPolicy extends BasePolicy
      * @param  \App\User  $model
      * @return mixed
      */
-    public function update(User $user, User $model)
+    public function update(User $user)
     {
         return $user->isCoordenador();
     }
@@ -51,7 +51,7 @@ class UserPolicy extends BasePolicy
      * @param  \App\User  $model
      * @return mixed
      */
-    public function delete(User $user, User $model)
+    public function delete(User $user)
     {
         return $user->isCoordenador();
     }
