@@ -4,7 +4,7 @@
         {{-- Paciente --}}
         <div class="form-group has-feedback">
             {{ Form::label('paciente_id', 'Paciente') }}
-            {{ Form::select('paciente_id', $paciente->pluck('nome', 'id'), $paciente->id, ['placeholder'=>'Paciente relacionado','class'=>'form-control', 'disabled']) }}
+            {{ Form::select('paciente_id', $paciente->pluck('nome', 'id'), $paciente->id, ['placeholder'=>'Paciente relacionado','class'=>'form-control']) }}
             {!! $errors->first('paciente_id', '<span class="help-block">:message</span>') !!}
         </div>
         {{-- Antecedentes Familiares --}}
@@ -207,9 +207,9 @@
         {{-- Avaliação Miofuncional Orofacial --}}
         <h3>Avaliação Miofuncional Orofacial - Aspector Gerais de Alimentação</h3>
         <div class="form-group has-feedback">
-            {{ Form::label('tempo_medio_quais_refeicoes', 'Tempo médio para cada refeição') }}
-            {{ Form::select('tempo_medio_quais_refeicoes', ['Até 30 minutos' =>'Até 30 minutos', 'Mais de 30 minutos' =>'Mais de 30 minutos'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
-            {!! $errors->first('tempo_medio_quais_refeicoes', '<span class="help-block">:message</span>') !!}
+            {{ Form::label('tempo_medio_refeicao', 'Tempo médio para cada refeição') }}
+            {{ Form::select('tempo_medio_refeicao', ['Até 30 minutos' =>'Até 30 minutos', 'Mais de 30 minutos' =>'Mais de 30 minutos'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
+            {!! $errors->first('tempo_medio_refeicao', '<span class="help-block">:message</span>') !!}
         </div>
         <div class="form-group has-feedback">
             {{ Form::label('postura_alimentacao', 'Postura durante a alimentação') }}
@@ -234,6 +234,11 @@
                     {!! $errors->first('qual_restricao', '<span class="help-block">:message</span>') !!}
                 </div>
             </div>
+        </div>
+        <div class="form-group has-feedback">
+            {{ Form::label('usa_mastigacao', 'Usa mastigacao?') }}
+            {{ Form::select('usa_mastigacao', ['SIM' =>'SIM', 'NÃO' =>'NÃO'], null, ['placeholder'=>'Selecione', 'class'=>'form-control select2']) }}
+            {!! $errors->first('usa_mastigacao', '<span class="help-block">:message</span>') !!}
         </div>
         <div class="form-group has-feedback">
             {{ Form::label('denticao', 'Dentição') }}
