@@ -35,7 +35,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>150</h3>
+                <h3>{{ count($users) }}</h3>
                 <p><strong>Usuários cadastrados</strong></p>
               </div>
               <div class="icon">
@@ -53,7 +53,7 @@
             <!-- small box -->
             <div class="small-box bg-red">
               <div class="inner">
-                <h3>65</h3>
+                <h3>{{ count($responsaveis) }}</h3>
                 <p><b>Responsáveis cadastrados</b></p>
               </div>
               <div class="icon">
@@ -69,7 +69,7 @@
             <!-- small box -->
             <div class="small-box bg-red">
               <div class="inner">
-                <h3>65</h3>
+                <h3>{{ count($responsaveis) }}</h3>
                 <p><b>Responsáveis cadastrados</b></p>
               </div>
               <div class="icon">
@@ -87,7 +87,7 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>53</h3>
+              <h3>{{ count($pacientes) }}</h3>
               <p><strong>Pacientes cadastrados</strong></p>
             </div>
             <div class="icon">

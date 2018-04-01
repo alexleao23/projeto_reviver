@@ -17,7 +17,10 @@ Route::get('register', function(){
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	Route::get('/', function(){
-		return view('index');
+		$users = App\User::all();
+		$pacientes = App\Models\Paciente::all();
+		$responsaveis = App\Models\Responsavel::all();
+		return view('index', compact('users', 'pacientes', 'responsaveis'));
 	});
 	Route::resource('responsaveis', 'ResponsaveisController');
 	Route::resource('pacientes', 'PacientesController');
