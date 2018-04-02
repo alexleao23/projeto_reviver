@@ -70,18 +70,6 @@
               </span>
           @endif
         </div>
-        {{-- Campo de Complemento --}}
-        <div class="form-group has-feedback">
-          {{ Form::label('complemento', 'Complemento') }}
-          {{ Form::text('complemento', null , ['class'=>'form-control', $errors->has('complemento') ? ' is-invalid' : '', 'placeholder'=>'Ex: Apartamento, Condominio, etc']) }}
-          {{-- <input name="complemento" class="form-control complemento" placeholder="Complemento(Ex: Apartamento, Condominio, etc)" {{ $errors->has('complemento') ? ' is-invalid' : '' }}" value="{{ old('complemento') }}" required> --}}
-          <span class="fa fa-address-book form-control-feedback"></span>
-          @if ($errors->has('complemento'))
-              <span class="invalid-feedback">
-                  <strong>{{ $errors->first('complemento') }}</strong>
-              </span>
-          @endif
-        </div>
         {{-- Campo de Bairro --}}
         <div class="form-group has-feedback">
           {{ Form::label('bairro', 'Bairro') }}
@@ -91,6 +79,18 @@
           @if ($errors->has('bairro'))
               <span class="invalid-feedback">
                   <strong>{{ $errors->first('bairro') }}</strong>
+              </span>
+          @endif
+        </div>
+        {{-- Campo de Complemento --}}
+        <div class="form-group has-feedback">
+          {{ Form::label('complemento', 'Complemento') }}
+          {{ Form::text('complemento', null , ['class'=>'form-control', $errors->has('complemento') ? ' is-invalid' : '', 'placeholder'=>'Ex: Apartamento, Condominio, etc']) }}
+          {{-- <input name="complemento" class="form-control complemento" placeholder="Complemento(Ex: Apartamento, Condominio, etc)" {{ $errors->has('complemento') ? ' is-invalid' : '' }}" value="{{ old('complemento') }}" required> --}}
+          <span class="fa fa-address-book form-control-feedback"></span>
+          @if ($errors->has('complemento'))
+              <span class="invalid-feedback">
+                  <strong>{{ $errors->first('complemento') }}</strong>
               </span>
           @endif
         </div>

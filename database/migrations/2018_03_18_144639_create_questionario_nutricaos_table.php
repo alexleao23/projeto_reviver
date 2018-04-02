@@ -15,7 +15,7 @@ class CreateQuestionarioNutricaosTable extends Migration
     {
         Schema::create('questionario_nutricaos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('paciente_id');
+            $table->integer('paciente_id')->unique();
             $table->foreign('paciente_id')->references('id')->on('pacientes');
             $table->text('antecedentes_familiares')->nullable();
             $table->text('antecedentes_clinicos')->nullable();
