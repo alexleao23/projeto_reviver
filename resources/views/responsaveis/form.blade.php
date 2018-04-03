@@ -1,5 +1,5 @@
 {{-- Form de paciente separado por tipo de dado --}}
-<h3>Dados pessoais</h3>
+<h3 style="margin-top: 1%">Dados pessoais</h3>
 
 {{-- Campo de nome --}}
 @include('form_build.text', [
