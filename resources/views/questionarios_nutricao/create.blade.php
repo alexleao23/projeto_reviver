@@ -12,7 +12,7 @@
   <!-- /.box-header -->
   <!-- form start -->
   <div class='box-body'>
-    {{ Form::model($paciente, ['url'=>action('PacientesController@questionarioNutricaoStore')]) }}
+    {{ Form::model($paciente, ['action'=>'PacientesController@questionarioNutricaoStore']) }}
       @include('questionarios_nutricao.form')
     {{ Form::close() }}
     </div>

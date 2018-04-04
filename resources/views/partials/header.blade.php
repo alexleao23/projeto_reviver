@@ -11,10 +11,6 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
           <ul class="nav navbar-nav">
-            {{-- @can('create', App\User::class)
-              <li class="{{ request()->is('admin/register') ? 'active' : '' }}"><a href="{{ url('/admin/register') }}">Cadastrar Usuário <span class="sr-only">(current)</span></a></li>
-            @endcan --}}
-            {{-- <li class="{{ request()->is('admin/pacientes/create') ? 'active' : '' }}"><a href="{{ url('/admin/pacientes/create') }}">Cadastrar Paciente</a></li> --}}
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Usuários </strong><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
