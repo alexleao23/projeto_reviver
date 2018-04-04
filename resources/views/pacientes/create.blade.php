@@ -8,12 +8,12 @@
 @endsection
 @section('content')
   <!-- Your Page Content Here -->
-  <div class="box box-primary" style="z-index: 99">
+  <div class="box box-primary" style="z-index: 99;">
   <!-- /.box-header -->
   <!-- form start -->
   <div class='box-body'>
-    {{ Form::model($paciente,['url'=>action('PacientesController@store')]) }}
-      @include('pacientes.form', ['responsavel' => $responsaveis])
+    {{ Form::model($paciente,['action'=>'PacientesController@store']) }}
+      @include('pacientes.form', ['responsaveis' => $responsaveis])
     {{ Form::close() }}
     </div>
   </div>

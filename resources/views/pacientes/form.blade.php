@@ -27,7 +27,7 @@
 @include('form_build.select', [
     'nome'=>'responsavel_id',
     'label'=>'Responsável',
-    'opcoes'=>$responsavel->pluck('nome', 'id'),
+    'opcoes'=>$responsaveis->pluck('nome', 'id'),
     'dado'=>null,
     'placeholder'=>'Selecione',
     'required'=>'required',

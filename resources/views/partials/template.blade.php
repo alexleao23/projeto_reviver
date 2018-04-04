@@ -24,6 +24,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
+    <div id="particles-js"></div>
     <body class="skin-blue layout-top-nav skin-green" style="height: auto; min-height: 100%;">
         <style>
             .box-body {
@@ -31,7 +32,6 @@
               padding-right: 30px;
             }
         </style>
-        <div id="particles-js" style="position: absolute;"></div>
         <div class="wrapper" style="height: auto; min-height: 100%;">
             @include('partials.header')
             <!-- Full Width Column -->
