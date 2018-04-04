@@ -2,7 +2,7 @@
     <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="{{ url('/admin') }}" class="navbar-brand"><i class="fa fa-hospital-o"></i> Projeto <b>Reviver</b></a>
+          <a href="{{ route('homepage') }}" class="navbar-brand"><i class="fa fa-hospital-o"></i> Projeto <b>Reviver</b></a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
             <i class="fa fa-bars"></i>
           </button>
@@ -19,26 +19,26 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Usuários </strong><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 @can('create', App\User::class)
-                  <li><a href="{{ url('/admin/users/register') }}">Cadastrar Usuário</a></li>
+                  <li><a href="{{ route('register') }}">Cadastrar Usuário</a></li>
                   <li class="divider"></li>
                 @endcan
-                <li><a href="{{ url('/admin/users') }}">Todos os Usuários</a></li>
+                <li><a href="{{ route('users_index') }}">Todos os Usuários</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Responsáveis </strong><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="{{ url('/admin/responsaveis/create') }}">Cadastrar Responsável</a></li>
+                <li><a href="{{ action('ResponsaveisController@create') }}">Cadastrar Responsável</a></li>
                 <li class="divider"></li>
-                <li><a href="{{ url('/admin/responsaveis') }}">Todos os Responsáveis</a></li>
+                <li><a href="{{ action('ResponsaveisController@index') }}">Todos os Responsáveis</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Pacientes </strong><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="{{ url('/admin/pacientes/create') }}">Cadastrar Paciente</a></li>
+                <li><a href="{{ action('PacientesController@create') }}">Cadastrar Paciente</a></li>
                 <li class="divider"></li>
-                <li><a href="{{ url('/admin/pacientes') }}">Todos os Pacientes</a></li>
+                <li><a href="{{ action('PacientesController@index') }}">Todos os Pacientes</a></li>
               </ul>
             </li>
           </ul>

@@ -30,6 +30,6 @@ class UsersController extends Controller
     {
         $user = $this->user->find($id);
         $user->delete();
-        return redirect('/admin/users');
+        return redirect()->back();
     }
 }

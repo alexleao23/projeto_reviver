@@ -42,7 +42,7 @@ class ResponsaveisController extends Controller
     public function store(Request $request)
     {
         Responsavel::create($request->all());
-        return redirect('/admin/responsaveis');
+        return view('responsaveis.index');
     }
 
     /**
@@ -97,7 +97,7 @@ class ResponsaveisController extends Controller
 
 
 
-        return redirect('/admin/responsaveis');
+        return view('responsaveis.index');
     }
 
     /**
@@ -106,10 +106,10 @@ class ResponsaveisController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $responsavel = $this->responsavel->find($id);
-        $responsavel->delete();
-        return redirect('/admin/responsaveis');
-    }
+    // public function destroy($id)
+    // {
+    //     $responsavel = $this->responsavel->find($id);
+    //     $responsavel->delete();
+    //     return redirect('/admin/responsaveis');
+    // }
 }

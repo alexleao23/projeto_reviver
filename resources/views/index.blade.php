@@ -39,7 +39,7 @@
               <div class="icon">
                 <i class="fa fa-user-plus"></i>
               </div>
-              <a href="{{ url('/admin/users/register') }}" class="small-box-footer">
+              <a href="{{ route('register') }}" class="small-box-footer">
                 <b>Cadastrar Usuário</b> <i class="fa fa-plus"></i>
               </a>
             </div>
@@ -57,7 +57,7 @@
               <div class="icon">
                 <i class="fa fa-handshake-o"></i>
               </div>
-              <a href="{{ url('/admin/responsaveis/create') }}" class="small-box-footer">
+              <a href="{{ action('ResponsaveisController@create') }}" class="small-box-footer">
                 <b>Cadastrar responsável</b> <i class="fa fa-plus"></i>
               </a>
             </div>
@@ -73,7 +73,7 @@
               <div class="icon">
                 <i class="fa fa-handshake-o"></i>
               </div>
-              <a href="{{ url('/admin/responsaveis/create') }}" class="small-box-footer">
+              <a href="{{ action('ResponsaveisController@create') }}" class="small-box-footer">
                 <b>Cadastrar responsável</b> <i class="fa fa-plus"></i>
               </a>
             </div>

@@ -38,13 +38,13 @@
                                     <a href="{{ action('ResponsaveisController@show', $responsavel->id) }}" class="btn btn-default"><i class="fa fa-eye"></i> Detalhes </a>
 
                                     <a href="{{ action('ResponsaveisController@edit',$responsavel->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Editar </a>
-                                    @can('delete', App\User::class)
+                                    {{-- @can('delete', App\User::class)
                                         <form action="{{ action('ResponsaveisController@destroy',$responsavel->id) }}" method="POST" style="display: inline">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
                                             <button href="" class="btn btn-danger"><i class="fa fa-trash"></i> Remover</button>
                                         </form>
-                                    @endcan
+                                    @endcan --}}
                                 </td>
                             </tr>
                         @endforeach

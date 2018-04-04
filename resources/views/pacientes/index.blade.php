@@ -20,11 +20,7 @@
                     <thead>
                         <tr>
                             <th>Nome</th>
-                            
-                            <th>
-                                Ações
-                            </th>
-
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,7 +38,7 @@
                                         </form>
                                     @endcan
                                     @can('create', App\User::class)
-                                        <a href="{{ action('PacientesController@questionarioNutricaoCreate', $paciente->id) }}" class="btn btn-default"><i class="fa fa-file-text-o"></i> Questionário </a>
+                                        <a href="{{ route('questionarios_nutricao', $paciente->id) }}" class="btn btn-default"><i class="fa fa-file-text-o"></i> Questionário </a>
                                     @endcan
                                 </td>
                             </tr>
