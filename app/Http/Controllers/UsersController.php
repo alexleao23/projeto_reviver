@@ -20,6 +20,12 @@ class UsersController extends Controller
         return view('users.index', compact('users'));
     }
 
+    public function show($id)
+    {
+        $user = $this->user->find($id);
+        return view('users.show', compact('user'));
+    }
+
     public function destroy($id)
     {
         $user = $this->user->find($id);

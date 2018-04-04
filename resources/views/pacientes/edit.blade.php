@@ -3,7 +3,7 @@
 @section('content-header')
     <h1 style="text-align: center; color: white;">
         Pacientes -
-        <small>Editar</small>
+        <small style="color: white;"><strong>Editar</strong></small>
     </h1>
 @endsection
 @section('content')

@@ -1,9 +1,9 @@
 @extends('partials.template')
 @section('title', 'Cadastrar Paciente | Projeto Reviver')
 @section('content-header')
-  <h1 style="color: white;">
+  <h1 style="text-align: center; color: white;">
   Paciente - 
-    <small style="color: lightgrey;">Cadastrar</small>
+    <small style="color: white;"><strong>Cadastrar</strong></small>
   </h1>
 @endsection
 @section('content')

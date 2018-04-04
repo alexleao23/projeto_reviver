@@ -3,7 +3,7 @@
 @section('content-header')
     <h1 style="text-align: center; color: white;">
         Pacientes -
-        <small>Lista</small>
+        <small style="color: white;"><strong>Lista</strong></small>
     </h1>
 @endsection
 @section('content')
@@ -32,9 +32,7 @@
                             <tr>
                                 <td>{{ $paciente->nome  }}</td>
                                 <td width="430px">
-
                                     <a href="{{ action('PacientesController@show', $paciente->id) }}" class="btn btn-default"><i class="fa fa-eye"></i> Detalhes </a>
-
                                     <a href="{{ action('PacientesController@edit',$paciente->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Editar </a>
                                     @can('delete', App\User::class)
                                         <form action="{{ action('PacientesController@destroy',$paciente->id) }}" method="POST" style="display: inline">
@@ -46,7 +44,6 @@
                                     @can('create', App\User::class)
                                         <a href="{{ action('PacientesController@questionarioNutricaoCreate', $paciente->id) }}" class="btn btn-default"><i class="fa fa-file-text-o"></i> Questionário </a>
                                     @endcan
-
                                 </td>
                             </tr>
                         @endforeach
