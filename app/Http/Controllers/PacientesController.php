@@ -22,7 +22,7 @@ class PacientesController extends Controller
 
     public function index(Request $request)
     {
-        $pacientes = $this->paciente;
+        $pacientes = Paciente::all();
         $query = $this->paciente->newQuery();    
         if($request->has('search')){
             $query->orWhere('nome', 'ilike', "%{$request->get('search')}%");
@@ -30,7 +30,7 @@ class PacientesController extends Controller
         } else {
             $pacientes = $this->paciente->orderBy('id', 'desc')->paginate(10);
         }
-         return view('pacientes.index', compact('pacientes'));
+        return view('pacientes.index', compact('pacientes'));
     }
 
     /**
@@ -53,9 +53,8 @@ class PacientesController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         Paciente::create($request->all());
-        return view('pacientes.index');
+        return redirect('/admin/pacientes');
     }
 
     /**
@@ -91,9 +90,8 @@ class PacientesController extends Controller
         )->validate();
 
         $paciente = $this->paciente->find($id);
-        $responsavel = Responsavel::all();
-
-        return view('pacientes.edit', compact('paciente', 'responsavel'));
+        $responsaveis = Responsavel::all();
+        return view('pacientes.edit', compact('paciente', 'responsaveis'));
     }
 
     /**
@@ -106,13 +104,8 @@ class PacientesController extends Controller
     public function update(Request $request, $id)
     {
         $paciente = $this->paciente->find($id);
-
-        $paciente->fill($request->all());
-
-        // if($paciente->save()){
-        //     Session::flash('mensage_sucesso','Cadastro atualizado com sucesso!');
-        // }
-        return view('pacientes.index');
+        $paciente->update($request->all());
+        return redirect('/admin/pacientes');
     }
 
     /**
@@ -130,7 +123,7 @@ class PacientesController extends Controller
 
     public function questionarioNutricaoCreate($id)
     {
-        $paciente = Paciente::find($id);
+        $paciente = $this->paciente->find($id);
         return view('questionarios_nutricao.create', compact('paciente'));
     }
 
@@ -202,6 +195,6 @@ class PacientesController extends Controller
                 $requestall['estado_nutricional'] = "Desnutrido";
             }
         QuestionarioNutricao::create($requestall);
-        return view('pacientes.index');
+        return redirect('/admin/pacientes');
     }
 }

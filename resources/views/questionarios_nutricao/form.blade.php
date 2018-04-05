@@ -174,7 +174,7 @@
     ],
     'dado'=>null,
     'placeholder'=>'Selecione',
-    'required'=>'required',
+    'required'=>'',
     'class'=>'form-control select2',
     'classdiv'=>''
 ])
@@ -189,7 +189,7 @@
     ],
     'dado'=>null,
     'placeholder'=>'Selecione',
-    'required'=>'required',
+    'required'=>'',
     'class'=>'form-control select2',
     'classdiv'=>''
 ])
@@ -215,7 +215,7 @@
     ],
     'dado'=>null,
     'placeholder'=>'Selecione',
-    'required'=>'required',
+    'required'=>'',
     'class'=>'form-control select2',
     'classdiv'=>''
 ])
@@ -614,7 +614,7 @@
             ],
             'dado'=>null,
             'placeholder'=>'Selecione',
-            'required'=>'required',
+            'required'=>'',
             'class'=>'form-control select2',
             'classdiv'=>''
         ])
@@ -646,7 +646,7 @@
     ],
     'dado'=>null,
     'placeholder'=>'Selecione',
-    'required'=>'required',
+    'required'=>'',
     'class'=>'form-control select2',
     'classdiv'=>''
 ])
@@ -662,7 +662,7 @@
     ],
     'dado'=>null,
     'placeholder'=>'Selecione',
-    'required'=>'required',
+    'required'=>'',
     'class'=>'form-control select2',
     'classdiv'=>'protese'
 ])
@@ -681,7 +681,7 @@
             ],
             'dado'=>null,
             'placeholder'=>'Selecione',
-            'required'=>'required',
+            'required'=>'',
             'class'=>'form-control select2',
             'classdiv'=>'protese'
         ])

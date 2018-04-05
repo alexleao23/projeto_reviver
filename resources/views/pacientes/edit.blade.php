@@ -13,8 +13,8 @@
   <!-- /.box-header -->
   <!-- form start -->
   <div class='box-body'>
-    {{ Form::model($paciente, ['url'=>action('PacientesController@update', $paciente->id), 'method'=>'PUT']) }}
-      @include('pacientes.form')
+    {{ Form::model($paciente, ['action'=>['PacientesController@update', $paciente->id], 'method'=>'PUT']) }}
+      @include('pacientes.form', ['responsaveis' => $responsaveis])
     {{ Form::close() }}
     </div>
   </div>

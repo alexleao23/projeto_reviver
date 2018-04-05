@@ -25,9 +25,9 @@ class Paciente extends Model
     	return $this->belongsTo(Responsavel::class);
     }
 
-    public function questionarioNutricao()
+    public function questionarionutricao()
     {
-    	return $this->hasOne(QuestionarioNutricao::class);
+    	return $this->belongsTo(QuestionarioNutricao::class);
     }
 
     public function getDataNascFormatadaAttribute()

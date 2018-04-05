@@ -13,7 +13,7 @@
   <!-- /.box-header -->
   <!-- form start -->
   <div class='box-body'>
-    {{ Form::model($responsavel, ['url'=>action('ResponsaveisController@update', $responsavel->id), 'method'=>'PUT']) }}
+    {{ Form::model($responsavel, ['action'=>['ResponsaveisController@update', $responsavel->id], 'method'=>'PUT']) }}
       @include('responsaveis.form')
     {{ Form::close() }}
     </div>

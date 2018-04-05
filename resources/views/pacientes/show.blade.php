@@ -32,6 +32,7 @@
                         , {{ mb_strtoupper($paciente->complemento) }}
                     @endif
                     </td></tr>
+                    <tr><th>Responsável:</th><td>{{ $paciente->responsavel->nome }}</td></tr>
                 </table>
                 <br>
                 <div class="btn-group pull-right">

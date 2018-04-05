@@ -18,8 +18,8 @@ class ResponsaveisController extends Controller
     }
     public function index(Request $request)
     {
-     $responsavels = $this->responsavel->orderBy('id', 'desc')->paginate(10);
-         return view('responsaveis.index', compact('responsavels'));
+        $responsaveis = $this->responsavel->orderBy('id', 'desc')->paginate(10);
+         return view('responsaveis.index', compact('responsaveis'));
     }
 
     /**
@@ -42,7 +42,7 @@ class ResponsaveisController extends Controller
     public function store(Request $request)
     {
         Responsavel::create($request->all());
-        return view('responsaveis.index');
+        return redirect('/admin/responsaveis');
     }
 
     /**
@@ -73,12 +73,10 @@ class ResponsaveisController extends Controller
     {
         $validator = \Validator::make(
             ['id' => $id],
-
-            ['id' => 'required|integer|exists:pacientes,id']
+            ['id' => 'required|integer|exists:responsavels,id']
         )->validate();
 
         $responsavel = $this->responsavel->find($id);
-
         return view('responsaveis.edit', compact('responsavel'));
     }
 
@@ -92,12 +90,8 @@ class ResponsaveisController extends Controller
     public function update(Request $request, $id)
     {
         $responsavel = $this->responsavel->find($id);
-
-        $responsavel->fill($request->all());
-
-
-
-        return view('responsaveis.index');
+        $responsavel->update($request->all());
+        return redirect('/admin/responsaveis');
     }
 
     /**

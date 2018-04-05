@@ -20,23 +20,16 @@
                     <thead>
                         <tr>
                             <th>Nome</th>
-                            
-                            <th>
-                                Ações
-                            </th>
-
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         {{-- {{ dd($responsavels) }} --}}
-                        @foreach($responsavels as $responsavel)
-
+                        @foreach($responsaveis as $responsavel)
                             <tr>
                                 <td>{{ $responsavel->nome  }}</td>
                                 <td width="410px">
-
                                     <a href="{{ action('ResponsaveisController@show', $responsavel->id) }}" class="btn btn-default"><i class="fa fa-eye"></i> Detalhes </a>
-
                                     <a href="{{ action('ResponsaveisController@edit',$responsavel->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Editar </a>
                                     {{-- @can('delete', App\User::class)
                                         <form action="{{ action('ResponsaveisController@destroy',$responsavel->id) }}" method="POST" style="display: inline">
@@ -53,7 +46,7 @@
 
             </div>
             <div style="text-align: center;">
-                {{ $responsavels->links() }}
+                {{ $responsaveis->links() }}
             </div>
         </div>
     </div>
