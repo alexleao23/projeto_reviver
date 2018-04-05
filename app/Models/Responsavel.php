@@ -15,11 +15,7 @@ class Responsavel extends Model
         $shortname;
         $first = $fullname[0];
         $last = end($fullname);
-        if (count($fullname) < 2) {
-            $shortname = $first;
-        } else {
-            $shortname = $first." ".$last;
-        }
+        count($fullname) < 2 ? $shortname = $first : $shortname = $first." ".$last;
         return $shortname;
     }
 
