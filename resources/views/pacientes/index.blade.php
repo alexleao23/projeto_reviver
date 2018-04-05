@@ -65,7 +65,7 @@
                                         @break
                                     @default
                                         @can('before', App\User::class)
-                                            <div class="btn-group">
+                                            <div class="btn-group" style="position: absolute; margin-left: 3px;">
                                                 <button type="button" class="btn btn-default">Questionários</button>
                                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                                     <span class="caret"></span>
