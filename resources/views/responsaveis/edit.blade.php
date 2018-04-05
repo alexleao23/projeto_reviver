@@ -1,7 +1,7 @@
 @extends('partials.template')
 @section('title', 'Editar Responsável | Projeto Reviver')
 @section('content-header')
-    <h1 style="text-align: center; color: white;">
+    <h1 style="color: white;">
         Responsáveis -
         <small style="color: white;"><strong>Editar</strong></small>
     </h1>

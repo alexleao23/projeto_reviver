@@ -12,9 +12,15 @@ class Responsavel extends Model
     public function getShortNomeAttribute()
     {
         $fullname = explode(' ', $this->nome);
+        $shortname;
         $first = $fullname[0];
         $last = end($fullname);
-        return $shortname = $first." ".$last;
+        if (count($fullname) < 2) {
+            $shortname = $first;
+        } else {
+            $shortname = $first." ".$last;
+        }
+        return $shortname;
     }
 
     public function paciente()

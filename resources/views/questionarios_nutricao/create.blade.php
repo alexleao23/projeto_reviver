@@ -3,7 +3,7 @@
 @section('content-header')
   <h1 style="color: white;">
   Questionário - 
-    <small style="color: lightgrey;">Nutrição</small>
+    <small style="color: white;"><strong>Nutrição</strong></small>
   </h1>
 @endsection
 @section('content')
