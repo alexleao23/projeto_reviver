@@ -24,7 +24,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <div id="particles-js"></div>
+    <div id="particles-js" style="position: fixed;"></div>
     <body class="skin-blue layout-top-nav skin-green" style="height: auto; min-height: 100%;">
         <style>
             .box-body {
