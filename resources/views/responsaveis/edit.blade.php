@@ -7,15 +7,12 @@
     </h1>
 @endsection
 @section('content')
-
   <!-- Your Page Content Here -->
-  <div class="box box-primary" style="z-index: 99">
-  <!-- /.box-header -->
-  <!-- form start -->
-  <div class='box-body'>
-    {{ Form::model($responsavel, ['action'=>['ResponsaveisController@update', $responsavel->id], 'method'=>'PUT']) }}
-      @include('responsaveis.form')
-    {{ Form::close() }}
+    <div class="box box-success">
+        <div class='box-body'>
+            {{ Form::model($responsavel, ['action'=>['ResponsaveisController@update', $responsavel->id], 'method'=>'PUT']) }}
+                @include('responsaveis.form')
+            {{ Form::close() }}
+        </div>
     </div>
-  </div>
 @endsection

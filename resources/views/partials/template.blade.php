@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="{{ asset('bower_components/AdminLTE/dist/css/skins/_all-skins.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('bower_components/AdminLTE/plugins/select2/select2.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('bower_components/AdminLTE/plugins/iCheck/all.css') }}">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,9 +28,14 @@
     <div id="particles-js" style="position: fixed;"></div>
     <body class="skin-blue layout-top-nav skin-green" style="height: auto; min-height: 100%;">
         <style>
-            .box-body {
-              padding-left: 30px;
-              padding-right: 30px;
+            .box-success {
+                z-index: 99;
+            }
+            h3 {
+                text-align: center;
+            }
+            .index {
+                text-align: left;
             }
         </style>
         <div class="wrapper" style="height: auto; min-height: 100%;">
@@ -68,6 +74,13 @@
 <script src="{{ asset('particlesjs/particles.js') }}"></script>
 <script src="{{ asset('jquerymask/src/jquery.mask.js') }}"></script>
 <script src="{{ asset('bower_components/AdminLTE/plugins/select2/select2.full.min.js') }}"></script>
+<script src="{{ asset('bower_components/AdminLTE/plugins/iCheck/icheck.min.js') }}"></script>
+<script>
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass: 'iradio_flat-green'
+    });
+</script>
 <script>
 $(function () {
   $(".select2").select2();

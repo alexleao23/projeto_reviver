@@ -1,15 +1,13 @@
 {{-- Form de paciente separado por tipo de dado --}}
-<h3 style="margin-top: 1%">Dados pessoais</h3>
-
+<h3>Dados pessoais</h3>
 {{-- Campo de nome --}}
 @include('form_build.text', [
     'nome'=>'nome',
     'label'=>'Nome Completo',
     'class'=>'form-control',
     'placeholder'=>'Ex.: João Pereira da Silva',
-    'dado'=>null,
     'classicon'=>'glyphicon glyphicon-user',
-    'classdiv'=>''
+    'classdiv'=>'col-md-8'
 ])
 
 {{-- Campo de CPF --}}
@@ -18,24 +16,29 @@
     'label'=>'CPF',
     'class'=>'form-control cpf',
     'placeholder'=>'Ex.: 000.000.000-00',
-    'dado'=>null,
     'classicon'=>'glyphicon glyphicon-user',
-    'classdiv'=>''
+    'classdiv'=>'col-md-4'
 ])
 
 {{-- Campo de sexo --}}
-@include('form_build.select', [
+@include('form_build.radio', [
     'nome'=>'sexo',
     'label'=>'Sexo',
     'opcoes'=>[
-        'Masculino'=>'Masculino',
-        'Feminino'=>'Feminino'
+        'Masculino',
+        'Feminino'
     ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-3'
+])
+
+{{-- Campo de celular --}}
+@include('form_build.text', [
+    'nome'=>'celular',
+    'label'=>'Celular',
+    'class'=>'form-control telefone',
+    'placeholder'=>'Ex.: 99999-9999',
+    'classicon'=>'glyphicon glyphicon-earphone',
+    'classdiv'=>'col-md-3'
 ])
 
 {{-- Data de nascimento --}}
@@ -46,7 +49,7 @@
     'placeholder'=>'Ex.: 01/01/1990',
     'dado'=>($responsavel->data_nasc)? $responsavel->data_nasc_formatada : null,
     'classicon'=>'fa fa-calendar',
-    'classdiv'=>''
+    'classdiv'=>'col-md-3'
 ])
 
 {{-- Campo de estado civil --}}
@@ -61,25 +64,11 @@
         'Viúvo(a)'=>'Viúvo(a)',
         'Outros'=>'Outros'
     ],
-    'dado'=>null,
     'placeholder'=>'Selecione',
     'required'=>'required',
     'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-3'
 ])
-
-{{-- Campo de celular --}}
-@include('form_build.text', [
-    'nome'=>'celular',
-    'label'=>'Celular',
-    'class'=>'form-control telefone',
-    'placeholder'=>'Ex.: 99999-9999',
-    'dado'=>null,
-    'classicon'=>'glyphicon glyphicon-earphone',
-    'classdiv'=>''
-])
-
-<h3>Localização</h3>
 
 {{-- Campo de Endereço --}}
 @include('form_build.text', [
@@ -87,9 +76,8 @@
     'label'=>'Endereço',
     'class'=>'form-control',
     'placeholder'=>'Ex: Avenida Henrique Galúcio, 1221',
-    'dado'=>null,
     'classicon'=>'fa fa-home',
-    'classdiv'=>''
+    'classdiv'=>'col-md-4'
 ])
 
 {{-- Campo de Bairro --}}
@@ -98,9 +86,8 @@
     'label'=>'Bairro',
     'class'=>'form-control',
     'placeholder'=>'Ex: Centro',
-    'dado'=>null,
     'classicon'=>'fa fa-location-arrow',
-    'classdiv'=>''
+    'classdiv'=>'col-md-4'
 ])
 
 {{-- Campo de Complemento --}}
@@ -109,9 +96,8 @@
     'label'=>'Complemento',
     'class'=>'form-control',
     'placeholder'=>'Ex: Apartamento, Condominio, etc',
-    'dado'=>null,
     'classicon'=>'fa fa-address-book',
-    'classdiv'=>''
+    'classdiv'=>'col-md-4'
 ])
 
 {{-- Botões abaixo dos campos --}}

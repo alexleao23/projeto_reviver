@@ -7,14 +7,12 @@
   </h1>
 @endsection
 @section('content')
-  <!-- Your Page Content Here -->
-  <div class="box box-primary" style="z-index: 99;">
-  <!-- /.box-header -->
-  <!-- form start -->
-  <div class='box-body'>
-    {{ Form::model($paciente, ['action'=>'PacientesController@store']) }}
-      @include('pacientes.form', ['responsaveis' => $responsaveis])
-    {{ Form::close() }}
-    </div>
-  </div>
+  	<!-- Your Page Content Here -->
+	<div class="box box-success">
+	    <div class='box-body'>
+			{{ Form::model($paciente, ['action'=>'PacientesController@store']) }}
+				@include('pacientes.form', ['responsaveis' => $responsaveis])
+			{{ Form::close() }}
+		</div>
+	</div>
 @endsection

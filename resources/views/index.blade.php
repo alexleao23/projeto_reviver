@@ -33,7 +33,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>{{ count($users) }}</h3>
+                <h3 class="index">{{ count($users) }}</h3>
                 <p><strong>Usuários cadastrados</strong></p>
               </div>
               <div class="icon">
@@ -51,7 +51,7 @@
             <!-- small box -->
             <div class="small-box bg-red">
               <div class="inner">
-                <h3>{{ count($responsaveis) }}</h3>
+                <h3 class="index">{{ count($responsaveis) }}</h3>
                 <p><b>Responsáveis cadastrados</b></p>
               </div>
               <div class="icon">
@@ -67,7 +67,7 @@
             <!-- small box -->
             <div class="small-box bg-red">
               <div class="inner">
-                <h3>{{ count($responsaveis) }}</h3>
+                <h3 class="index">{{ count($responsaveis) }}</h3>
                 <p><b>Responsáveis cadastrados</b></p>
               </div>
               <div class="icon">
@@ -85,7 +85,7 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>{{ count($pacientes) }}</h3>
+              <h3 class="index">{{ count($pacientes) }}</h3>
               <p><strong>Pacientes cadastrados</strong></p>
             </div>
             <div class="icon">
@@ -101,7 +101,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3><i class="fa fa-info-circle"></i></h3>
+              <h3 class="index"><i class="fa fa-info-circle"></i></h3>
               <p><b>Sobre o sistema</b></p>
             </div>
             <div class="icon">
