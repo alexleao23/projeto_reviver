@@ -26,8 +26,7 @@
     'opcoes'=>[
         'Masculino',
         'Feminino'
-    ],
-    'classdiv'=>'col-md-4'
+    ]
 ])
 
 {{-- Campo de celular --}}
@@ -106,7 +105,7 @@
     'classicon'=>'fa fa-address-book',
     'classdiv'=>'col-md-4'
 ])
-
+<div class="divider"></div>
 <h3>Questionário</h3>
 {{-- Você fuma? --}}
 @include('form_build.radio', [
@@ -120,59 +119,52 @@
 ])
 
 {{-- Se PAROU, Há quanto tempo parou? --}}
-<div class="box box-success tempofuma" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        @include('form_build.text', [
-            'nome'=>'tempo_fuma',
-            'label'=>'Há quanto tempo parou?',
-            'placeholder'=>'Ex.: Dois meses'
-        ])
-    </div>
-</div>
+@include('form_build.text', [
+    'nome'=>'tempo_fuma',
+    'label'=>'Se PAROU, há quanto tempo?',
+    'placeholder'=>'Ex.: Dois meses',
+    'classdiv'=>'col-md-12'
+])
 
 {{-- Você consome alguma bebida alcoólica? --}}
 {{-- Precisa ajeitar no js --}}
 @include('form_build.radio', [
     'nome'=>'bebida_alcoolica',
-    'label'=>'Você consome alguma bebida alcoólica?'
+    'label'=>'Você consome alguma bebida alcoólica?',
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Se SIM, quantos dias no mês? --}}
-<div class="box box-success quantobebe" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        @include('form_build.select', [
-            'nome'=>'quantos_dias_mes',
-            'label'=>'Quantos dias no mês?',
-            'opcoes'=>[
-                'Raramente'=>'Raramente',
-                '1 dia no mês'=>'1 dia no mês',
-                '2-5 dias'=>'2-5 dias',
-                '5-10 dias'=>'5-10 dias',
-                'Mais de 10 dias'=>'Mais de 10 dias'
-            ],
-            'placeholder'=>'Selecione',
-            'class'=>'form-control select2'
-        ])
-    </div>
-</div>
+@include('form_build.select', [
+    'nome'=>'quantos_dias_mes',
+    'label'=>'Se SIM, quantos dias no mês?',
+    'opcoes'=>[
+        'Raramente'=>'Raramente',
+        '1 dia no mês'=>'1 dia no mês',
+        '2-5 dias'=>'2-5 dias',
+        '5-10 dias'=>'5-10 dias',
+        'Mais de 10 dias'=>'Mais de 10 dias'
+    ],
+    'placeholder'=>'Selecione',
+    'class'=>'form-control select2',
+    'classdiv'=>'col-md-12'
+])
 
 {{-- Você realiza alguma atividade física? --}}
 {{-- Precisa ajeitar no js --}}
 @include('form_build.radio', [
     'nome'=>'atividade_fisica',
-    'label'=>'Você realiza alguma atividade física?'
+    'label'=>'Você realiza alguma atividade física?',
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Se SIM, quais atividades físicas? --}}
- <div class="box box-success atividadefisica" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        @include('form_build.text', [
-            'nome'=>'quais_atividades_fisicas',
-            'label'=>'Quais atividades físicas?',
-            'placeholder'=>'Ex.: Corrida, Natação'
-        ])
-    </div>
-</div>
+@include('form_build.text', [
+    'nome'=>'quais_atividades_fisicas',
+    'label'=>'Se SIM, quais atividades físicas?',
+    'placeholder'=>'Ex.: Corrida, Natação',
+    'classdiv'=>'col-md-12'
+])
 
 {{-- Qual a sua escolaridade? --}}
 @include('form_build.select', [
@@ -191,7 +183,7 @@
     'placeholder'=>'Selecione',
     'required'=>'required',
     'class'=>'form-control select2',
-    'classdiv'=>'col-md-6'
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Como ficou sabendo do Projeto Reviver? --}}
@@ -207,19 +199,16 @@
     'placeholder'=>'Selecione',
     'required'=>'required',
     'class'=>'form-control select2 comoconheceu',
-    'classdiv'=>'col-md-6'
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Se Outro, Por onde ficou sabendo do projeto --}}
-<div class="box box-success outros" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        @include('form_build.text', [
-            'nome'=>'por_onde',
-            'label'=>'Qual outra forma?',
-            'placeholder'=>'Ex.: TV'
-        ])
-    </div>
-</div>
+@include('form_build.text', [
+    'nome'=>'por_onde',
+    'label'=>'Se Outros, de que outra forma?',
+    'placeholder'=>'Ex.: TV',
+    'classdiv'=>'col-md-12'
+])
 
 {{-- Qual o melhor dia para atendimento? --}}
 @include('form_build.select', [
@@ -264,7 +253,7 @@
     'placeholder'=>'Selecione',
     'required'=>'required',
     'class'=>'form-control select2',
-    'classdiv'=>'col-md-6'
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Há quanto tempo possui a doença? --}}
@@ -280,159 +269,143 @@
     'placeholder'=>'Selecione',
     'required'=>'required',
     'class'=>'form-control select2 tempodoenca',
-    'classdiv'=>'col-md-6'
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Se Outro, há quanto tempo? --}}
-<div class="box box-success outrostempo" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        @include('form_build.text', [
-            'nome'=>'tempo_outro',
-            'label'=>'Há quanto tempo?',
-            'placeholder'=>'Ex.: 10 anos'
-        ])
-    </div>
-</div>
+@include('form_build.text', [
+    'nome'=>'tempo_outro',
+    'label'=>'Se Outro, há quanto tempo?',
+    'placeholder'=>'Ex.: 10 anos',
+    'classdiv'=>'col-md-12'
+])
 
 {{-- Você tem se sentido incapaz de realizar atividades domésticas habituais devido à sua doença? --}}
 {{-- Precisa ajeitar no js --}}
 @include('form_build.radio', [
     'nome'=>'incapaz_realizar_atividades_domesticas',
     'label'=>'Você tem se sentido incapaz de realizar atividades domésticas habituais devido à sua doença?',
-    'classdiv'=>'col-md-6'
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Se SIM, quais atividades? --}}
-<div class="box box-success campodomestica" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        @include('form_build.text', [
-            'nome'=>'quais_atividades',
-            'label'=>'Quais atividades?',
-            'placeholder'=>'Ex.: Varrer a casa'
-        ])
-    </div>
-</div>
+@include('form_build.text', [
+    'nome'=>'quais_atividades',
+    'label'=>'Quais atividades?',
+    'placeholder'=>'Ex.: Varrer a casa',
+    'classdiv'=>'col-md-12'
+])
 
 {{-- Seu estado de saúde tem interferido nas suas atividades de lazer ou divertimento? --}}
 {{-- Precisa ajeitar no js --}}
 @include('form_build.radio', [
     'nome'=>'interferido_atividades_lazer',
     'label'=>'Seu estado de saúde tem interferido nas suas atividades de lazer ou divertimento?',
-    'classdiv'=>'col-md-6'
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Se SIM, de que maneira? --}}
-<div class="box box-success maneira" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        @include('form_build.text', [
-            'nome'=>'de_que_maneira',
-            'label'=>'De que maneira?',
-            'placeholder'=>'Ex.: Impedindo que eu saia de casa'
-        ])
-    </div>
-</div>
+@include('form_build.text', [
+    'nome'=>'de_que_maneira',
+    'label'=>'De que maneira?',
+    'placeholder'=>'Ex.: Impedindo que eu saia de casa',
+    'classdiv'=>'col-md-12'
+])
 
 {{-- Paciente faz uso de medicamentos? --}}
 {{-- Precisa ajeitar no js --}}
 @include('form_build.radio', [
     'nome'=>'uso_medicamentos',
-    'label'=>'Paciente faz uso de medicamentos?'
+    'label'=>'Paciente faz uso de medicamentos?',
+    'classdiv'=>'col-md-12'
 ])
 
-{{-- Se SIM --}}
-<div class="box box-success campousamedicamentos" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        {{-- Quais medicamentos utiliza? --}}
-        @include('form_build.text', [
-            'nome'=>'nome_medicamentos',
-            'label'=>'Quais medicamentos utiliza?',
-            'placeholder'=>'Ex.: Paracetamol, Doril'
-        ])
+{{-- Se SIM, quais medicamentos utiliza? --}}
+@include('form_build.text', [
+    'nome'=>'nome_medicamentos',
+    'label'=>'Se SIM, quais medicamentos utiliza?',
+    'placeholder'=>'Ex.: Paracetamol, Doril',
+    'classdiv'=>'col-md-4'
+])
 
-        {{-- Qual a dosagem? --}}
-        @include('form_build.text', [
-            'nome'=>'dose',
-            'label'=>'Qual a dosagem?',
-            'placeholder'=>'Ex.: Dois comprimidos ao dia'
-        ])
+{{-- Qual a dosagem? --}}
+@include('form_build.text', [
+    'nome'=>'dose',
+    'label'=>'Se SIM, qual a dosagem?',
+    'placeholder'=>'Ex.: Dois comprimidos ao dia',
+    'classdiv'=>'col-md-4'
+])
 
-        {{-- Quais horários? --}}
-        @include('form_build.text', [
-            'nome'=>'horarios',
-            'label'=>'Quais horários toma os medicamentos?',
-            'placeholder'=>'Quais horários?'
-        ])
+{{-- Quais horários? --}}
+@include('form_build.text', [
+    'nome'=>'horarios',
+    'label'=>'Se SIM, quais horários toma os medicamentos?',
+    'placeholder'=>'Ex.: Manhã',
+    'classdiv'=>'col-md-4'
+])
 
-        {{-- Se SIM, sob prescrição médica? --}}
-        @include('form_build.radio', [
-            'nome'=>'sob_prescricao',
-            'label'=>'Sob prescrição médica?'
-        ])
+{{-- Se SIM, sob prescrição médica? --}}
+@include('form_build.radio', [
+    'nome'=>'sob_prescricao',
+    'label'=>'Se SIM, sob prescrição médica?',
+    'classdiv'=>'col-md-12'
+])
 
-        {{-- Se SIM, qual médico prescreveu os medicamentos? --}}
-        @include('form_build.text', [
-            'nome'=>'medico_prescreveu',
-            'label'=>'Qual médico prescreveu os medicamentos?',
-            'placeholder'=>'Ex.: Dr. Pedro Santos',
-            'classdiv'=>'campomedico'
-        ])
-    </div>
-</div>
+{{-- Se SIM, qual médico prescreveu os medicamentos? --}}
+@include('form_build.text', [
+    'nome'=>'medico_prescreveu',
+    'label'=>'Se SIM, qual médico prescreveu os medicamentos?',
+    'placeholder'=>'Ex.: Dr. Pedro Santos',
+    'classdiv'=>'col-md-12'
+])
 
 {{-- Você faz algum tratamento sem medicamentos? --}}
 {{-- Precisa ajeitar no js --}}
 @include('form_build.radio', [
     'nome'=>'tratamento_smed',
-    'label'=>'Você faz algum tratamento sem medicamentos?'
+    'label'=>'Você faz algum tratamento sem medicamentos?',
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Se SIM, quais tratamentos? --}}
-<div class="box box-success tratamentossemmed" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        @include('form_build.text', [
-            'nome'=>'quais_tratamentos',
-            'label'=>'Quais tratamentos?',
-            'placeholder'=>'Ex.: Fisioterapia'
-        ])
-    </div>
-</div>
+@include('form_build.text', [
+    'nome'=>'quais_tratamentos',
+    'label'=>'Se SIM, quais tratamentos?',
+    'placeholder'=>'Ex.: Fisioterapia',
+    'classdiv'=>'col-md-12'
+])
 
 {{-- Você realiza alguma atividade de lazer ou divertimento? --}}
 {{-- Precisa ajeitar no js --}}
 @include('form_build.radio', [
     'nome'=>'atividades_lazer',
-    'label'=>'Você realiza alguma atividade de lazer ou divertimento?'
+    'label'=>'Você realiza alguma atividade de lazer ou divertimento?',
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Se SIM, quais atividades de lazer? --}}
-<div class="box box-success campolazer" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        @include('form_build.text', [
-            'nome'=>'quais_atividades_lazer',
-            'label'=>'Quais atividades de lazer?',
-            'placeholder'=>'Ex.: Jogar bola'
-        ])
-    </div>
-</div>
+@include('form_build.text', [
+    'nome'=>'quais_atividades_lazer',
+    'label'=>'Se SIM, quais atividades de lazer ou divertimento?',
+    'placeholder'=>'Ex.: Jogar bola',
+    'classdiv'=>'col-md-12'
+])
 
 {{-- Você participa de atividades religiosas? --}}
 {{-- Precisa ajeitar no js --}}
 @include('form_build.radio', [
     'nome'=>'atividades_religiosas',
     'label'=>'Você participa de atividades religiosas?',
-    'classdiv'=>'col-md-4'
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Se SIM, quais atividades religiosas? --}}
-<div class="box box-success atividadereligiosa" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        @include('form_build.text', [
-            'nome'=>'quais_atividades_religiosas',
-            'label'=>'Quais atividades religiosas?',
-            'placeholder'=>'Ex.: Evangelizar'
-        ])
-    </div>
-</div>
+@include('form_build.text', [
+    'nome'=>'quais_atividades_religiosas',
+    'label'=>'Se SIM, quais atividades religiosas?',
+    'placeholder'=>'Ex.: Evangelizar',
+    'classdiv'=>'col-md-12'
+])
 
 {{-- Como você costuma se locomover? --}}
 @include('form_build.radio', [

@@ -1,3 +1,4 @@
+
 {{-- Form de questionário de nutrição --}}
 {{--  IMC, PONTUAÇÃO-IMC e PONTUAÇÃO-TRIAGEM, --}}
 <h3 style="margin-top: 1%">História Clínica</h3>
@@ -11,7 +12,7 @@
     'placeholder'=>'Selecione',
     'required'=>'required',
     'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-4'
 ])
 
 {{-- Antecedentes Familiares --}}
@@ -26,9 +27,9 @@
     ],
     'dado'=>null,
     'dataplaceholder'=>'Selecione',
-    'required'=>'',
+    'required'=>'required',
     'class'=>'form-control select2',
-    'classdiv'=>'',
+    'classdiv'=>'col-md-4',
     'multiple'=>'multiple'
 ])
 
@@ -46,89 +47,64 @@
     ],
     'dado'=>null,
     'dataplaceholder'=>'Selecione',
-    'required'=>'',
+    'required'=>'required',
     'class'=>'form-control select2',
-    'classdiv'=>'',
+    'classdiv'=>'col-md-4',
     'multiple'=>'multiple'
 ])
 
 {{-- Presença de Doenças --}}
 {{-- Precisa ajeitar no js --}}
-@include('form_build.select', [
+@include('form_build.radio', [
     'nome'=>'presenca_doencas',
     'label'=>'Presença de Doenças',
-    'opcoes'=>[
-        'NÃO'=>'NÃO',
-        'SIM'=>'SIM'
-    ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'required',
-    'class'=>'form-control select2 presencadoencas',
-    'classdiv'=>''
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Se SIM, quais doenças? --}}
-<div class="box box-success quaisdoencas" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        @include('form_build.select-multi', [
-            'nome'=>'quais_doencas',
-            'label'=>'Quais doenças?',
-            'opcoes'=>[
-                'Diabetes'=>'Diabetes',
-                'Hipertensão'=>'Hipertensão',
-                'Câncer'=>'Câncer',
-                'Artrite Reumatóide'=>'Artrite Reumatóide',
-                'Inflamações'=>'Inflamações',
-                'Infecções'=>'Infecções',
-                'Febre'=>'Febre',
-                'Diarréia'=>'Diarréia'
-            ],
-            'dado'=>null,
-            'dataplaceholder'=>'Selecione',
-            'required'=>'',
-            'class'=>'form-control select2',
-            'classdiv'=>'',
-            'multiple'=>'multiple'
-        ])
-
-        {{-- Se Outros, quais outros? --}}
-        @include('form_build.text', [
-            'nome'=>'outros_doencas',
-            'label'=>'Se houverem outras, quais são?',
-            'class'=>'form-control',
-            'placeholder'=>'Ex.: Sinusite, Rinite',
-            'dado'=>null,
-            'classicon'=>'',
-            'classdiv'=>''
-        ])
-    </div>
-</div>
-
-{{-- Uso de medicamentos ou suplemento vitamínico-mineral --}}
-@include('form_build.select', [
-    'nome'=>'medicamento_suplemento',
-    'label'=>'Uso de medicamentos ou suplemento vitamínico-mineral',
+@include('form_build.select-multi', [
+    'nome'=>'quais_doencas',
+    'label'=>'Se SIM, quais doenças?',
     'opcoes'=>[
-        'NÃO'=>'NÃO',
-        'SIM'=>'SIM'
+        'Diabetes'=>'Diabetes',
+        'Hipertensão'=>'Hipertensão',
+        'Câncer'=>'Câncer',
+        'Artrite Reumatóide'=>'Artrite Reumatóide',
+        'Inflamações'=>'Inflamações',
+        'Infecções'=>'Infecções',
+        'Febre'=>'Febre',
+        'Diarréia'=>'Diarréia'
     ],
     'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'required',
-    'class'=>'form-control select2 vitaminico',
-    'classdiv'=>''
+    'dataplaceholder'=>'Selecione',
+    'required'=>'',
+    'class'=>'form-control select2',
+    'classdiv'=>'col-md-12',
+    'multiple'=>'multiple'
 ])
 
+{{-- Se Outros, quais outros? --}}
+@include('form_build.text', [
+    'nome'=>'outros_doencas',
+    'label'=>'Se Outros, quais são?',
+    'class'=>'form-control',
+    'placeholder'=>'Ex.: Sinusite, Rinite',
+    'classdiv'=>'col-md-12'
+])
+
+{{-- Uso de medicamentos ou suplemento vitamínico-mineral --}}
+@include('form_build.radio', [
+    'nome'=>'medicamento_suplemento',
+    'label'=>'Uso de medicamentos ou suplemento vitamínico-mineral',
+    'classdiv'=>'col-md-12'
+])
 {{-- Se SIM, qual o nome do medicamento ou suplemento vitamínico-mineral? --}}
 @include('form_build.text', [
     'nome'=>'nome_medicamento',
     'label'=>'Se SIM, qual o nome do medicamento ou suplemento vitamínico-mineral?',
     'class'=>'form-control',
     'placeholder'=>'Ex.:',
-    'dado'=>null,
-    'classicon'=>'',
-    'classdiv'=>''
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Início do tratamento --}}
@@ -137,9 +113,7 @@
     'label'=>'Início do tratamento',
     'class'=>'form-control',
     'placeholder'=>'Ex.: 6 meses atrás',
-    'dado'=>null,
-    'classicon'=>'',
-    'classdiv'=>''
+    'classdiv'=>'col-md-4'
 ])
 
 {{-- Posologia --}}
@@ -148,9 +122,7 @@
     'label'=>'Posologia',
     'class'=>'form-control',
     'placeholder'=>'Ex.: Duas vezes ao dia',
-    'dado'=>null,
-    'classicon'=>'',
-    'classdiv'=>''
+    'classdiv'=>'col-md-4'
 ])
 
 {{-- FF (não sei o que é) --}}
@@ -159,67 +131,35 @@
     'label'=>'FF',
     'class'=>'form-control',
     'placeholder'=>'Ex.:',
-    'dado'=>null,
-    'classicon'=>'',
-    'classdiv'=>''
+    'classdiv'=>'col-md-4'
 ])
 
 {{-- Toma em jejum? --}}
-@include('form_build.select', [
+@include('form_build.radio', [
     'nome'=>'jejum',
-    'label'=>'Toma em jejum?',
-    'opcoes'=>[
-        'NÃO'=>'NÃO',
-        'SIM'=>'SIM'
-    ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'label'=>'Toma em jejum?'
 ])
 
 {{-- Toma próximo a algum alimento ou refeição? --}}
-@include('form_build.select', [
+@include('form_build.radio', [
     'nome'=>'toma_prox_alimento',
-    'label'=>'Toma próximo a algum alimento ou refeição?',
-    'opcoes'=>[
-        'NÃO'=>'NÃO',
-        'SIM'=>'SIM'
-    ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'label'=>'Toma próximo a algum alimento ou refeição?'
+])
+
+{{-- Toma com algum líquido? --}}
+@include('form_build.radio', [
+    'nome'=>'toma_liquido',
+    'label'=>'Toma com algum líquido?'
 ])
 
 {{-- Se SIM, quais refeições? --}}
 @include('form_build.text', [
     'nome'=>'quais_refeicoes',
-    'label'=>'Se SIM, quais refeições?',
+    'label'=>'Quais refeições?',
     'class'=>'form-control',
-    'placeholder'=>'Ex.:',
-    'dado'=>null,
-    'classicon'=>'',
-    'classdiv'=>''
+    'placeholder'=>'Ex.:'
 ])
-
-{{-- Toma com algum líquido? --}}
-@include('form_build.select', [
-    'nome'=>'toma_liquido',
-    'label'=>'Toma com algum líquido?',
-    'opcoes'=>[
-        'NÃO'=>'NÃO',
-        'SIM'=>'SIM'
-    ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'',
-    'class'=>'form-control select2',
-    'classdiv'=>''
-])
-
+<div class="divider"></div>
 <h3>Avaliação Triagem</h3>
 
 {{-- Nos últimos três meses houve diminuição da ingesta alimentar devido a perda de apetite, problemas digestivos ou dificuldade para mastigar ou deglutir? --}}
@@ -229,13 +169,12 @@
     'opcoes'=>[
         0 =>'Diminuição grave da ingesta',
         1 =>'Diminuição moderada da ingesta',
-        2 => 'Sem diminuição da ingesta'
+        2 =>'Sem diminuição da ingesta'
     ],
-    'dado'=>null,
     'placeholder'=>'Selecione',
     'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-12',
+    'class'=>'form-control select2'
 ])
 
 {{-- Perda de peso nos últimos 3 meses --}}
@@ -245,14 +184,13 @@
     'opcoes'=>[
         0 =>'Superior a três quilos',
         1 =>'Não sabe informar',
-        2 => 'Entre um e três quilos',
-        3 => 'Não houve perda de peso'
+        2 =>'Entre um e três quilos',
+        3 =>'Não houve perda de peso'
     ],
-    'dado'=>null,
     'placeholder'=>'Selecione',
     'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-6',
+    'class'=>'form-control select2'
 ])
 
 {{-- Mobilidade --}}
@@ -262,29 +200,22 @@
     'opcoes'=>[
         0 =>'Restrito ao leito ou à cadeira de rodas',
         1 =>'Deambula mas não é capaz de sair de casa',
-        2 => 'Normal'
+        2 =>'Normal'
     ],
-    'dado'=>null,
     'placeholder'=>'Selecione',
     'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-6',
+    'class'=>'form-control select2'
 ])
 
 {{-- Passou por algum stress psicológico ou doença aguda nos últimos três meses? --}}
-@include('form_build.select', [
-    'nome'=>'stress_doenca',
-    'label'=>'Passou por algum stress psicológico ou doença aguda nos últimos três meses?',
-    'opcoes'=>[
-        0 =>'Sim',
-        2 => 'Não'
-    ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
-])
+<div class="col-md-12">
+    <div class="form-group">
+        {{ Form::label('stress_doenca', 'Passou por algum stress psicológico ou doença aguda nos últimos três meses?') }}<br>
+        {{ Form::radio('stress_doenca', 0, false, ['class'=>'flat-red']) }} Sim&nbsp;&nbsp;
+        {{ Form::radio('stress_doenca', 2, true, ['class'=>'flat-red']) }} Não&nbsp;&nbsp;
+    </div>
+</div>
 
 {{-- Problemas neuropsicológicos --}}
 @include('form_build.select', [
@@ -293,13 +224,12 @@
     'opcoes'=>[
         0 =>'Demência ou depressão graves',
         1 =>'Demência ligeira',
-        2 => 'Sem problemas psicológicos'
+        2 =>'Sem problemas psicológicos'
     ],
-    'dado'=>null,
     'placeholder'=>'Selecione',
     'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-4',
+    'class'=>'form-control select2'
 ])
 
 {{-- Peso em kg --}}
@@ -308,9 +238,7 @@
     'label'=>'Peso em kg',
     'class'=>'form-control peso',
     'placeholder'=>'Ex.: 98.15',
-    'dado'=>null,
-    'classicon'=>'',
-    'classdiv'=>''
+    'classdiv'=>'col-md-4'
 ])
 
 {{-- Altura em metros --}}
@@ -319,59 +247,47 @@
     'label'=>'Altura em metros',
     'class'=>'form-control altura',
     'placeholder'=>'Ex.: 1.67',
-    'dado'=>null,
-    'classicon'=>'',
-    'classdiv'=>''
+    'classdiv'=>'col-md-4'
 ])
 
 {{-- Triagem End --}}
 
 {{-- Resto das perguntas --}}
+<div class="divider"></div>
 <h3>Avaliação Global</h3>
 
 {{-- O paciente vive em sua própria casa(não em instituição geriátrica ou hospital)? --}}
-@include('form_build.select', [
+@include('form_build.radio2', [
     'nome'=>'vive_emcasa',
     'label'=>'O paciente vive em sua própria casa(não em instituição geriátrica ou hospital)?',
     'opcoes'=>[
-        1 =>'Sim',
-        0 =>'Não'
+        'Não',
+        'Sim'
     ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-12'
 ])
 
-{{-- Utiliza mais de três medicamentos diferentes por dia? --}}
-@include('form_build.select', [
-    'nome'=>'utiliza_muito_medicamentos',
-    'label'=>'Utiliza mais de três medicamentos diferentes por dia?',
-    'opcoes'=>[
-        0 =>'Sim',
-        1 =>'Não'
-    ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
-])
 
 {{-- Possui lesões de pele ou escaras? --}}
-@include('form_build.select', [
+@include('form_build.radio2', [
     'nome'=>'lesoes_pele',
     'label'=>'Possui lesões de pele ou escaras?',
     'opcoes'=>[
-        0 =>'Sim',
-        1 =>'Não'
+        'Sim',
+        'Não'
     ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-12'
+])
+
+{{-- Utiliza mais de três medicamentos diferentes por dia? --}}
+@include('form_build.radio2', [
+    'nome'=>'utiliza_muito_medicamentos',
+    'label'=>'Utiliza mais de três medicamentos diferentes por dia?',
+    'opcoes'=>[
+        'Sim',
+        'Não'
+    ],
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Quantas refeições faz por dia? --}}
@@ -383,93 +299,63 @@
         1 =>'Duas refeições',
         2 =>'Três refeições'
     ],
-    'dado'=>null,
     'placeholder'=>'Selecione',
     'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-12',
+    'class'=>'form-control select2'
 ])
 
-<b>O paciente consome</b>
+{{-- Pelo menos uma porção diária de leite ou derivados(leite, queijo, iogurte, etc)? --}}
+<div class="col-md-12">
+    <div class="form-group">
+        {{ Form::label('uma_porcao_diaria_leite', 'Pelo menos uma porção diária de leite ou derivados(leite, queijo, iogurte, etc)?') }}<br>
+        {{ Form::radio('uma_porcao_diaria_leite', true, false, ['class'=>'flat-red']) }} Sim&nbsp;&nbsp;
+        {{ Form::radio('uma_porcao_diaria_leite', false, true, ['class'=>'flat-red']) }} Não&nbsp;&nbsp;
+    </div>
+</div>
 
-<div class="box box-success" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        {{-- Pelo menos uma porção diária de leite ou derivados(leite, queijo, iogurte, etc)? --}}
-        @include('form_build.select', [
-            'nome'=>'uma_porcao_diaria_leite',
-            'label'=>'Pelo menos uma porção diária de leite ou derivados(leite, queijo, iogurte, etc)?',
-            'opcoes'=>[
-                true =>'Sim',
-                false =>'Não'
-            ],
-            'dado'=>null,
-            'placeholder'=>'Selecione',
-            'required'=>'required',
-            'class'=>'form-control select2',
-            'classdiv'=>''
-        ])
-        
-        {{-- Duas ou mais porções semanais de leguminosas ou ovos? --}}
-        @include('form_build.select', [
-            'nome'=>'duas_porcoes_semanais_legumes',
-            'label'=>'Duas ou mais porções semanais de leguminosas ou ovos?',
-            'opcoes'=>[
-                true =>'Sim',
-                false =>'Não'
-            ],
-            'dado'=>null,
-            'placeholder'=>'Selecione',
-            'required'=>'required',
-            'class'=>'form-control select2',
-            'classdiv'=>''
-        ])
-        
-        {{-- Carne, peixe ou aves todos os dias? --}}
-        @include('form_build.select', [
-            'nome'=>'carne_peixe_aves',
-            'label'=>'Carne, peixe ou aves todos os dias?',
-            'opcoes'=>[
-                true =>'Sim',
-                false =>'Não'
-            ],
-            'dado'=>null,
-            'placeholder'=>'Selecione',
-            'required'=>'required',
-            'class'=>'form-control select2',
-            'classdiv'=>''
-        ])
+{{-- Duas ou mais porções semanais de leguminosas ou ovos? --}}
+<div class="col-md-12">
+    <div class="form-group">
+        {{ Form::label('duas_porcoes_semanais_legumes', 'Duas ou mais porções semanais de leguminosas ou ovos?') }}<br>
+        {{ Form::radio('duas_porcoes_semanais_legumes', true, false, ['class'=>'flat-red']) }} Sim&nbsp;&nbsp;
+        {{ Form::radio('duas_porcoes_semanais_legumes', false, true, ['class'=>'flat-red']) }} Não&nbsp;&nbsp;
     </div>
 </div>
 
 {{-- O paciente consome duas ou mais porções diárias de frutas ou produtos hortícolas?' --}}
-@include('form_build.select', [
+@include('form_build.radio2', [
     'nome'=>'duas_porcoes_diarias_frutas',
     'label'=>'O paciente consome duas ou mais porções diárias de frutas ou produtos hortícolas?',
     'opcoes'=>[
-        1 =>'Sim',
-        0 =>'Não'
+        'Não',
+        'Sim'
     ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-7'
 ])
+
+{{-- Carne, peixe ou aves todos os dias? --}}
+<div class="col-md-12">
+    <div class="form-group">
+        {{ Form::label('carne_peixe_aves', 'Carne, peixe ou aves todos os dias?') }}<br>
+        {{ Form::radio('carne_peixe_aves', true, false, ['class'=>'flat-red']) }} Sim&nbsp;&nbsp;
+        {{ Form::radio('carne_peixe_aves', false, true, ['class'=>'flat-red']) }} Não&nbsp;&nbsp;
+    </div>
+</div>
 
 {{-- Quantos copos de líquido(água, sumo, café, chá, leite) o paciente consome por dia? --}}
 @include('form_build.select', [
     'nome'=>'liquido_doente_consome_dia',
     'label'=>'Quantos copos de líquido(água, sumo, café, chá, leite) o paciente consome por dia?',
     'opcoes'=>[
-        1 =>'Mais de cinco copos',
         0 =>'Menos de três copos',
-        '0.5'=>'Três a cinco copos'
+        '0.5' =>'Três a cinco copos',
+        1 =>'Mais de cinco copos'
     ],
-    'dado'=>null,
     'placeholder'=>'Selecione',
     'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-7',
+    'class'=>'form-control select2'
 ])
 
 {{-- Modo de se alimentar --}}
@@ -481,11 +367,10 @@
         1 =>'Se alimenta sozinho, mas com dificuldade',
         2 =>'Se alimenta sozinho, sem dificuldade'
     ],
-    'dado'=>null,
     'placeholder'=>'Selecione',
     'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-5',
+    'class'=>'form-control select2'
 ])
 
 {{-- Em comparação com pessoas da mesma idade, como considera o paciente sua própria saúde? --}}
@@ -494,15 +379,14 @@
     'label'=>'Em comparação com pessoas da mesma idade, como considera o paciente sua própria saúde?',
     'opcoes'=>[
         0 =>'Pior',
-        '0.5'=>'Não sabe',
+        '0.5' =>'Não sabe',
         1 =>'Igual',
         2 =>'Melhor'
     ],
-    'dado'=>null,
     'placeholder'=>'Selecione',
     'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-12',
+    'class'=>'form-control select2'
 ])
 
 {{-- Perímetro braquial(PB) em cm --}}
@@ -510,15 +394,14 @@
     'nome'=>'pb',
     'label'=>'Perímetro braquial(PB) em cm',
     'opcoes'=>[
-        0 =>'PB menor que 21',
-        '0.5'=>'PB maior ou igual a 21 e menor ou igual a 22',
-        1 =>'PB maior que 22'
+        0 =>'PB < 21',
+        '0.5' =>'21 <= PB <= 22',
+        1 =>'PB > 22'
     ],
-    'dado'=>null,
     'placeholder'=>'Selecione',
     'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-6',
+    'class'=>'form-control select2'
 ])
 
 {{-- Perímetro da perna(PP) em cm --}}
@@ -526,167 +409,104 @@
     'nome'=>'pp',
     'label'=>'Perímetro da perna(PP) em cm',
     'opcoes'=>[
-        0 =>'PP menor que 31',
-        1 =>'PP maior ou igual a 31'
+        0 =>'PP < 31',
+        1 =>'PP >= 31'
     ],
-    'dado'=>null,
     'placeholder'=>'Selecione',
     'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-6',
+    'class'=>'form-control select2'
 ])
      
 {{-- Resto das perguntas end --}}
 {{-- Avaliação Miofuncional Orofacial --}}
+<div class="divider"></div>
 <h3>Avaliação Miofuncional Orofacial - Aspector Gerais de Alimentação</h3>
 
 {{-- Tempo médio para cada refeição --}}
-@include('form_build.select', [
+@include('form_build.radio', [
     'nome'=>'tempo_medio_refeicao',
     'label'=>'Tempo médio para cada refeição',
     'opcoes'=>[
-        'Até 30 minutos'=>'Até 30 minutos',
-        'Mais de 30 minutos'=>'Mais de 30 minutos'
-    ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+        'Até 30 minutos',
+        'Mais de 30 minutos'
+    ]
 ])
 
 {{-- Postura durante a alimentação --}}
-@include('form_build.select', [
+@include('form_build.radio', [
     'nome'=>'postura_alimentacao',
     'label'=>'Postura durante a alimentação',
     'opcoes'=>[
-        'Sentada'=>'Sentada',
-        'Inclinada'=>'Inclinada'
-    ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+        'Sentada',
+        'Inclinada'
+    ]
 ])
 
 {{-- Auxílio de líquido --}}
-@include('form_build.select', [
+@include('form_build.radio', [
     'nome'=>'aux_liquido',
-    'label'=>'Auxílio de líquido',
-    'opcoes'=>[
-        'SIM'=>'Sim',
-        'NÃO'=>'Não'
-    ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'label'=>'Auxílio de líquido'
 ])
 
 {{-- Restrição de alguma consistência? --}}
 {{-- Precisa ajeitar no js --}}
-@include('form_build.select', [
+@include('form_build.radio', [
     'nome'=>'restricao_consistencia',
     'label'=>'Restrição de alguma consistência?',
-    'opcoes'=>[
-        'SIM'=>'Sim',
-        'NÃO'=>'Não'
-    ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>'restricaoconsistencia'
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Se SIM, qual restrição? --}}
-<div class="box box-success qualconsistencia" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        @include('form_build.select', [
-            'nome'=>'qual_restricao',
-            'label'=>'Qual restrição?',
-            'opcoes'=>[
-                'Sólido'=>'Sólido',
-                'Pastoso'=>'Pastoso',
-                'Líquido'=>'Líquido'
-            ],
-            'dado'=>null,
-            'placeholder'=>'Selecione',
-            'required'=>'',
-            'class'=>'form-control select2',
-            'classdiv'=>''
-        ])
-    </div>
-</div>
+@include('form_build.checkbox', [
+    'nome'=>'qual_restricao',
+    'label'=>'Se SIM, qual restrição?',
+    'opcoes'=>[
+        'Sólido',
+        'Pastoso',
+        'Líquido'
+    ],
+    'classdiv'=>'col-md-12'
+])
 
 {{-- Usa mastigacao? --}}
-@include('form_build.select', [
+@include('form_build.radio', [
     'nome'=>'usa_mastigacao',
     'label'=>'Usa mastigacao?',
-    'opcoes'=>[
-        'SIM'=>'Sim',
-        'NÃO'=>'Não'
-    ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'required',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-3'
 ])
 
 {{-- Dentição --}}
-@include('form_build.select', [
+@include('form_build.radio', [
     'nome'=>'denticao',
     'label'=>'Dentição',
     'opcoes'=>[
-        'Presente'=>'Presente',
-        'Ausente'=>'Ausente'
+        'Presente',
+        'Ausente'
     ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'',
-    'class'=>'form-control select2',
-    'classdiv'=>''
+    'classdiv'=>'col-md-3'
 ])
 
 {{-- Utiliza prótese dentária? --}}
 {{-- Precisa ajeitar no js --}}
-@include('form_build.select', [
+@include('form_build.radio', [
     'nome'=>'protese_dentaria',
     'label'=>'Utiliza prótese dentária?',
-    'opcoes'=>[
-        'SIM'=>'Sim',
-        'NÃO'=>'Não'
-    ],
-    'dado'=>null,
-    'placeholder'=>'Selecione',
-    'required'=>'',
-    'class'=>'form-control select2',
-    'classdiv'=>'protese'
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Se SIM, que tipo de prótese? --}}
-<div class="box box-success qualprotese" style="z-index: 99">
-    <div class='box-body' style="background-color: lightgrey;">
-        @include('form_build.select', [
-            'nome'=>'qual_protese',
-            'label'=>'Que tipo de prótese?',
-            'opcoes'=>[
-                'Total Superior'=>'Total Superior',
-                'Total Inferior'=>'Total Inferior',
-                'Pacial Superior'=>'Pacial Superior',
-                'Parcial Inferior'=>'Parcial Inferior'
-            ],
-            'dado'=>null,
-            'placeholder'=>'Selecione',
-            'required'=>'',
-            'class'=>'form-control select2',
-            'classdiv'=>'protese'
-        ])
-    </div>
-</div>
+@include('form_build.checkbox', [
+    'nome'=>'qual_protese',
+    'label'=>'Se SIM, que tipo de prótese?',
+    'opcoes'=>[
+        'Total Superior',
+        'Total Inferior',
+        'Pacial Superior',
+        'Parcial Inferior'
+    ],
+    'classdiv'=>'col-md-12'
+])
 
 {{-- Botões abaixo dos campos --}}
 <div class="row">

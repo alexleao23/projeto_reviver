@@ -37,6 +37,14 @@
             .index {
                 text-align: left;
             }
+            .divider {
+              height: 1px;
+              width:100%;
+              display:block;
+              margin: 9px 0;
+              overflow: hidden;
+              background-color: #e5e5e5;
+            }
         </style>
         <div class="wrapper" style="height: auto; min-height: 100%;">
             @include('partials.header')
