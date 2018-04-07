@@ -7,7 +7,7 @@
 	<div class="form-group">
 		{{ Form::label($nome, $label) }}<br>
 		@for ($i = 0; $i < count($opcoes); $i++)
-			{{ Form::radio($nome, $opcoes[$i], true,['class'=>$class]) }} {{ $opcoes[$i] }}&nbsp;&nbsp;
+			{{ Form::radio($nome, $opcoes[$i], true, ['class'=>$class]) }} {{ $opcoes[$i] }}&nbsp;&nbsp;
 		@endfor
 	</div>
 </div>

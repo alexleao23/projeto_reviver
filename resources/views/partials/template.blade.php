@@ -89,6 +89,7 @@
       radioClass: 'iradio_flat-green'
     });
 </script>
+</script>
 <script>
 $(function () {
   $(".select2").select2();
@@ -154,11 +155,11 @@ $(function () {
 
     $(".tempofuma").hide();
     $(".fuma").change(function () {
-           if ($(this).val() === "PAROU") {
-                    $(".tempofuma").show();
-                }else{
-                    $(".tempofuma").hide();
-                } 
+       if ($(this).val() === "PAROU") {
+                $(".tempofuma").show();
+            }else{
+                $(".tempofuma").hide();
+            }
     });
 
     $(".campousamedicamentos").hide();

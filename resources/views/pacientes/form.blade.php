@@ -115,7 +115,8 @@
         'SIM',
         'NÃO',
         'PAROU'
-        ]
+    ],
+    'classdiv'=>'col-md-12'
 ])
 
 {{-- Se PAROU, Há quanto tempo parou? --}}
@@ -123,7 +124,7 @@
     'nome'=>'tempo_fuma',
     'label'=>'Se PAROU, há quanto tempo?',
     'placeholder'=>'Ex.: Dois meses',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12',
 ])
 
 {{-- Você consome alguma bebida alcoólica? --}}
