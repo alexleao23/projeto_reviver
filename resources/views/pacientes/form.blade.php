@@ -20,14 +20,13 @@
 ])
 
 {{-- Campo de sexo --}}
-@include('form_build.radio', [
-    'nome'=>'sexo',
-    'label'=>'Sexo',
-    'opcoes'=>[
-        'Masculino',
-        'Feminino'
-    ]
-])
+<div class="col-md-4">
+    <div class="form-group">
+        {{ Form::label('sexo', 'Sexo') }}<br>
+        {{ Form::radio('sexo', 'Masculino', true, ['class'=>'flat-red']) }} Masculino&nbsp;&nbsp;
+        {{ Form::radio('sexo', 'Feminino', false, ['class'=>'flat-red']) }} Feminino&nbsp;&nbsp;
+    </div>
+</div>
 
 {{-- Campo de celular --}}
 @include('form_build.text', [
@@ -108,16 +107,14 @@
 <div class="divider"></div>
 <h3>Questionário</h3>
 {{-- Você fuma? --}}
-@include('form_build.radio', [
-    'nome'=>'fuma',
-    'label'=>'Você fuma?',
-    'opcoes'=>[
-        'SIM',
-        'NÃO',
-        'PAROU'
-    ],
-    'classdiv'=>'col-md-12'
-])
+<div class="col-md-12">
+    <div class="form-group">
+        {{ Form::label('fuma', 'Você fuma?') }}<br>
+        {{ Form::radio('fuma', 'SIM', true, ['class'=>'flat-red']) }} Sim&nbsp;&nbsp;
+        {{ Form::radio('fuma', 'NÃO', false, ['class'=>'flat-red']) }} Não&nbsp;&nbsp;
+        {{ Form::radio('fuma', 'PAROU', false, ['class'=>'flat-red']) }} Parou&nbsp;&nbsp;
+    </div>
+</div>
 
 {{-- Se PAROU, Há quanto tempo parou? --}}
 @include('form_build.text', [
@@ -409,18 +406,16 @@
 ])
 
 {{-- Como você costuma se locomover? --}}
-@include('form_build.radio', [
-    'nome'=>'como_locomover',
-    'label'=>'Como você costuma se locomover?',
-    'opcoes'=>[
-        'Carro',
-        'Transporte Público',
-        'Bicicleta',
-        'Motocicleta',
-        'A pé'
-    ],
-    'classdiv'=>'col-md-8'
-])
+<div class="col-md-12">
+    <div class="form-group">
+        {{ Form::label('como_locomover', 'Como você costuma se locomover?') }}<br>
+        {{ Form::radio('como_locomover', 'Carro', true, ['class'=>'flat-red']) }} Carro&nbsp;&nbsp;
+        {{ Form::radio('como_locomover', 'Transporte Público', false, ['class'=>'flat-red']) }} Transporte Público&nbsp;&nbsp;
+        {{ Form::radio('como_locomover', 'Bicicleta', false, ['class'=>'flat-red']) }} Bicicleta&nbsp;&nbsp;
+        {{ Form::radio('como_locomover', 'Motocicleta', false, ['class'=>'flat-red']) }} Motocicleta&nbsp;&nbsp;
+        {{ Form::radio('como_locomover', 'A pé', false, ['class'=>'flat-red']) }} A pé&nbsp;&nbsp;
+    </div>
+</div>
 
 {{-- Botões abaixo dos campos --}}
 <div class="row">

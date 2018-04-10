@@ -424,24 +424,22 @@
 <h3>Avaliação Miofuncional Orofacial - Aspector Gerais de Alimentação</h3>
 
 {{-- Tempo médio para cada refeição --}}
-@include('form_build.radio', [
-    'nome'=>'tempo_medio_refeicao',
-    'label'=>'Tempo médio para cada refeição',
-    'opcoes'=>[
-        'Até 30 minutos',
-        'Mais de 30 minutos'
-    ]
-])
+<div class="col-md-4">
+    <div class="form-group">
+        {{ Form::label('tempo_medio_refeicao', 'Tempo médio para cada refeição') }}<br>
+        {{ Form::radio('tempo_medio_refeicao', 'Até 30 minutos', true, ['class'=>'flat-red']) }} Até 30 minutos&nbsp;&nbsp;
+        {{ Form::radio('tempo_medio_refeicao', 'Mais de 30 minutos', false, ['class'=>'flat-red']) }} Mais de 30 minutos&nbsp;&nbsp;
+    </div>
+</div>
 
 {{-- Postura durante a alimentação --}}
-@include('form_build.radio', [
-    'nome'=>'postura_alimentacao',
-    'label'=>'Postura durante a alimentação',
-    'opcoes'=>[
-        'Sentada',
-        'Inclinada'
-    ]
-])
+<div class="col-md-4">
+    <div class="form-group">
+        {{ Form::label('postura_alimentacao', 'Postura durante a alimentação') }}<br>
+        {{ Form::radio('postura_alimentacao', 'Sentada', true, ['class'=>'flat-red']) }} Sentada&nbsp;&nbsp;
+        {{ Form::radio('postura_alimentacao', 'Inclinada', false, ['class'=>'flat-red']) }} Inclinada&nbsp;&nbsp;
+    </div>
+</div>
 
 {{-- Auxílio de líquido --}}
 @include('form_build.radio', [
@@ -457,10 +455,10 @@
     'classdiv'=>'col-md-12'
 ])
 
-{{-- Se SIM, qual restrição? --}}
+{{-- Se SIM, quais restrições? --}}
 @include('form_build.checkbox', [
     'nome'=>'qual_restricao',
-    'label'=>'Se SIM, qual restrição?',
+    'label'=>'Se SIM, quais restrições?',
     'opcoes'=>[
         'Sólido',
         'Pastoso',
@@ -477,15 +475,13 @@
 ])
 
 {{-- Dentição --}}
-@include('form_build.radio', [
-    'nome'=>'denticao',
-    'label'=>'Dentição',
-    'opcoes'=>[
-        'Presente',
-        'Ausente'
-    ],
-    'classdiv'=>'col-md-3'
-])
+<div class="col-md-3">
+    <div class="form-group">
+        {{ Form::label('denticao', 'Dentição') }}<br>
+        {{ Form::radio('denticao', 'Presente', true, ['class'=>'flat-red']) }} Presente&nbsp;&nbsp;
+        {{ Form::radio('denticao', 'Ausente', false, ['class'=>'flat-red']) }} Ausente&nbsp;&nbsp;
+    </div>
+</div>
 
 {{-- Utiliza prótese dentária? --}}
 {{-- Precisa ajeitar no js --}}
@@ -495,10 +491,10 @@
     'classdiv'=>'col-md-12'
 ])
 
-{{-- Se SIM, que tipo de prótese? --}}
+{{-- Se SIM, quais tipos de próteses? --}}
 @include('form_build.checkbox', [
     'nome'=>'qual_protese',
-    'label'=>'Se SIM, que tipo de prótese?',
+    'label'=>'Se SIM, quais tipos de próteses?',
     'opcoes'=>[
         'Total Superior',
         'Total Inferior',

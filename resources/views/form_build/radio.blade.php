@@ -1,13 +1,12 @@
 @php
-	$opcoes = $opcoes ?? ['SIM', 'NÃO'];
 	$classdiv = $classdiv ?? 'col-md-4';
-	$class = $class ?? 'flat-red';
+	$class1 = $class1 ?? 'flat-red';
+	$class2 = $class2 ?? 'flat-red';
 @endphp
 <div class={{ $classdiv }}>
 	<div class="form-group">
 		{{ Form::label($nome, $label) }}<br>
-		@for ($i = 0; $i < count($opcoes); $i++)
-			{{ Form::radio($nome, $opcoes[$i], true, ['class'=>$class]) }} {{ $opcoes[$i] }}&nbsp;&nbsp;
-		@endfor
+		{{ Form::radio($nome, 'SIM', true, ['class'=>$class1]) }} Sim&nbsp;&nbsp;
+		{{ Form::radio($nome, 'NÃO', true, ['class'=>$class2]) }} Não&nbsp;&nbsp;
 	</div>
 </div>

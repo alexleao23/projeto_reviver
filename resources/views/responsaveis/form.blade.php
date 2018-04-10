@@ -21,15 +21,13 @@
 ])
 
 {{-- Campo de sexo --}}
-@include('form_build.radio', [
-    'nome'=>'sexo',
-    'label'=>'Sexo',
-    'opcoes'=>[
-        'Masculino',
-        'Feminino'
-    ],
-    'classdiv'=>'col-md-3'
-])
+<div class="col-md-3">
+    <div class="form-group">
+        {{ Form::label('sexo', 'Sexo') }}<br>
+        {{ Form::radio('sexo', 'Masculino', true, ['class'=>'flat-red']) }} Masculino&nbsp;&nbsp;
+        {{ Form::radio('sexo', 'Feminino', false, ['class'=>'flat-red']) }} Feminino&nbsp;&nbsp;
+    </div>
+</div>
 
 {{-- Campo de celular --}}
 @include('form_build.text', [
