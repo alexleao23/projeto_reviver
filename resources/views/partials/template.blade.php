@@ -254,16 +254,14 @@ $(function () {
     if ($('[name=uso_medicamentos]:checked').val() === 'NÃO')
     {
         $('.campousamedicamentos').hide()
-        // $('.prescrito').addClass('radiohide');
     }
 
     $('.usamedicamentos').bind('ifChecked uncheck', function() {
         if (this.value == 'SIM') {
             $('.campousamedicamentos').fadeIn(600)
-            // $('.prescrito').addClass("radiohide") 
         }else{
             $('.campousamedicamentos').fadeOut()
-            // $('.prescrito').removeClass("radiohide")
+            $('#marcarsaporra').iCheck('check');
         }
     });
    
