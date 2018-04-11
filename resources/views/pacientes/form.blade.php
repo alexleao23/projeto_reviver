@@ -352,7 +352,7 @@
 @include('form_build.radio', [
     'nome'=>'sob_prescricao',
     'label'=>'O uso é sob prescrição médica?',
-    'classdiv'=>'col-md-12 campousamedicamentos ',
+    'classdiv'=>'col-md-12 campousamedicamentos',
     'class'=>'flat-red prescrito'
 ])
 
