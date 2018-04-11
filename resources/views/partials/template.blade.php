@@ -135,101 +135,164 @@ $(function () {
 
 
     //Alteração de campos no questionário baseado nas escolhas
-    $(".outros").hide();
-    $(".comoconheceu").change(function () {
-           if ($(this).val() === "Outros") {
-                    $(".outros").show();
-                }else{
-                    $(".outros").hide();
-                } 
+
+    //Check fuma    
+    if ($('[name=fuma]:checked').val() !== 'PAROU')
+    {
+        $('.tempoparou').hide()
+    }
+
+    $('.fuma').bind('ifChecked uncheck', function() {
+        if (this.value == 'PAROU') {
+            $('.tempoparou').fadeIn(600)   
+        }else{
+            $('.tempoparou').fadeOut()
+        }
     });
 
-    $(".outrostempo").hide();
-    $(".tempodoenca").change(function () {
-           if ($(this).val() === "Outro") {
-                    $(".outrostempo").show();
-                }else{
-                    $(".outrostempo").hide();
-                } 
+    //Check bebe
+    if ($('[name=bebida_alcoolica]:checked').val() === 'NÃO')
+    {
+        $('.quantobebe').hide()
+    }
+
+    $('.bebe').bind('ifChecked uncheck', function() {
+        if (this.value == 'SIM') {
+            $('.quantobebe').fadeIn(600)   
+        }else{
+            $('.quantobebe').fadeOut()
+        }
     });
 
-    $(".tempofuma").hide();
-    $(".fuma").change(function () {
-       if ($(this).val() === "PAROU") {
-                $(".tempofuma").show();
-            }else{
-                $(".tempofuma").hide();
-            }
+    //Check incapaz
+    if ($('[name=incapaz_realizar_atividades_domesticas]:checked').val() === 'NÃO')
+    {
+        $('.incapazdeque').hide()
+    }
+
+    $('.incapaz').bind('ifChecked uncheck', function() {
+        if (this.value == 'SIM') {
+            $('.incapazdeque').fadeIn(600)   
+        }else{
+            $('.incapazdeque').fadeOut()
+        }
     });
 
-    $(".campousamedicamentos").hide();
-    $(".usamedicamentos").change(function () {
-      $(".campousamedicamentos").toggle();
+    //Check interfere atividade lazer
+    if ($('[name=interferido_atividades_lazer]:checked').val() === 'NÃO')
+    {
+        $('.maneira').hide()
+    }
+
+    $('.interferelazer').bind('ifChecked uncheck', function() {
+        if (this.value == 'SIM') {
+            $('.maneira').fadeIn(600)   
+        }else{
+            $('.maneira').fadeOut()
+        }
     });
 
-    $(".quantobebe").hide();
-    $(".bebe").change(function () {
-      $(".quantobebe").toggle();
+    //Check atividadefisica
+    if ($('[name=atividade_fisica]:checked').val() === 'NÃO')
+    {
+        $('.quaisativfisicas').hide()
+    }
+
+    $('.atividadefisica').bind('ifChecked uncheck', function() {
+        if (this.value == 'SIM') {
+            $('.quaisativfisicas').fadeIn(600)   
+        }else{
+            $('.quaisativfisicas').fadeOut()
+        }
     });
 
-    $(".campomedico").hide();
-    $(".campoprescrito").change(function () {
-      $(".campomedico").toggle();
+    //Check atividadelazer
+    if ($('[name=atividades_lazer]:checked').val() === 'NÃO')
+    {
+        $('.ativlazer').hide()
+    }
+
+    $('.lazer').bind('ifChecked uncheck', function() {
+        if (this.value == 'SIM') {
+            $('.ativlazer').fadeIn(600)   
+        }else{
+            $('.ativlazer').fadeOut()
+        }
     });
 
-    $(".tratamentossemmed").hide();
-    $(".realizatratamentossemmed").change(function () {
-      $(".tratamentossemmed").toggle();
+    //Check atividadereligiosa
+    if ($('[name=atividades_religiosas]:checked').val() === 'NÃO')
+    {
+        $('.ativrelig').hide()
+    }
+
+    $('.relig').bind('ifChecked uncheck', function() {
+        if (this.value == 'SIM') {
+            $('.ativrelig').fadeIn(600)   
+        }else{
+            $('.ativrelig').fadeOut()
+        }
+    });
+    //Select sabendo_projeto
+    // if ($('[name=sabendo_projeto]').val() === "Outros"){
+    //     $('.outrosconheceu').fadeIn(600)
+    // }else{
+    //     $('.outrosconheceu').fadeOut()
+    // }
+
+    // $('.comoconheceu').change(function (){
+
+    //     if(this.val() === "Outros"){
+    //         $('.outrosconheceu').fadeIn(600)
+    //     }else{
+    //         $('.outrosconheceu').fadeOut()
+    //     }
+
+    // });
+// 
+    //Check Medicamentos    
+    if ($('[name=uso_medicamentos]:checked').val() === 'NÃO')
+    {
+        $('.campousamedicamentos').hide()
+        // $('.prescrito').addClass('radiohide');
+    }
+
+    $('.usamedicamentos').bind('ifChecked uncheck', function() {
+        if (this.value == 'SIM') {
+            $('.campousamedicamentos').fadeIn(600)
+            // $('.prescrito').addClass("radiohide") 
+        }else{
+            $('.campousamedicamentos').fadeOut()
+            // $('.prescrito').removeClass("radiohide")
+        }
+    });
+   
+    //Check prescrição médica
+    if ($('[name=sob_prescricao]:checked').val() === 'NÃO')
+    {
+        $('.medico').hide()
+    }
+
+    $('.prescrito').bind('ifChecked uncheck', function() {
+        if (this.value == 'SIM') {
+            $('.medico').fadeIn(600) 
+        }else{
+            $('.medico').fadeOut()
+        }
     });
 
-    $(".campodomestica").hide();
-    $(".incapazdomestica").change(function () {
-      $(".campodomestica").toggle();
-    });
+    //Check tratamento sem remedio
+    if ($('[name=tratamento_smed]:checked').val() === 'NÃO')
+    {
+        $('.exemplosemmed').hide()
+    }
 
-    $(".campolazer").hide();
-    $(".camporealizalazer").change(function () {
-      $(".campolazer").toggle();
-    });
-
-    $(".maneira").hide();
-    $(".teminterferido").change(function () {
-      $(".maneira").toggle();
-    });
-
-    $(".atividadefisica").hide();
-    $(".realizafisica").change(function () {
-      $(".atividadefisica").toggle();
-    });
-
-    $(".atividadereligiosa").hide();
-    $(".realizareligiosa").change(function () {
-      $(".atividadereligiosa").toggle();
-    });
-
-    $(".qualconsistencia").hide();
-    $(".restricaoconsistencia").change(function () {
-      $(".qualconsistencia").toggle();
-    });
-
-    $(".qualprotese").hide();
-    $(".protese").change(function () {
-      $(".qualprotese").toggle();
-    });
-
-    $(".quaisdoencas").hide();
-    $(".presencadoencas").change(function () {
-      $(".quaisdoencas").toggle();
-    });
-
-    $(".nomevitaminico").hide();
-    $(".vitaminico").change(function () {
-      $(".nomevitaminico").toggle();
-    });
-
-    $(".qualrefeicao").hide();
-    $(".tomacomendo").change(function () {
-      $(".qualrefeicao").toggle();
+    $('.tratsemmed').bind('ifChecked uncheck', function() {
+        if (this.value == 'SIM') {
+            $('.exemplosemmed').fadeIn(600) 
+        }else{
+            $('.exemplosemmed').fadeOut()
+        }
     });
 
 

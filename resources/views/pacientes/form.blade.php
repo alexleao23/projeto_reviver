@@ -110,18 +110,18 @@
 <div class="col-md-12">
     <div class="form-group">
         {{ Form::label('fuma', 'Você fuma?') }}<br>
-        {{ Form::radio('fuma', 'SIM', true, ['class'=>'flat-red']) }} Sim&nbsp;&nbsp;
-        {{ Form::radio('fuma', 'NÃO', false, ['class'=>'flat-red']) }} Não&nbsp;&nbsp;
-        {{ Form::radio('fuma', 'PAROU', false, ['class'=>'flat-red']) }} Parou&nbsp;&nbsp;
+        {{ Form::radio('fuma', 'SIM', true, ['class'=>'flat-red fuma']) }} Sim&nbsp;&nbsp;
+        {{ Form::radio('fuma', 'NÃO', false, ['class'=>'flat-red fuma']) }} Não&nbsp;&nbsp;
+        {{ Form::radio('fuma', 'PAROU', false, ['class'=>'flat-red fuma']) }} Parou&nbsp;&nbsp;
     </div>
 </div>
 
 {{-- Se PAROU, Há quanto tempo parou? --}}
 @include('form_build.text', [
     'nome'=>'tempo_fuma',
-    'label'=>'Se PAROU, há quanto tempo?',
+    'label'=>'Há quanto tempo parou?',
     'placeholder'=>'Ex.: Dois meses',
-    'classdiv'=>'col-md-12',
+    'classdiv'=>'col-md-12 tempoparou',
 ])
 
 {{-- Você consome alguma bebida alcoólica? --}}
@@ -129,13 +129,14 @@
 @include('form_build.radio', [
     'nome'=>'bebida_alcoolica',
     'label'=>'Você consome alguma bebida alcoólica?',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12',
+    'class'=>'flat-red bebe'
 ])
 
 {{-- Se SIM, quantos dias no mês? --}}
 @include('form_build.select', [
     'nome'=>'quantos_dias_mes',
-    'label'=>'Se SIM, quantos dias no mês?',
+    'label'=>'Quantos dias no mês?',
     'opcoes'=>[
         'Raramente'=>'Raramente',
         '1 dia no mês'=>'1 dia no mês',
@@ -145,7 +146,7 @@
     ],
     'placeholder'=>'Selecione',
     'class'=>'form-control select2',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12 quantobebe',
 ])
 
 {{-- Você realiza alguma atividade física? --}}
@@ -153,15 +154,16 @@
 @include('form_build.radio', [
     'nome'=>'atividade_fisica',
     'label'=>'Você realiza alguma atividade física?',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12',
+    'class'=>'flat-red atividadefisica'
 ])
 
 {{-- Se SIM, quais atividades físicas? --}}
 @include('form_build.text', [
     'nome'=>'quais_atividades_fisicas',
-    'label'=>'Se SIM, quais atividades físicas?',
+    'label'=>'Quais atividades físicas?',
     'placeholder'=>'Ex.: Corrida, Natação',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12 quaisativfisicas'
 ])
 
 {{-- Qual a sua escolaridade? --}}
@@ -205,7 +207,7 @@
     'nome'=>'por_onde',
     'label'=>'Se Outros, de que outra forma?',
     'placeholder'=>'Ex.: TV',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12 outrosconheceu',
 ])
 
 {{-- Qual o melhor dia para atendimento? --}}
@@ -283,7 +285,8 @@
 @include('form_build.radio', [
     'nome'=>'incapaz_realizar_atividades_domesticas',
     'label'=>'Você tem se sentido incapaz de realizar atividades domésticas habituais devido à sua doença?',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12',
+    'class'=>'flat-red incapaz'
 ])
 
 {{-- Se SIM, quais atividades? --}}
@@ -291,7 +294,7 @@
     'nome'=>'quais_atividades',
     'label'=>'Quais atividades?',
     'placeholder'=>'Ex.: Varrer a casa',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12 incapazdeque'
 ])
 
 {{-- Seu estado de saúde tem interferido nas suas atividades de lazer ou divertimento? --}}
@@ -299,7 +302,8 @@
 @include('form_build.radio', [
     'nome'=>'interferido_atividades_lazer',
     'label'=>'Seu estado de saúde tem interferido nas suas atividades de lazer ou divertimento?',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12',
+    'class'=>'flat-red interferelazer'
 ])
 
 {{-- Se SIM, de que maneira? --}}
@@ -307,7 +311,7 @@
     'nome'=>'de_que_maneira',
     'label'=>'De que maneira?',
     'placeholder'=>'Ex.: Impedindo que eu saia de casa',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12 maneira'
 ])
 
 {{-- Paciente faz uso de medicamentos? --}}
@@ -315,46 +319,49 @@
 @include('form_build.radio', [
     'nome'=>'uso_medicamentos',
     'label'=>'Paciente faz uso de medicamentos?',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12',
+    'class'=>'flat-red usamedicamentos'
 ])
 
 {{-- Se SIM, quais medicamentos utiliza? --}}
 @include('form_build.text', [
     'nome'=>'nome_medicamentos',
-    'label'=>'Se SIM, quais medicamentos utiliza?',
+    'label'=>'Quais medicamentos utiliza?',
     'placeholder'=>'Ex.: Paracetamol, Doril',
-    'classdiv'=>'col-md-4'
+    'classdiv'=>'col-md-4 campousamedicamentos'
 ])
 
 {{-- Qual a dosagem? --}}
 @include('form_build.text', [
     'nome'=>'dose',
-    'label'=>'Se SIM, qual a dosagem?',
+    'label'=>'Qual a dosagem?',
     'placeholder'=>'Ex.: Dois comprimidos ao dia',
-    'classdiv'=>'col-md-4'
+    'classdiv'=>'col-md-4 campousamedicamentos'
 ])
 
 {{-- Quais horários? --}}
 @include('form_build.text', [
     'nome'=>'horarios',
-    'label'=>'Se SIM, quais horários toma os medicamentos?',
+    'label'=>'Quais horários toma os medicamentos?',
     'placeholder'=>'Ex.: Manhã',
-    'classdiv'=>'col-md-4'
+    'classdiv'=>'col-md-4 campousamedicamentos'
 ])
 
 {{-- Se SIM, sob prescrição médica? --}}
+{{-- to tentando fazer essa parada sumir também quando o cara n usa medicamento o ICHECK É FODA....... --}}
 @include('form_build.radio', [
     'nome'=>'sob_prescricao',
-    'label'=>'Se SIM, sob prescrição médica?',
-    'classdiv'=>'col-md-12'
+    'label'=>'O uso é sob prescrição médica?',
+    'classdiv'=>'col-md-12 campousamedicamentos ',
+    'class'=>'flat-red prescrito'
 ])
 
 {{-- Se SIM, qual médico prescreveu os medicamentos? --}}
 @include('form_build.text', [
     'nome'=>'medico_prescreveu',
-    'label'=>'Se SIM, qual médico prescreveu os medicamentos?',
+    'label'=>'Qual médico prescreveu os medicamentos?',
     'placeholder'=>'Ex.: Dr. Pedro Santos',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12 medico'
 ])
 
 {{-- Você faz algum tratamento sem medicamentos? --}}
@@ -362,15 +369,16 @@
 @include('form_build.radio', [
     'nome'=>'tratamento_smed',
     'label'=>'Você faz algum tratamento sem medicamentos?',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12',
+    'class'=>'flat-red tratsemmed'
 ])
 
 {{-- Se SIM, quais tratamentos? --}}
 @include('form_build.text', [
     'nome'=>'quais_tratamentos',
-    'label'=>'Se SIM, quais tratamentos?',
+    'label'=>'Quais tratamentos?',
     'placeholder'=>'Ex.: Fisioterapia',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12 exemplosemmed'
 ])
 
 {{-- Você realiza alguma atividade de lazer ou divertimento? --}}
@@ -378,15 +386,16 @@
 @include('form_build.radio', [
     'nome'=>'atividades_lazer',
     'label'=>'Você realiza alguma atividade de lazer ou divertimento?',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12',
+    'class'=>'flat-red lazer'
 ])
 
 {{-- Se SIM, quais atividades de lazer? --}}
 @include('form_build.text', [
     'nome'=>'quais_atividades_lazer',
-    'label'=>'Se SIM, quais atividades de lazer ou divertimento?',
+    'label'=>'Quais atividades de lazer ou divertimento?',
     'placeholder'=>'Ex.: Jogar bola',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12 ativlazer'
 ])
 
 {{-- Você participa de atividades religiosas? --}}
@@ -394,15 +403,16 @@
 @include('form_build.radio', [
     'nome'=>'atividades_religiosas',
     'label'=>'Você participa de atividades religiosas?',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12',
+    'class'=>'flat-red relig'
 ])
 
 {{-- Se SIM, quais atividades religiosas? --}}
 @include('form_build.text', [
     'nome'=>'quais_atividades_religiosas',
-    'label'=>'Se SIM, quais atividades religiosas?',
+    'label'=>'Quais atividades religiosas?',
     'placeholder'=>'Ex.: Evangelizar',
-    'classdiv'=>'col-md-12'
+    'classdiv'=>'col-md-12 ativrelig'
 ])
 
 {{-- Como você costuma se locomover? --}}
