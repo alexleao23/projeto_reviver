@@ -353,6 +353,7 @@
     'nome'=>'sob_prescricao',
     'label'=>'O uso é sob prescrição médica?',
     'classdiv'=>'col-md-12 campousamedicamentos',
+    'id'=>'marcarsaporra',
     'class'=>'flat-red prescrito'
 ])
 
