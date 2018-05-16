@@ -96,7 +96,7 @@ var pJS = function(tag_id, params){
         },
         onclick: {
           enable: true,
-          mode: 'repulse'
+          mode: 'bubbles'
         },
         resize: true
       },

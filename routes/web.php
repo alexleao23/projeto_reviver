@@ -1,6 +1,6 @@
 <?php
 Route::get('/', function () {
-    return redirect('login');
+    return view('registrohome');
 });
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
