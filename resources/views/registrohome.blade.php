@@ -53,7 +53,7 @@
   <section class="hero overlay" data-stellar-background-ratio="0.3">
     <div id="particles-js"></div>
     <div style="z-index: 2" id="botao" class="button">
-        <a href="register">Participe <span class="shift">›</span></a>
+        <a href="register">Cadastre-se <span class="shift">›</span></a>
         <div class="mask"></div>
     </div>
     <img style="margin: 0 auto;" src="logomain.png" alt="">
@@ -65,7 +65,7 @@
   <section id="sobreprojeto" class="wrapper">
     <div class="content">
       <h2>Bem-vindo ao projeto reviver</h2>
-      <p style="text-align: justify;">O Projeto Reviver é uma iniciativa da Universidade Federal do Amapá, através do Laboratório de Química Farmacêutica Medicinal – PharMedChem, que trabalha com uma equipe multidisciplinar de médicos, farmacêuticos, enfermeiros, nutricionistas, educadores físicos e fisioterapeutas, para acompanhar pacientes portadores de Doença de Parkinson e/ou Doença de Alzheimer e seus cuidadores.
+      <p style="text-align: justify;">O Projeto Reviver é uma iniciativa da Universidade Federal do Amapá, através do Laboratório de Química Farmacêutica e Medicinal – PharMedChem, que trabalha com uma equipe multidisciplinar de médicos, farmacêuticos, enfermeiros, nutricionistas, educadores físicos e fisioterapeutas, para acompanhar pacientes portadores de Doença de Parkinson e/ou Doença de Alzheimer e seus familiares/cuidadores.
 	  </p>
     <div>
   </section>
@@ -80,8 +80,8 @@
             Your browser does not support HTML5 video.
         </video>
       </div><br>
-      <p style="text-align: justify;">A Doença de Parkinson e a Doença de Alzheimer são doenças crônico-não transmissíveis comuns em idosos. As alterações presentes nestas afecções geram uma grande incapacidade funcional em seus portadores e consequentemente uma queda na qualidade de vida dos mesmos. É de grande importância que a Doença de Parkinson e a Doença de Alzheimer sejam tratadas de maneira multiprofissional e acima de tudo projetadas de acordo com cada caso e envolvendo estratégias para o paciente e seus familiares ou cuidadores.
-      O Projeto Reviver foi criado com o intuito de prover cuidados para portadores de Doença de Parkinson e Doença de Alzheimer, e seus cuidadores. Esse projeto conta com uma equipe multiprofissional, que visa a melhoria da qualidade de vida dos pacientes e cuidadores envolvidos. Desta forma, é possível prestar a devida assistência à esses pacientes e seus cuidadores, retardando ao máximo a progressão dessas doenças.
+      <p style="text-align: justify;">
+        A Doença de Parkinson e a Doença de Alzheimer são doenças crônico-não transmissíveis comuns em idosos. As alterações presentes nestas afecções geram uma grande incapacidade funcional em seus portadores e consequentemente uma queda na qualidade de vida dos mesmos. É de grande importância que a Doença de Parkinson e a Doença de Alzheimer sejam tratadas de maneira multiprofissional e acima de tudo projetadas de acordo com cada caso e envolvendo estratégias para o paciente e seus familiares ou cuidadores. O Projeto Reviver foi criado com o intuito de prover cuidados multiprofissional visando a qualidade de vida de portadores de Doença de Parkinson e Doença de Alzheimer e seus familiares/cuidadores. Desta forma, é possível prestar a devida assistência à esses pacientes e seus familiares/cuidadores, retardando ao máximo a progressão dessas doenças.
       </p>
       {{-- <a class="btn" href="#">Click Here</a> --}}
     <div>
