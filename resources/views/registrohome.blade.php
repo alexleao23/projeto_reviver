@@ -50,10 +50,12 @@
         <div id="MenuIcon">
         <div id="MenuLine"></div>
         </div>
+
+        {{-- Session::flash('sucesso') --}}
   <section class="hero overlay" data-stellar-background-ratio="0.3">
     <div id="particles-js"></div>
     <div style="z-index: 2" id="botao" class="button">
-        <a href="register">Cadastre-se <span class="shift">›</span></a>
+        <a href="cadastro">Cadastre-se <span class="shift">›</span></a>
         <div class="mask"></div>
     </div>
     <img style="margin: 0 auto;" src="logomain.png" alt="">
@@ -138,12 +140,12 @@
         
             <strong>P R O J E T O</strong><br>
             <strong>R E V I V E R</strong><br>
-              <li id="matricular">ENTRAR<div class="line"></div></li>
               <li id="sobre">BEM-VINDO<div class="line"></div></li>
-                <li id="projeto">O PROJETO<div class="line"></div></li>
-                <li id="embaixadores">EMBAIXADORES<div class="line"></div></li>
-                <li id="programacao">PROGRAMAÇÃO<div class="line"></div></li>
-                <li><div style="margin-top:30px" id="close">
+              <li id="projeto">O PROJETO<div class="line"></div></li>
+              <li id="embaixadores">EMBAIXADORES<div class="line"></div></li>
+              <li id="programacao">PROGRAMAÇÃO<div class="line"></div></li>
+              <li id="matricular">MEMBRO DA EQUIPE?<div class="line"></div></li>
+              <li><div style="margin-top:30px" id="close">
                 <div class="outer">
                   <div class="inner">
                     <label>Fechar</label>
