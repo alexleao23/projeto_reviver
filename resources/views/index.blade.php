@@ -28,6 +28,21 @@
     </div>
     <div class="box-body">
       <div class="row">
+        <div class="col-lg-12 col-xs-12">
+          <!-- small box -->
+          <div class="small-box bg-orange">
+            <div class="inner">
+              <h3 class="index">{{ count($solicitantes) }}</h3>
+              <p><strong>Pacientes Em Espera</strong></p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-user-plus"></i>
+            </div>
+            <a href="{{ action('SolicitantesController@index') }}" class="small-box-footer">
+              <b>Lista de Pacientes Em Espera </b> <i class="fa fa-th-list"></i>
+            </a>
+          </div>
+        </div>
         @can('create', App\User::class)
           <div class="col-lg-6 col-xs-6">
             <!-- small box -->

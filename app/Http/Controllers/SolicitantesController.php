@@ -22,7 +22,8 @@ class SolicitantesController extends Controller
 
     public function index()
     {
-        //
+        $solicitantes = $this->solicitante->orderBy('id', 'desc')->paginate(10);
+        return view('solicitantes.index', compact('solicitantes'));
     }
 
     /**
@@ -54,9 +55,16 @@ class SolicitantesController extends Controller
      * @param  \App\Solicitante  $solicitante
      * @return \Illuminate\Http\Response
      */
-    public function show(Solicitante $solicitante)
+    public function show($id)
     {
-        //
+        $validator = \Validator::make(
+            ['id' => $id],
+            ['id' => 'required|integer|exists:solicitantes,id']
+
+        )->validate();
+
+        $solicitante = $this->solicitante->find($id);
+        return view('solicitantes.show', compact('solicitante'));
     }
 
     /**

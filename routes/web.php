@@ -17,8 +17,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 		$users = App\User::all();
 		$pacientes = App\Models\Paciente::all();
 		$responsaveis = App\Models\Responsavel::all();
-		return view('index', compact('users', 'pacientes', 'responsaveis'));
+		$solicitantes = App\Models\Solicitante::all();
+		return view('index', compact('users', 'pacientes', 'responsaveis', 'solicitantes'));
 	})->name('homepage');
+	Route::resource('solicitantes', 'SolicitantesController');
 	Route::resource('responsaveis', 'ResponsaveisController');
 	Route::resource('pacientes', 'PacientesController');
 	Route::get('pacientes/{id}/questionarios_nutricao/create', 'PacientesController@questionarioNutricaoCreate')->name('questionarios_nutricao');
