@@ -55,4 +55,9 @@ class UserPolicy extends BasePolicy
     {
         return $user->isCoordenador();
     }
+
+    public function aceitar(User $user)
+    {
+        return $user->isCoordenador();
+    }
 }

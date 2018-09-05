@@ -28,18 +28,33 @@
     </div>
     <div class="box-body">
       <div class="row">
-        <div class="col-lg-12 col-xs-12">
+        <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-orange">
             <div class="inner">
-              <h3 class="index">{{ count($solicitantes) }}</h3>
-              <p><strong>Pacientes Em Espera</strong></p>
+              <h3 class="index">{{ App\Models\Solicitante::select()->where('status', 'Em Espera')->count() }}</h3>
+              <p><strong>Solicitante Em Espera</strong></p>
             </div>
             <div class="icon">
-              <i class="fa fa-user-plus"></i>
+              <i class="fa fa-th-list"></i>
             </div>
             <a href="{{ action('SolicitantesController@index') }}" class="small-box-footer">
-              <b>Lista de Pacientes Em Espera </b> <i class="fa fa-th-list"></i>
+              <b>Lista de Solicitante Em Espera </b> <i class="fa fa-th-list"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3 class="index">{{ App\Models\Solicitante::select()->where('status', 'Aceito')->count() }}</h3>
+              <p><strong>Solicitantes Aceitos</strong></p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-th-list"></i>
+            </div>
+            <a href="{{ action('SolicitantesController@aceito') }}" class="small-box-footer">
+              <b>Lista de Solicitantes Aceitos </b> <i class="fa fa-th-list"></i>
             </a>
           </div>
         </div>

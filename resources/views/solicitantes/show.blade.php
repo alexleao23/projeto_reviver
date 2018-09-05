@@ -23,6 +23,15 @@
                 <br>
                 <div class="btn-group pull-right">
                     <a href="{{ action('SolicitantesController@index')  }}" class="btn btn-default "><i class="fa fa-arrow-left"></i> Voltar</a>
+                    @can('aceitar', App\User::class)
+                        @if ($solicitante->status == 'Em Espera')    
+                            <form action="{{ action('SolicitantesController@update',$solicitante->id) }}" method="POST" style="display: inline">
+                                {{ method_field('PUT') }}
+                                {{ csrf_field() }}
+                                <button href="" class="btn btn-success"><i class="fa fa-check"></i> Aceitar</button>
+                            </form>
+                        @endif
+                    @endcan
                 </div>
             </div>
         </div>

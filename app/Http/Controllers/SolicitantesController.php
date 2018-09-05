@@ -22,7 +22,13 @@ class SolicitantesController extends Controller
 
     public function index()
     {
-        $solicitantes = $this->solicitante->orderBy('id', 'desc')->paginate(10);
+        $solicitantes = $this->solicitante->select()->where('status', 'Em Espera')->orderBy('id', 'desc')->paginate(10);
+        return view('solicitantes.index', compact('solicitantes'));
+    }
+
+    public function aceito()
+    {
+        $solicitantes = $this->solicitante->select()->where('status', 'Aceito')->orderBy('id', 'desc')->paginate(10);
         return view('solicitantes.index', compact('solicitantes'));
     }
 
@@ -85,9 +91,12 @@ class SolicitantesController extends Controller
      * @param  \App\Solicitante  $solicitante
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Solicitante $solicitante)
+    public function update(Request $request, $id)
     {
-        //
+        $solicitante = $this->solicitante->find($id);
+        $solicitante->status = 'Aceito';
+        $solicitante->save();
+        return redirect('/admin/solicitantes');
     }
 
     /**
@@ -96,8 +105,10 @@ class SolicitantesController extends Controller
      * @param  \App\Solicitante  $solicitante
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Solicitante $solicitante)
+    public function destroy($id)
     {
-        //
+        $solicitante = $this->solicitante->find($id);
+        $solicitante->delete();
+        return redirect('/admin/solicitantes');
     }
 }
