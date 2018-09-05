@@ -132,6 +132,7 @@
     <div class="content">
       <p style="text-align: center;">UNIFAP - Universidade Federal do Amapá - 2018</p>
       <p style="text-align: center; font-size: 15px;">João Victor Machado de Andrade</p>
+      <p style="text-align: center; font-size: 15px;">Alexander Silva de Leão</p>
     </div>
   </section>
           
