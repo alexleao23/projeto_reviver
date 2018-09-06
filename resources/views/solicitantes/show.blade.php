@@ -22,7 +22,7 @@
                 </table>
                 <br>
                 <div class="btn-group pull-right">
-                    <a href="{{ action('SolicitantesController@index')  }}" class="btn btn-default "><i class="fa fa-arrow-left"></i> Voltar</a>
+                    <a href="/admin" class="btn btn-default "><i class="fa fa-arrow-left"></i> Voltar</a>
                     @can('aceitar', App\User::class)
                         @if ($solicitante->status == 'Em Espera')    
                             <form action="{{ action('SolicitantesController@update',$solicitante->id) }}" method="POST" style="display: inline">
