@@ -67,7 +67,7 @@
   <section id="sobreprojeto" class="wrapper">
     <div class="content">
       <h2>Bem-vindo ao projeto reviver</h2>
-      <p style="text-align: justify;">O Projeto Reviver é uma iniciativa da Universidade Federal do Amapá, através do Laboratório de Química Farmacêutica e Medicinal – PharMedChem, que trabalha com uma equipe multidisciplinar de médicos, farmacêuticos, enfermeiros, nutricionistas, educadores físicos e fisioterapeutas, para acompanhar pacientes portadores de Doença de Parkinson e/ou Doença de Alzheimer e seus familiares/cuidadores.
+      <p style="text-align: justify;">O Projeto Reviver é uma iniciativa do Laboratório de Química Farmacêutica Medicinal – PharMedChem da Universidade Federal do Amapá, que trabalha com uma equipe multidisciplinar de médicos, farmacêuticos, enfermeiros, nutricionistas, educadores físicos, psicólogos e fisioterapeutas, para acompanhar pacientes portadores de Doença de Parkinson e/ou Doença de Alzheimer e seus familiares/cuidadores.
 	  </p>
     <div>
   </section>
@@ -91,7 +91,7 @@
 
   <section class="wrapper">
     <div class="content">
-      <h2 id="embaixadoressobre">Embaixadores</h2>
+      <h2 id="embaixadoressobre">Equipe</h2>
       
        <h3>Coordenadoras</h3><p style="text-align: center;">Prof.ª Dr.ª Lorane Hage Melim e Prof.ª MSc. Viviane Cardoso</p>
       <br>
@@ -112,29 +112,26 @@
   </section>
 
   <section class="lower overlay" data-stellar-background-ratio="0.3">
-    <div class="content"> 
-      <h2 id="programacaosobre">Programação</h2>
-      <p>inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui inserir algo aqui</p>
-    </div>
-  </section>
-
-  <section class="wrapper">
     <div class="content">
       <h2 id="internetinfo">Uma iniciativa</h2>
        <img src="pharmed.png" style="margin-right: 100px;">
        <img src="amapaloginn.png" style="margin-right: 100px;">
-       <img src="logo.png">
+       {{-- <img src="logo.png"> --}}
     </div>
+  </section>
+
+  <section class="wrapper">
+    
 
   </section>
 
-  <section class="bottom">
+{{--   <section class="bottom">
     <div class="content">
       <p style="text-align: center;">UNIFAP - Universidade Federal do Amapá - 2018</p>
       <p style="text-align: center; font-size: 15px;">João Victor Machado de Andrade</p>
       <p style="text-align: center; font-size: 15px;">Alexander Silva de Leão</p>
     </div>
-  </section>
+  </section> --}}
           
           <div id="MainMenu">
             <ul>  
@@ -143,7 +140,7 @@
             <strong>R E V I V E R</strong><br>
               <li id="sobre">BEM-VINDO<div class="line"></div></li>
               <li id="projeto">O PROJETO<div class="line"></div></li>
-              <li id="embaixadores">EMBAIXADORES<div class="line"></div></li>
+              <li id="embaixadores">EQUIPE<div class="line"></div></li>
               <li id="programacao">PROGRAMAÇÃO<div class="line"></div></li>
               <li id="matricular">MEMBRO DA EQUIPE?<div class="line"></div></li>
               <li><div style="margin-top:30px" id="close">

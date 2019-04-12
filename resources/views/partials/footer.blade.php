@@ -1,4 +1,4 @@
-<footer class="main-footer" style="position: relative;">
+{{-- <footer class="main-footer" style="position: relative;">
     <div class="container">
       	<div class="pull-right hidden-xs">
         	<b>Versão</b> 0.2
@@ -7,3 +7,4 @@
     </div>
     <!-- /.container -->
 </footer>
+ --}}
