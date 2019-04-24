@@ -24,7 +24,7 @@ class CreatePacientesTable extends Migration
             $table->string('bairro');
             $table->string('celular');
             $table->enum('estado_civil', ['Solteiro(a)', 'Casado(a)', 'Desquitado(a)', 'Divorciado(a)', 'Viúvo(a)', 'Outros']);
-            $table->integer('responsavel_id');
+            $table->integer('responsavel_id')->unsigned();
             $table->foreign('responsavel_id')->references('id')->on('responsavels');
             $table->enum('escolaridade', ['Analfabeto', 'EFI', 'EFC', 'EMI', 'EMC', 'ESI', 'ESC', 'Pós-graduação']);
             $table->enum('fuma', ['SIM', 'NÃO', 'PAROU']);

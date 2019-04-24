@@ -15,7 +15,7 @@ class CreateQuestionarioNutricaosTable extends Migration
     {
         Schema::create('questionario_nutricaos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('paciente_id')->unique();
+            $table->integer('paciente_id')->unique()->unsigned();
             $table->foreign('paciente_id')->references('id')->on('pacientes');
             $table->text('antecedentes_familiares')->nullable();
             $table->text('antecedentes_clinicos')->nullable();
@@ -39,7 +39,7 @@ class CreateQuestionarioNutricaosTable extends Migration
             $table->enum('problemas_neuropsicologicos', [0, 1, 2]);
                 // Cálculo do IMC
                 $table->double('peso', 3, 2);
-                $table->double('altura', 1, 2);
+                $table->double('altura', 3, 2);
                 $table->double('imc');
                 $table->enum('pontuacao_imc', [0, 1, 2, 3]);
                 //

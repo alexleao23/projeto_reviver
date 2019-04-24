@@ -82,6 +82,23 @@
                                 {{ Form::radio('doenca', 'Parkinson', true, ['class'=>'flat-red']) }} Parkinson&nbsp;&nbsp;
                               </div>
                             </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                {{ Form::label('sou', 'Sou') }}<br>
+                                {{ Form::radio('sou', 'Profissional', false, ['class'=>'flat-red']) }} Profissional&nbsp;&nbsp;
+                                {{ Form::radio('sou', 'Acadêmico', true, ['class'=>'flat-red']) }} Acadêmico&nbsp;&nbsp;
+                                {{ Form::radio('sou', 'Familiar', true, ['class'=>'flat-red']) }} Familiar&nbsp;&nbsp;
+                                {{ Form::radio('sou', 'Cuidador', true, ['class'=>'flat-red']) }} Cuidador&nbsp;&nbsp;
+                                {{ Form::radio('sou', 'Paciente', true, ['class'=>'flat-red']) }} Paciente&nbsp;&nbsp;
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                {{ Form::label('projetoreviver', 'Projeto Reviver') }}<br>
+                                {{ Form::radio('projetoreviver', 'Já Participo', false, ['class'=>'flat-red']) }} Já participo&nbsp;&nbsp;
+                                {{ Form::radio('projetoreviver', 'Tenho interesse', true, ['class'=>'flat-red']) }} Tenho interesse&nbsp;&nbsp;
+                              </div>
+                            </div>
                             <div class="row">
                               <div class="col-xs-6">
                                 <a href="{{ URL::previous() }}" class="pull-right btn btn-default btn-block btn-flat">Voltar</a>

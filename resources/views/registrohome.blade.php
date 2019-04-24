@@ -95,18 +95,40 @@
       
        <h3>Coordenadoras</h3><p style="text-align: center;">Prof.ª Dr.ª Lorane Hage Melim e Prof.ª MSc. Viviane Cardoso</p>
       <br>
-      <h3>Médicos</h3><p style="text-align: center;"> Dr. Anderson Ferraz e Dr. Alessandro Nunes</p>
+      <h3>Medicina</h3><p style="text-align: center;"> Dr. Anderson Ferraz e Dr. Alessandro Nunes <br>(médicos parceiros)</p>
+                        <p style="text-align: center;"> Prof.ª MSc. Viviane Cardoso <br>(coordenadora)</p>
+                        
       <br>
-      <h3>Enfermeira</h3><p style="text-align: center;"> Prof.ª Dr.ª Marlucilena Pinheiro</p>
+      <h3>Enfermagem</h3><p style="text-align: center;"> Prof.ª Dr.ª Marlucilena Pinheiro <br>(coordenadora)</p>
+                          <p style="text-align: center;"> Prof.ª Esp. Maira Beatrine de Rocha <br>(enfermeira)</p>
+                          <p style="text-align: center;"> Prof.ª Dr.ª Maria Izabel Tentes Côrtes <br>(enfermeira)</p>
+                          <p style="text-align: center;"> Lorenna Leal de Moraes <br>(enfermeira)</p>
       <br>
-      <h3>Farmacêuticas</h3><p style="text-align: center;"> Prof.ª MSc. Taysa Schalcher e Dr.ª Bianca Marino</p>
+      <h3>Farmácia</h3><p style="text-align: center;"> Profª Drª Lorane Hage Melim <br>(coordenadora)</p><br>
+                        <p style="text-align: center;"> Bianca Marino <br>(farmacêutica)</p><br>
+                        <p style="text-align: center;"> Heitor Ribeiro <br>(farmacêutico)</p><br>
+                        <p style="text-align: center;"> Jaderson Ferreira <br>(farmacêutico)</p><br>
+                        <p style="text-align: center;"> Lucilene Rocha <br>(farmacêutica)</p><br>
       <br>
-      <h3>Nutricionista</h3><p style="text-align: center;"> Prof.ª MSc. Susy Barros</p>
+      <h3>Fisioterapia</h3><p style="text-align: center;"> Prof. Esp. Cleuton Landre e Prof.ª Esp. Kátia Cirilo <br>(coordenadores)</p>
       <br>
-      <h3>Fisioterapeuta</h3><p style="text-align: center;"> Prof. Esp. Cleuton Landre</p>
+      <h3>Nutrição</h3><p style="text-align: center;"> Prof.ª MSc. Susy Érika <br>(coordenadora)</p>
+      <br>
+      <h3>Educação Física</h3>
+      <p style="text-align: center;">Prof. Dr. Demilto Yamaguchi <br> (coordenador)</p>
+      <br>
+      <h3>Psicologia</h3>
+      <p style="text-align: center;">Marcilene Sena <br>(coordenadora)</p>
+      <br>
+      <p style="text-align: center;">Larissa Souza <br>(psicóloga)</p>
+      <br>
+      <p style="text-align: center;"> Lidiane Lima<br>(psicóloga)</p>
+      <br>
+      <h3>Ciência da Computação</h3>
+      <p style="text-align: center;">Prof MSc. Thiago Nascimento <br> (coordenador)</p>
       <br>
       <h3>&</h3>
-      <p style="text-align: center;">Acadêmicos de medicina, farmácia, enfermagem, fisioterapia e nutrição</p>
+      <p style="text-align: center;">Acadêmicos de todas as áreas</p>
 
     <div>
   </section>
@@ -114,7 +136,7 @@
   <section class="lower overlay" data-stellar-background-ratio="0.3">
     <div class="content">
       <h2 id="internetinfo">Uma iniciativa</h2>
-       <img src="pharmed.png" style="margin-right: 100px;">
+       <img src="pharmed.png" style="margin-left: 20%;margin-right: 100px;">
        <img src="amapaloginn.png" style="margin-right: 100px;">
        {{-- <img src="logo.png"> --}}
     </div>
