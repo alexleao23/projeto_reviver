@@ -10,7 +10,8 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('cadastro', 'SolicitantesController@create');
-Route::post('cadastro', 'SolicitantesController@store')->name('cadastro');
+Route::post('cadastro', 'SolicitantesController@store')
+	->name('cadastro')->middleware('email.me');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	Route::get('/', function(){

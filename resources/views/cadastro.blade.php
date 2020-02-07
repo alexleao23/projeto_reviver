@@ -75,6 +75,14 @@
                               'classicon'=>'glyphicon glyphicon-earphone',
                               'classdiv'=>'col-md-12'
                             ])
+                            @include('form_build.text', [
+                              'nome'=>'endereco',
+                              'label'=>'Endereço Completo',
+                              'class'=>'form-control',
+                              'placeholder'=>'Ex: Av. Fab, Nº 200, Centro',
+                              'classicon'=>'glyphicon glyphicon-home',
+                              'classdiv'=>'col-md-12'
+                            ])
                             <div class="col-md-12">
                               <div class="form-group">
                                 {{ Form::label('doenca', 'Doença') }}<br>

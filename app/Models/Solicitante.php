@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Solicitante extends Model
 {
     protected $table = 'solicitantes';
-    protected $fillable = ['nome', 'email', 'celular', 'doenca', 'status','sou','projetoreviver'];
+    protected $fillable = [
+        'nome', 'email', 'celular',
+        'endereco', 'doenca', 'status',
+        'sou', 'projetoreviver'
+    ];
     
     public function getShortNomeAttribute()
     {
