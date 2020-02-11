@@ -34,13 +34,13 @@ class SolicitacaoCadastro extends Mailable
         return $this
             ->from(env('MAIL_USERNAME'))
             ->subject('Solicitação de participação no Projeto Reviver')
+            ->view('emails.solicitacao_cadastro')
             ->with([
                 'nome_solicitante' => $this->solicitante['nome'],
                 'email_solicitante' => $this->solicitante['email'],
                 'celular_solicitante' => $this->solicitante['celular'],
                 'doenca_solicitante' => $this->solicitante['doenca'],
                 'sou_solicitante' => $this->solicitante['sou']
-            ])
-            ->view('emails.solicitacao_cadastro');
+            ]);
     }
 }
