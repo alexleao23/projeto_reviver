@@ -12,7 +12,7 @@ class SolicitacaoCadastro extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $solicitante;
+    protected $solicitante;
 
     /**
      * Create a new message instance.
@@ -33,13 +33,13 @@ class SolicitacaoCadastro extends Mailable
     {
         return $this
             ->from(env('MAIL_USERNAME'))
-            ->subject("Solicitação de participação no Projeto Reviver")
+            ->subject('Solicitação de participação no Projeto Reviver')
             ->with([
-                "nome_solicitante" => $this->solicitante["nome"],
-                "email_solicitante" => $this->solicitante["email"],
-                "celular_solicitante" => $this->solicitante["celular"],
-                "doenca_solicitante" => $this->solicitante["doenca"],
-                "sou_solicitante" => $this->solicitante["sou"]
+                'nome_solicitante' => $this->solicitante['nome'],
+                'email_solicitante' => $this->solicitante['email'],
+                'celular_solicitante' => $this->solicitante['celular'],
+                'doenca_solicitante' => $this->solicitante['doenca'],
+                'sou_solicitante' => $this->solicitante['sou']
             ])
             ->view('emails.solicitacao_cadastro');
     }
