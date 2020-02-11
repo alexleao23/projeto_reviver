@@ -51,7 +51,8 @@ class SolicitantesController extends Controller
      */
     public function store(Request $request)
     {
-        Solicitante::create($request->all());
+        // Solicitante::create($request->all());
+        dd($request->all());
         return view('sucesso');
     }
 
